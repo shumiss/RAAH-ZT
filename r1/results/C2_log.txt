@@ -1,0 +1,105 @@
+engine check vs frozen score-shift rows: 0.0
+                      selection  budget      family  version_changes  infeasible_updates  test_caps_met  sr_action  far_direct  mfa_benign  local_mfa_max  local_windows_over_2pct
+0             adaptive_original    0.02  hysteresis             59.0                45.0           True      1.880       0.154       1.904         27.696                   29.508
+1             adaptive_original    0.02      single             27.0                68.0          False      2.033       0.563       1.112          4.902                   16.393
+2             adaptive_original    0.02         sma             79.0                42.0           True      1.829       0.222       1.925         22.202                   33.333
+3             adaptive_original    0.02         ema             66.0                39.0           True      1.823       0.154       1.799         11.332                   33.880
+4             adaptive_original    0.02     counter             62.0                45.0           True      1.824       0.217       1.703          6.498                   33.880
+5             adaptive_original    0.05  hysteresis             53.0                16.0           True      1.857       0.122       2.134         27.696                   34.973
+6             adaptive_original    0.05      single             26.0                54.0           True      2.017       0.454       1.154          4.875                   16.940
+7             adaptive_original    0.05         sma             68.0                 5.0           True      1.768       0.069       2.196         22.202                   39.891
+8             adaptive_original    0.05         ema             52.0                 4.0           True      1.769       0.051       2.104         11.332                   41.530
+9             adaptive_original    0.05     counter             65.0                14.0           True      1.755       0.120       2.053          7.087                   42.623
+10  adaptive_validated_fallback    0.02  hysteresis             67.0                45.0           True      1.865       0.153       1.911         27.696                   30.601
+11  adaptive_validated_fallback    0.02      single             37.0                68.0          False      1.937       0.275      11.468         99.425                   28.962
+12  adaptive_validated_fallback    0.02         sma             90.0                42.0           True      1.787       0.093       1.989         22.202                   33.880
+13  adaptive_validated_fallback    0.02         ema             78.0                39.0           True      1.796       0.075       1.805         11.332                   34.426
+14  adaptive_validated_fallback    0.02     counter             73.0                45.0           True      1.822       0.201       1.688          6.286                   32.787
+15  adaptive_validated_fallback    0.05  hysteresis             55.0                16.0           True      1.855       0.135       2.119         27.696                   34.973
+16  adaptive_validated_fallback    0.05      single             41.0                54.0          False      1.938       0.226      10.621         99.425                   30.055
+17  adaptive_validated_fallback    0.05         sma             71.0                 5.0           True      1.766       0.057       2.214         22.202                   40.437
+18  adaptive_validated_fallback    0.05         ema             54.0                 4.0           True      1.767       0.040       2.124         11.332                   42.077
+19  adaptive_validated_fallback    0.05     counter             70.0                14.0           True      1.751       0.108       2.139          7.087                   43.169
+20                        fixed    0.02  hysteresis              NaN                 NaN           True      1.840       0.137       1.547          5.661                   31.148
+21                        fixed    0.02      single              NaN                 NaN          False      1.886       0.158      25.687         99.768                   44.809
+22                        fixed    0.02         sma              NaN                 NaN           True      1.752       0.072       1.858          6.485                   36.612
+23                        fixed    0.02         ema              NaN                 NaN           True      1.761       0.088       1.823          6.439                   35.519
+24                        fixed    0.02     counter              NaN                 NaN           True      1.809       0.190       1.768          6.286                   34.973
+25                        fixed    0.05  hysteresis              NaN                 NaN           True      1.840       0.137       1.547          5.661                   31.148
+26                        fixed    0.05      single              NaN                 NaN          False      1.826       0.075      26.116         99.768                   54.098
+27                        fixed    0.05         sma              NaN                 NaN          False      1.735       0.000      26.352         99.768                   60.656
+28                        fixed    0.05         ema              NaN                 NaN          False      1.734       0.000      26.469         99.768                   60.109
+29                        fixed    0.05     counter              NaN                 NaN           True      1.733       0.032       2.251          7.574                   45.902
+                       selection  budget      family  phase  sr_action  far_direct  fdr_hard  mfa_benign  phase_caps_met
+0              adaptive_original    0.02  hysteresis      1      1.795       0.107  0.007674       1.513            True
+1              adaptive_original    0.02  hysteresis      2      1.904       0.362  0.010325       1.256            True
+2              adaptive_original    0.02  hysteresis      3      2.091       0.103  0.009546       3.447           False
+3              adaptive_original    0.02  hysteresis      4      1.730       0.060  0.006531       1.410            True
+8              adaptive_original    0.02         sma      1      1.771       0.288  0.007674       1.690            True
+9              adaptive_original    0.02         sma      2      1.721       0.099  0.010325       1.615            True
+10             adaptive_original    0.02         sma      3      2.088       0.238  0.009546       2.995           False
+11             adaptive_original    0.02         sma      4      1.734       0.258  0.006531       1.401            True
+12             adaptive_original    0.02         ema      1      1.737       0.166  0.007674       1.930            True
+13             adaptive_original    0.02         ema      2      1.707       0.082  0.010325       1.620            True
+14             adaptive_original    0.02         ema      3      2.111       0.196  0.009546       2.177           False
+15             adaptive_original    0.02         ema      4      1.735       0.168  0.006531       1.466            True
+20             adaptive_original    0.05  hysteresis      1      1.782       0.071  0.007674       1.563            True
+21             adaptive_original    0.05  hysteresis      2      1.904       0.362  0.010325       1.256            True
+22             adaptive_original    0.05  hysteresis      3      2.048       0.061  0.009546       3.889            True
+23             adaptive_original    0.05  hysteresis      4      1.696       0.013  0.006531       1.846            True
+28             adaptive_original    0.05         sma      1      1.704       0.079  0.007674       1.904            True
+29             adaptive_original    0.05         sma      2      1.678       0.037  0.010325       1.789            True
+30             adaptive_original    0.05         sma      3      2.024       0.019  0.009546       3.261            True
+31             adaptive_original    0.05         sma      4      1.666       0.135  0.006531       1.837            True
+32             adaptive_original    0.05         ema      1      1.696       0.076  0.007674       2.071            True
+33             adaptive_original    0.05         ema      2      1.662       0.011  0.010325       1.799            True
+34             adaptive_original    0.05         ema      3      2.067       0.045  0.009546       2.512            True
+35             adaptive_original    0.05         ema      4      1.649       0.070  0.006531       2.039            True
+40   adaptive_validated_fallback    0.02  hysteresis      1      1.779       0.059  0.007674       1.519            True
+41   adaptive_validated_fallback    0.02  hysteresis      2      1.910       0.467  0.010325       1.190            True
+42   adaptive_validated_fallback    0.02  hysteresis      3      2.059       0.069  0.009546       3.507           False
+43   adaptive_validated_fallback    0.02  hysteresis      4      1.711       0.038  0.006531       1.440            True
+48   adaptive_validated_fallback    0.02         sma      1      1.724       0.121  0.007674       1.788            True
+49   adaptive_validated_fallback    0.02         sma      2      1.718       0.068  0.010325       1.588            True
+50   adaptive_validated_fallback    0.02         sma      3      2.034       0.034  0.009546       3.111           False
+51   adaptive_validated_fallback    0.02         sma      4      1.675       0.145  0.006531       1.472            True
+52   adaptive_validated_fallback    0.02         ema      1      1.728       0.119  0.007674       1.781            True
+53   adaptive_validated_fallback    0.02         ema      2      1.712       0.048  0.010325       1.614            True
+54   adaptive_validated_fallback    0.02         ema      3      2.064       0.050  0.009546       2.301           False
+55   adaptive_validated_fallback    0.02         ema      4      1.681       0.085  0.006531       1.526            True
+60   adaptive_validated_fallback    0.05  hysteresis      1      1.767       0.023  0.007674       1.568            True
+61   adaptive_validated_fallback    0.05  hysteresis      2      1.910       0.467  0.010325       1.190            True
+62   adaptive_validated_fallback    0.05  hysteresis      3      2.048       0.061  0.009546       3.889            True
+63   adaptive_validated_fallback    0.05  hysteresis      4      1.696       0.013  0.006531       1.846            True
+68   adaptive_validated_fallback    0.05         sma      1      1.690       0.031  0.007674       1.909            True
+69   adaptive_validated_fallback    0.05         sma      2      1.678       0.037  0.010325       1.789            True
+70   adaptive_validated_fallback    0.05         sma      3      2.024       0.019  0.009546       3.261            True
+71   adaptive_validated_fallback    0.05         sma      4      1.672       0.133  0.006531       1.904            True
+72   adaptive_validated_fallback    0.05         ema      1      1.681       0.028  0.007674       2.082            True
+73   adaptive_validated_fallback    0.05         ema      2      1.662       0.011  0.010325       1.799            True
+74   adaptive_validated_fallback    0.05         ema      3      2.067       0.045  0.009546       2.512            True
+75   adaptive_validated_fallback    0.05         ema      4      1.657       0.070  0.006531       2.110            True
+80                         fixed    0.02  hysteresis      1      1.745       0.017  0.007674       1.541            True
+81                         fixed    0.02  hysteresis      2      1.904       0.484  0.010325       1.163            True
+82                         fixed    0.02  hysteresis      3      1.988       0.000  0.009546       2.161           False
+83                         fixed    0.02  hysteresis      4      1.723       0.068  0.006531       1.324            True
+88                         fixed    0.02         sma      1      1.683       0.068  0.007674       1.913            True
+89                         fixed    0.02         sma      2      1.678       0.144  0.010325       1.726            True
+90                         fixed    0.02         sma      3      1.990       0.000  0.009546       2.155           False
+91                         fixed    0.02         sma      4      1.656       0.080  0.006531       1.637            True
+92                         fixed    0.02         ema      1      1.693       0.076  0.007674       1.887            True
+93                         fixed    0.02         ema      2      1.689       0.198  0.010325       1.701            True
+94                         fixed    0.02         ema      3      1.993       0.000  0.009546       2.126           False
+95                         fixed    0.02         ema      4      1.670       0.083  0.006531       1.575            True
+100                        fixed    0.05  hysteresis      1      1.745       0.017  0.007674       1.541            True
+101                        fixed    0.05  hysteresis      2      1.904       0.484  0.010325       1.163            True
+102                        fixed    0.05  hysteresis      3      1.988       0.000  0.009546       2.161            True
+103                        fixed    0.05  hysteresis      4      1.723       0.068  0.006531       1.324            True
+108                        fixed    0.05         sma      1      1.670       0.000  0.007674       2.148            True
+109                        fixed    0.05         sma      2      1.652       0.000  0.010325       1.837            True
+110                        fixed    0.05         sma      3      2.002       0.000  0.009546      98.995           False
+111                        fixed    0.05         sma      4      1.617       0.000  0.006531       2.841            True
+112                        fixed    0.05         ema      1      1.670       0.000  0.007674       2.206            True
+113                        fixed    0.05         ema      2      1.652       0.000  0.010325       1.814            True
+114                        fixed    0.05         ema      3      1.998       0.000  0.009546      98.717           False
+115                        fixed    0.05         ema      4      1.617       0.000  0.006531       3.565            True

@@ -1,0 +1,19 @@
+\begin{table}[!htbp]
+\centering
+\caption{Retained single-seed original-topic three-action PPO evaluator on 762,000 chronological UNSW flows (percent). All policies fail the validation 5\% benign-MFA screen; entries are diagnostics, not eligible operating points. No result is from the later sequential-factor PPO study.}
+\label{tab:supp_retained_ppo}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Method & Val. MFA$_b$ & Test SR & Test FAR$_d$ & Test FDR$_h$ & Test MFA$_b$ & Test strict Acc.\\
+\midrule
+PPO base & 6.353 & 1.601 & 0.000 & 19.159 & 3.915 & 81.424 \\
+Fixed 40/60 & 7.189 & 2.625 & 0.000 & 19.159 & 4.814 & 80.700 \\
+Single & 6.617 & 2.058 & 0.000 & 19.159 & 4.215 & 81.182 \\
+SMA & 6.353 & 1.602 & 0.000 & 19.159 & 3.915 & 81.424 \\
+EMA & 6.353 & 1.601 & 0.000 & 19.159 & 3.915 & 81.424 \\
+GP-LCB Hyst & 6.353 & 1.601 & 0.000 & 19.159 & 3.915 & 81.424 \\
+\bottomrule
+\end{tabular}
+\end{table}

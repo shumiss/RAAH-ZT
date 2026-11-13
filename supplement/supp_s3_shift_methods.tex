@@ -1,0 +1,33 @@
+\begin{table}[!htbp]
+\centering
+\caption{All 20 whole-trace policy rows of the separately locked synthetic score-offset sensitivity. Fixed candidates retain unshifted-validation selections; adaptive policies use clean D256 feedback, the unchanged 250-policy shadow bank and no test-stage selection. Rates are percent; cost is a declared proxy. Phase failures count failing quarter-level safety/MFA screens. FDR is 0.853\% for every row.}
+\label{tab:supp_shift_all20}
+\scriptsize
+\setlength{\tabcolsep}{2.6pt}
+\begin{tabular}{lllrrrrrrrl}
+\toprule
+Mode & Cap & Family & SR & FAR$_d$ & MFA$_b$ & MFA$_a$ & Cost & Commits & Phase failures & Full caps\\
+\midrule
+Fixed & 2 & Hyst & 1.840 & 0.137 & 1.547 & 2.941 & 0.01501 & 0 & 1 & Yes \\
+Adaptive & 2 & Hyst & 1.880 & 0.154 & 1.904 & 2.924 & 0.01607 & 59 & 1 & Yes \\
+Fixed & 2 & Single & 1.886 & 0.158 & 25.687 & 2.921 & 0.06400 & 0 & 2 & No \\
+Adaptive & 2 & Single & 2.033 & 0.563 & 1.112 & 2.515 & 0.02233 & 27 & 2 & No \\
+Fixed & 2 & SMA & 1.752 & 0.072 & 1.858 & 3.006 & 0.01435 & 0 & 1 & Yes \\
+Adaptive & 2 & SMA & 1.829 & 0.222 & 1.925 & 2.856 & 0.01738 & 79 & 1 & Yes \\
+Fixed & 2 & EMA & 1.761 & 0.088 & 1.823 & 2.991 & 0.01458 & 0 & 1 & Yes \\
+Adaptive & 2 & EMA & 1.823 & 0.154 & 1.799 & 2.924 & 0.01583 & 66 & 1 & Yes \\
+Fixed & 2 & Counter & 1.809 & 0.190 & 1.768 & 2.889 & 0.01644 & 0 & 0 & Yes \\
+Adaptive & 2 & Counter & 1.824 & 0.217 & 1.703 & 2.862 & 0.01683 & 62 & 0 & Yes \\
+Fixed & 5 & Hyst & 1.840 & 0.137 & 1.547 & 2.941 & 0.01501 & 0 & 0 & Yes \\
+Adaptive & 5 & Hyst & 1.857 & 0.122 & 2.134 & 2.957 & 0.01591 & 53 & 0 & Yes \\
+Fixed & 5 & Single & 1.826 & 0.075 & 26.116 & 3.003 & 0.06327 & 0 & 1 & No \\
+Adaptive & 5 & Single & 2.017 & 0.454 & 1.154 & 2.625 & 0.02032 & 26 & 1 & Yes \\
+Fixed & 5 & SMA & 1.735 & 0.000 & 26.352 & 3.078 & 0.06227 & 0 & 1 & No \\
+Adaptive & 5 & SMA & 1.768 & 0.069 & 2.196 & 3.010 & 0.01498 & 68 & 0 & Yes \\
+Fixed & 5 & EMA & 1.734 & 0.000 & 26.469 & 3.078 & 0.06251 & 0 & 1 & No \\
+Adaptive & 5 & EMA & 1.769 & 0.051 & 2.104 & 3.027 & 0.01446 & 52 & 0 & Yes \\
+Fixed & 5 & Counter & 1.733 & 0.032 & 2.251 & 3.046 & 0.01438 & 0 & 0 & Yes \\
+Adaptive & 5 & Counter & 1.755 & 0.120 & 2.053 & 2.958 & 0.01567 & 65 & 0 & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}

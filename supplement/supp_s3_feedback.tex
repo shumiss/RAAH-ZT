@@ -1,0 +1,18 @@
+\begin{table}[!htbp]
+\centering
+\caption{Locked and additive label-arrival conditions. Delay is in global events; the current label can arrive no earlier than the next event even at D0. The last two conditions were added after primary results were inspected. Support counts do not imply feasible candidate selection.}
+\label{tab:supp_feedback}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Condition & Delay & Coverage & Flip & Updates & Supported & Scheduled labels & Flipped labels\\
+\midrule
+Full clean, D0 & 0 & 100 & 0 & 186 & 186 & 762,000 & 0 \\
+Full clean, D256 & 256 & 100 & 0 & 186 & 186 & 762,000 & 0 \\
+25\% clean, D256 & 256 & 25 & 0 & 186 & 186 & 190,274 & 0 \\
+Full 10\% flip, D256 & 256 & 100 & 10 & 186 & 186 & 762,000 & 75,814 \\
+25\% 10\% flip, D256 & 256 & 25 & 10 & 186 & 186 & 191,148 & 19,105 \\
+\bottomrule
+\end{tabular}
+\end{table}

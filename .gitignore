@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+frozen/nc/
+r1/results/A10_start_features/*_predictions.csv

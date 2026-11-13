@@ -1,0 +1,38 @@
+\begin{table}[!htbp]
+\centering
+\caption{All 25 causal feedback rows at the 5\% benign-MFA cap. Rates are percent; cost is a declared proxy. FDR is 0.853\% for every row because conservative fusion preserves base Deny. All 186 update windows per condition pass the nominal support gate. Zero-commit noisy rows remain on the base, which fails the direct-FAR cap. The two post-primary conditions are descriptive addenda.}
+\label{tab:supp_dynamic_5}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrrrl}
+\toprule
+Condition & Family & SR & FAR$_d$ & MFA$_b$ & MFA$_a$ & Strict Acc. & Cost & Commits & Caps\\
+\midrule
+Full clean, D0 & Hyst & 1.838 & 0.044 & 1.626 & 3.035 & 97.404 & 0.01339 & 69 & Yes \\
+Full clean, D0 & Single & 1.927 & 0.159 & 1.316 & 2.920 & 97.653 & 0.01500 & 43 & Yes \\
+Full clean, D0 & SMA & 1.758 & 0.114 & 1.847 & 2.965 & 97.226 & 0.01513 & 60 & Yes \\
+Full clean, D0 & EMA & 1.751 & 0.027 & 2.011 & 3.051 & 97.094 & 0.01380 & 44 & Yes \\
+Full clean, D0 & Counter & 1.755 & 0.120 & 2.053 & 2.958 & 97.060 & 0.01567 & 64 & Yes \\
+Full clean, D256 & Hyst & 1.836 & 0.041 & 1.644 & 3.037 & 97.390 & 0.01338 & 65 & Yes \\
+Full clean, D256 & Single & 1.929 & 0.162 & 1.315 & 2.917 & 97.654 & 0.01505 & 43 & Yes \\
+Full clean, D256 & SMA & 1.758 & 0.114 & 1.853 & 2.965 & 97.221 & 0.01514 & 61 & Yes \\
+Full clean, D256 & EMA & 1.751 & 0.027 & 2.009 & 3.051 & 97.096 & 0.01380 & 44 & Yes \\
+Full clean, D256 & Counter & 1.755 & 0.120 & 2.053 & 2.958 & 97.060 & 0.01567 & 65 & Yes \\
+25\% clean, D256 & Hyst & 1.837 & 0.046 & 1.607 & 3.033 & 97.420 & 0.01339 & 65 & Yes \\
+25\% clean, D256 & Single & 1.939 & 0.181 & 1.303 & 2.897 & 97.664 & 0.01540 & 32 & Yes \\
+25\% clean, D256 & SMA & 1.757 & 0.110 & 1.870 & 2.968 & 97.207 & 0.01511 & 57 & Yes \\
+25\% clean, D256 & EMA & 1.756 & 0.044 & 1.999 & 3.035 & 97.104 & 0.01410 & 45 & Yes \\
+25\% clean, D256 & Counter & 1.759 & 0.125 & 2.045 & 2.953 & 97.066 & 0.01574 & 63 & Yes \\
+Full 10\% flip, D256 & Hyst & 2.121 & 0.881 & 0.926 & 2.197 & 97.968 & 0.02804 & 0 & No \\
+Full 10\% flip, D256 & Single & 2.121 & 0.881 & 0.926 & 2.197 & 97.968 & 0.02804 & 0 & No \\
+Full 10\% flip, D256 & SMA & 2.121 & 0.881 & 0.926 & 2.197 & 97.968 & 0.02804 & 0 & No \\
+Full 10\% flip, D256 & EMA & 2.121 & 0.881 & 0.926 & 2.197 & 97.968 & 0.02804 & 0 & No \\
+Full 10\% flip, D256 & Counter & 2.121 & 0.881 & 0.926 & 2.197 & 97.968 & 0.02804 & 0 & No \\
+25\% 10\% flip, D256 & Hyst & 2.121 & 0.881 & 0.926 & 2.197 & 97.968 & 0.02804 & 0 & No \\
+25\% 10\% flip, D256 & Single & 2.121 & 0.881 & 0.926 & 2.197 & 97.968 & 0.02804 & 0 & No \\
+25\% 10\% flip, D256 & SMA & 2.121 & 0.881 & 0.926 & 2.197 & 97.968 & 0.02804 & 0 & No \\
+25\% 10\% flip, D256 & EMA & 2.121 & 0.881 & 0.926 & 2.197 & 97.968 & 0.02804 & 0 & No \\
+25\% 10\% flip, D256 & Counter & 2.121 & 0.881 & 0.926 & 2.197 & 97.968 & 0.02804 & 0 & No \\
+\bottomrule
+\end{tabular}
+\end{table}

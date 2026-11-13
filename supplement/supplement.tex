@@ -1,0 +1,791 @@
+\documentclass[10pt,onecolumn]{IEEEtran}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setmonofont{Times New Roman}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,array,graphicx,longtable}
+\usepackage[hidelinks]{hyperref}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\makeatletter
+\newenvironment{suppnonfloattable}{\par\noindent\begin{minipage}{\textwidth}\centering\def\@captype{table}}{\end{minipage}\par}
+\makeatother
+\setlength{\emergencystretch}{2em}
+
+\begin{document}
+\title{Supplementary Evidence for\\
+RAAH-ZT: Risk-Aware Adaptive Hysteresis\\
+for Stable Zero-Trust Access Control in IoT Networks}
+\author{Lei Shu, Weijie Tan, Zhi Ouyang, Kun Niu, Xiuzhang Yang, and Yuling Chen}
+\maketitle
+
+\noindent\textbf{Evidence status.}
+This supplement documents corrected analysis, a newly implemented
+exploratory replay, and retained reconstruction evidence for the
+original three-action stabilization question. Source-IP histories
+scope the temporal proxy study; separate scripted gateway cases
+check factor completion and resource delivery. Section S6 records
+the reconstruction provenance, and Section S7 contains all results added in the
+first revision (IoT-76550-2026).
+
+\section{Theory and correction ledger}
+\label{sec:supp_theory}
+
+\subsection{Adjacent decisions and the active boundary}
+For independent, identically distributed Gaussian errors
+\(\varepsilon_{t-1},\varepsilon_t\) with standard deviation
+\(\sigma>0\), let \(D_k=\mathbf1\{m+\varepsilon_k>\theta\}\) and
+\(p=\Phi((m-\theta)/\sigma)\). The two disjoint switch events give
+\[
+ \Pr(D_t\ne D_{t-1})=2p(1-p)\le\tfrac12 .
+\]
+At \(m=\theta\), both the one-epoch high-decision probability
+and the adjacent switch probability are \(1/2\). The submitted
+formula \(2\Phi(-|m-\theta|/\sigma)\), which gives one at that
+point, is withdrawn. With independent unequal marginal
+probabilities \(p_{t-1},p_t\), the probability instead is
+\(p_{t-1}(1-p_t)+(1-p_{t-1})p_t\); correlated errors require
+their joint law. These statements concern a binary comparison,
+not the fused Deny/MFA/Allow action.
+
+For fixed \(\theta_{\rm low}<\theta_{\rm high}\), the active
+boundary is \(\theta_{\rm low}\) when the previous internal
+state is High and \(\theta_{\rm high}\) when it is Low. With
+latent score \(m\), the noisy and unperturbed state updates
+agree whenever \(|\varepsilon_t|\) is strictly smaller than
+the positive distance from \(m\) to that active boundary.
+The proof is the strict comparison defining each transition:
+noise shorter than the applicable distance cannot reverse it.
+Within the dead zone the margins are
+\(m-\theta_{\rm low}\) from High and
+\(\theta_{\rm high}-m\) from Low; both equal
+\(\Delta/2\), \(\Delta=\theta_{\rm high}-\theta_{\rm low}\),
+only at the midpoint. There is no positive uniform margin
+for latent scores arbitrarily close to a boundary. This
+replaces the submitted unconditional \(\Delta/2\) guarantee.
+For \(m\) inside the dead zone and independent
+\(\mathcal N(0,\sigma^2)\) error, the one-step state-change
+probabilities are respectively
+\(Q((m-\theta_{\rm low})/\sigma)\) from High and
+\(Q((\theta_{\rm high}-m)/\sigma)\) from Low,
+where \(Q=1-\Phi\). These are one-step internal-state
+probabilities; final-action SR is reported separately.
+
+\subsection{Finite sampled variation}
+For fixed thresholds and observed samples \(x_0,\ldots,x_n\),
+let \(K_h(n)=\sum_{t=1}^n\mathbf1\{S_t\ne S_{t-1}\}\) and
+\(V_n=\sum_{t=1}^n|x_t-x_{t-1}|\). Then
+\[
+ K_h(n)\le1+V_n/\Delta. \tag{S1}
+\]
+Successive binary-state switches alternate direction and their
+observed scores lie beyond opposite thresholds. Each disjoint
+between-switch interval therefore contributes more than
+\(\Delta\) of sampled variation; the cases of zero or one
+switch are immediate. This result concerns a fixed-threshold
+internal state. An adaptive controller can change active
+versions between separately evolved shadow states; that
+version edge still counts in final-action SR. The submitted
+Brownian exponential ratio and five-order switching claim
+do not follow and are withdrawn.
+
+\subsection{Conservative fusion and disposition}
+The internal High state is neither authentication nor
+entitlement. Deny and pending MFA are preserved in either
+state; only a preliminary Allow may become pending MFA
+when the state is Low. A verifier result returns to an
+independent current guard. The original figure's cell
+showing Low state with high risk as Allow contradicted
+the source fusion table and is not reused.
+\begin{table}[!htbp]
+\centering
+\caption{Corrected fusion. MFA remains a pending challenge, not a grant.}
+\label{tab:supp_fusion}
+\footnotesize
+\begin{tabular}{lcc}
+\toprule
+Evaluator output & High internal state & Low internal state\\
+\midrule
+Deny & Deny & Deny\\
+MFA & MFA & MFA\\
+Allow & Allow & MFA\\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[!htbp]
+\centering
+\caption{Treatment of the submitted analytic and reporting claims.
+The treatments do not retrospectively verify missing original tables.}
+\label{tab:supp_corrections}
+\footnotesize
+\begin{tabular}{p{.27\textwidth}p{.62\textwidth}}
+\toprule
+Submitted issue & Revision disposition\\
+\midrule
+Flip probability one at threshold & Corrected to \(2p(1-p)=1/2\) under independent identical threshold observations.\\
+Uniform half-width noise guarantee & Replaced by distance to the active threshold; midpoint is a special case.\\
+Brownian exponential ratio and five-order claim & Withdrawn; only the conditional sampled internal-state variation bound remains.\\
+BO regret and 20--50-iteration optimality & Withdrawn; finite-budget GP-LCB is reported as a heuristic with full shadow computation.\\
+High-state Deny/MFA promotion & Removed; neither hard Deny nor pending MFA can be lifted by state memory.\\
+Always-MFA accuracy and ten-pair \(p<0.001\) & Old interpretations withdrawn; class-specific MFA, strict accuracy and descriptive proxy intervals replace them.\\
+Submillisecond path and universal evaluator benefit & Withdrawn; S5 separates arithmetic from end-to-end time and S2--S3 retain failures.\\
+\bottomrule
+\end{tabular}
+\end{table}
+\section{Data, fitting, and retained reconstruction evidence}
+\label{sec:supp_data}
+
+\subsection{Chronological HGB provenance}
+After removal of three raw-shard boundary duplicates, the
+UNSW-NB15 reconstruction~\cite{unsw_nb15} contains 2,540,044 flows.
+A frozen time boundary allocates 1,270,024 records to
+early training, 508,020 to validation and 762,000 to test
+(613,448 benign and 148,552 attack-labeled test flows).
+HGB is fitted on a newly seeded balanced 50,000-row subset
+of early training. The first chronological validation half
+(254,067 records, including tied boundary seconds) fits
+sigmoid calibration, and the later portion selects policy
+parameters. The boundary-purged compact input of the new
+controller comparison has 253,933 validation events.
+Training-only transformations include median imputation,
+scaling, clipping to \([-10,10]\), and categorical encoding.
+The recorded feature specification contains 40 numeric
+and three categorical fields. IPs, timestamps, attack names
+and labels are excluded from the model feature matrix.
+
+The centroid trust input uses benign training data and
+the training-distance 99th percentile before clipping to
+\([0,100]\); the empirical test score has no added artificial
+noise. A classifier-derived alternative uses
+\(100(1-\widehat p_{\rm attack})\).
+These scores are constructed flow diagnostics, not identity
+assurance. The test includes 40 source-IP proxies, 38 of
+which have adjacent records. There are 761,960 eligible
+within-proxy edges; 576,912 connect records with the same
+recorded second. Within a proxy, the primary order is
+start second then original row ID. Controllers start Low
+and reset at validation/test boundaries, with no inferred
+within-period inactivity reset. Replay begins after
+complete-flow features have been materialized.
+
+\subsection{Retained evaluator and score-source observations}
+\input{supp_s2_evaluators.tex}
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\textwidth,height=4.7in,keepaspectratio]{figures/fig_supp_score_sources.pdf}
+\caption{Evaluator and score-source sensitivity from the eight retained reconstruction rows. The two panels compare Base, Hysteresis and SMA final-action switch rates and benign-MFA rates for RF/HGB/LR/MLP under centroid and classifier scores. Horizontal positions reproduce the reported rounded percentages; vertical offsets separate overlapping symbols.}
+\label{fig:supp_score_sources}
+\end{figure}
+
+Table~\ref{tab:supp_retained_evaluators} transcribes rounded
+earlier Archive S9 results, separately from the purged
+HGB candidate-bank replay in S3. For
+centroid trust, hysteresis raises test final-action SR for
+all four evaluators (HGB 2.10\% to 3.50\%); HGB benign
+MFA becomes 7.21\%. Classifier-derived HGB trust instead
+gives 2.10\% to 1.82\%, while equally budgeted SMA reaches
+1.72\%. Software interface compatibility therefore does
+not establish evaluator-independent performance gain.
+Archive S9 retains full class-conditional rates, validation
+burdens and adverse transfer screens.
+
+\subsection{Retained original-topic PPO evaluator}
+The submitted PPO weights were not recovered. A separate
+new three-action PPO evaluator, seed 20260924, used
+50,000 balanced early-training flows and a 197-component
+transformed input. Its categorical Deny/MFA/Allow action
+probabilities are not calibrated attack probabilities.
+In that action order the proxy rewards are
+\((-2,-0.25,+1)\) for benign labels and
+\((+1,-0.5,-5)\) for attack labels, charging MFA for
+both. Separate actor and critic networks have hidden
+widths 256 and 128; their learning rates are
+\(2\times10^{-4}\) and \(5\times10^{-4}\);
+\(\gamma=0.99\), GAE \(0.95\), clipping \(0.20\),
+entropy coefficient \(0.05\) to \(0.005\), and
+gradient clipping \(0.5\). Each of 50 updates samples
+1,024 early-train requests as four artificial 256-step
+episodes, with four optimization epochs and minibatches
+of 128. The next sampled flow is independent of the
+selected action. This offline label reward is not a
+deployed authentication feedback loop or a monotonic
+PPO-improvement guarantee.
+
+The frozen checkpoint was evaluated on 253,953 later
+validation and 762,000 test flows. All conservative
+fusion diagnostics in Table~\ref{tab:supp_retained_ppo}
+fail the validation 5\% benign-MFA screen. Fixed
+40/60 hysteresis raises test SR from 1.601\% to
+2.625\%. Zero direct attack-Allow coexists with
+19.159\% hard benign-Deny. On this one-seed proxy
+trace, the reconstructed PPO comparator shows no
+stabilization advantage.
+\input{supp_s2_ppo.tex}
+The separate ten-seed balanced static PPO study has no
+valid temporal SR. Its NF-ToN-IoT-v2 FAR, hard FDR,
+benign MFA and strict accuracy (mean \(\pm\) sample SD,
+percent) are \(4.68\pm0.56\), \(17.88\pm4.28\),
+\(13.84\pm5.84\) and \(80.10\pm2.07\).
+UNSW-NB15 gives \(0.03\pm0.06\), \(1.96\pm0.29\),
+\(0.87\pm1.40\) and \(98.46\pm0.73\); an exact-feature-
+vector-disjoint UNSW sensitivity gives \(0.04\pm0.03\),
+\(2.22\pm0.94\), \(2.68\pm3.05\) and \(97.20\pm1.87\).
+These samples and protocols are distinct from the
+one-seed chronological PPO diagnostic.
+
+\subsection{Retained static NF-ToN-IoT-v2 prior stress and recheck}
+NF-ToN-IoT-v2~\cite{nf_v2} has flow labels but lacks a defensible
+absolute access-request timeline. Ten fixed seeds fit
+RF, HGB, LR and MLP on earlier balanced samples.
+After validation thresholds were locked, each model
+scored the same previously constructed 100,000-row holdout
+(50,000 benign and 50,000 attacks), whose original
+row IDs are disjoint from every earlier prepared seed
+sample. The 95/5 and 99/1 exercises retain all
+50,000 benign rows and draw 2,632 or 505 attacks
+by seeded row-ID hashing. Calibrated probabilities
+receive a Bayes-odds correction under the explicit
+pure-prior-shift assumption. Separate validation
+thresholds are locked for each target prior before
+the holdout is opened. These are paired resamples of
+one corpus, not three independent populations.
+
+An independent audit reread all 40 saved prediction
+CSVs; verified holdout, threshold-lock and prediction
+hashes; recomputed all 120 seed/model/prior action-count
+cells; and matched reported counts/rates to
+\(10^{-12}\). Table~\ref{tab:supp_nf_static} adds attack
+MFA to the archived Table S15. LR's low direct
+attack-Allow comes with 91.751\% benign MFA
+and over 71\% attack MFA. Some seeds exceed a
+0.5\% direct-FAR target under prior stress.
+The table reports static class-conditional outcomes;
+temporal switching and gateway execution have their
+own protocols below.
+\input{supp_s2_nf.tex}
+
+\section{Finite controls, static outcomes, and all feedback rows}
+\label{sec:supp_results}
+
+\subsection{Candidate bank and static selection}
+The frozen bank contains 50 candidates per family:
+hysteresis, single-threshold gating, SMA, EMA, and a
+consecutive base-Allow counter. All 250 literal parameter
+records and coordinates are in
+\texttt{experiments/protocol.lock.json}. For each of the
+first four families, four declared anchors precede 46
+two-dimensional Latin-hypercube points with seed
+\(20261008+j\), \(j=0,1,2,3\). With \(a,b\in[0,1]\),
+hysteresis sets
+\[
+ \theta_{\rm low}=\operatorname{round}(99.9a,6),\quad
+ \theta_{\rm high}=\operatorname{round}
+ (\theta_{\rm low}+0.1+(99.9-\theta_{\rm low})b,6).
+\]
+Single gating uses \(\operatorname{round}(100a,6)\);
+SMA uses that threshold and
+\(\min(64,1+\lfloor64b\rfloor)\) events;
+EMA uses that threshold and
+\(\operatorname{round}(\exp[\log(0.01)(1-b)],6)\).
+The counter family contains every \(K=1,\ldots,50\)
+once, with \(K=1,2,8,50\) first. This generator,
+its anchors, rounded values and selected IDs are
+included in the frozen source and table CSV.
+All candidates preserve base Deny and MFA and may
+only restrict base Allow to pending MFA. New source-IP
+groups start Low; SMA uses available within-group
+history and EMA starts from its first group score.
+
+Static calibration exhaustively evaluates 50 candidates
+per family on the purged 253,933-event validation
+trace. Eligibility requires direct attack-Allow
+\(\le0.5\%\), hard benign-Deny \(\le5\%\), and
+benign MFA \(\le\rho\) for
+\(\rho\in\{1,2,5\}\%\).
+Among feasible candidates, minimum final-action SR
+wins; ties use lower benign MFA, direct FAR and
+fixed candidate ID. No feasible candidate means
+no selection, not a relaxed screen. Static choice
+is a finite-bank exhaustive search, not BO and
+not a continuous threshold optimum.
+
+The base test action mix is 149,212 Deny,
+8,944 MFA and 603,844 Allow over 762,000 events.
+It makes 16,163 switches across 761,960 within-proxy
+edges. Its 0.8812\% direct attack-Allow exceeds
+the 0.5\% screen. At the 1\% benign-MFA cap,
+none of the five families has a feasible validation
+candidate. Table~\ref{tab:supp_static_all} reports
+all 15 family/cap cells, including null selections
+and simple controls with lower test SR than hysteresis.
+\input{supp_s3_static.tex}
+
+\subsection{Causal label feedback and actual query budget}
+The separate adaptive GP-LCB replay uses the same
+250 continuously shadowed candidate policies, a
+trailing 16,384-event window and scheduled updates
+every 4,096 global events, beginning at event 4,096.
+Each update needs 200 arrived benign labels,
+20 arrived attack labels and 10\% arrived-label
+coverage. At zero-based event index \(i\), scheduled
+feedback for earlier event \(j=i-1-D\) can arrive;
+a boundary update at \(i=4096,8192,\ldots\) uses
+only events with index less than \(i\). The selected
+version then governs action \(i\). Its own label is
+scheduled only after that action commits, so even
+\(D=0\) cannot change action \(i\). The first three conditions
+in Table~\ref{tab:supp_feedback} were in the primary
+lock. The isolated 25\%-clean and full-noisy
+conditions were frozen in a post-primary addendum,
+after primary results were inspected.
+
+Within a supported family/window, four fixed anchors
+and six GP-LCB acquisitions reveal ten candidate
+losses. The separate per-family Gaussian process uses
+fixed Mat\'ern-\(5/2\) length scale 0.2, constant
+factor one, white-noise term \(10^{-5}\), ridge
+\(10^{-6}\), normalized targets and acquisition
+\(\mu-2\sigma\); it is rebuilt in each window.
+Here \(\mu\) is the GP posterior predictive mean of the penalized loss
+and \(\sigma\) its predictive standard deviation.
+The queried score, with rates as fractions, is
+\[
+ L_\rho={\rm SR}_{a}
+ +200[{\rm FAR}_{d}-0.005]_+
+ +50[{\rm FDR}_{h}-0.05]_+
+ +5[{\rm MFA}_{b}-\rho]_+ .
+\]
+At a scheduled boundary, a candidate commits for
+event \(i\) only if its arrived-label rates pass all
+screens; otherwise the incumbent remains, or the
+base before the first commit. Each candidate's
+scoped shadow state advances continuously and
+version-edge action changes count toward SR.
+All five conditions have 186 nominally supported
+updates. Coverage, label flipping, exact scheduled
+label counts and update support appear in
+Table~\ref{tab:supp_feedback}.
+\input{supp_s3_feedback.tex}
+
+The ten-loss limit is an \emph{information disclosure}
+budget, not ten objective computations. All
+250 candidate action traces and all candidate
+window metrics were computed as shadows before
+selected losses reached the GP. Three primary
+conditions disclose 83,700 losses but compute
+139,500 full-bank candidate-window vectors;
+two additive conditions add 55,800 and 93,000.
+Across five conditions the totals are 139,500
+loss disclosures and 232,500 metric vectors.
+The budget controls loss disclosure while
+computational work uses full shadows. Feedback
+is injected from existing flow labels.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\textwidth,height=5.0in,keepaspectratio]{figures/fig_supp_queries.pdf}
+\caption{The ten saved GP-LCB loss queries at the first supported clean-D256 update, zero-based event index 4096, with a 2\% benign-MFA cap. Points are losses revealed to the surrogate; steps are the smallest revealed loss so far. Loss uses the declared penalized acquisition score. Titles give feasible queried counts and selected candidate IDs. All 50 shadow candidates were precomputed per family; this is a finite query-path diagnostic.}
+\label{fig:supp_queries}
+\end{figure}
+
+\subsection{All 75 dynamic cells and negative controls}
+Tables~\ref{tab:supp_dynamic_1}--\ref{tab:supp_dynamic_5}
+report the full \(5\) feedback conditions
+\(\times\,3\) benign-MFA caps \(\times\,5\) families.
+No 1\%-cap
+dynamic row meets the test screens. Under both
+10\%-flipped feedback conditions, all 186
+windows pass nominal support but no queried
+candidate passes the arrived-label screens.
+All families and caps remain on the unmodified
+base with zero version commits; its direct FAR
+remains 0.8812\% and fails the 0.5\% cap.
+With 25\% clean feedback instead, commits occur.
+These fixed conditions isolate the observed
+effect of label corruption from missing coverage.
+\input{supp_s3_dynamic_1.tex}
+\input{supp_s3_dynamic_2.tex}
+\input{supp_s3_dynamic_5.tex}
+
+The five fixed diagnostics in
+Table~\ref{tab:supp_diagnostics} show why SR
+or permissive accuracy alone is inadequate.
+Always-MFA has zero SR and 100\% submitted-style
+permissive accuracy, yet zero strict diagnostic
+accuracy and a challenge for every flow.
+Constant trust 50 under safe 40/60 fusion has
+99.147\% benign MFA and 18.895\% strict
+accuracy. That is a new ablation, not a
+byte-identical reconstruction of the submitted
+trust-masked PPO row. The original unsafe
+bidirectional promotion, shown only as an
+offline counterexample, raises direct
+attack-Allow from base 0.881\% to 2.364\%;
+it was excluded from eligible selection and
+execution.
+\input{supp_s3_diagnostics.tex}
+
+\subsection{Separately locked synthetic score-calibration shift}
+\label{sec:supp_score_shift}
+An additional protocol was locked on 9 October 2026
+\emph{before} computing this diagnostic's outcomes
+(SHA-256 prefix \texttt{dfb27373f83ee70b}).
+It leaves the previously frozen 45 primary and
+30 missing/noisy feedback rows byte-unchanged.
+The 762,000 inspected UNSW test events are sorted
+globally by observed start second and original row
+ID and divided into four equal rank quarters of
+190,500 events. Trust-score offsets
+\((0,+12,-12,0)\) are applied and clipped to
+\([0,100]\); the event labels, source-IP groups,
+timestamps, row IDs, fitted evaluator and base
+Deny/MFA/Allow actions are unchanged. Phase
+boundaries occur at global ranks
+190,500, 381,000 and 571,500. The transform
+clips 151,682 high values in the \(+12\) quarter
+and 35,273 low values in the \(-12\) quarter.
+This is an \emph{abrupt constructed score-calibration
+shift}, not measured traffic/concept drift or
+recovery of the submitted drift generator.
+
+The fixed comparison retains exactly the
+unshifted-validation-selected five families at
+2\% and 5\% benign-MFA caps. The adaptive
+comparison reuses the same 250-candidate bank,
+clean feedback with 256-global-event label delay,
+the frozen 16,384/4,096 window and cadence,
+support gate and ten-disclosed-loss GP-LCB rule.
+There is no test-stage threshold selection.
+All 20 full-trace method/cap/mode combinations
+appear in Table~\ref{tab:supp_shift_all20}.
+The 80 quarter-level rows appear without
+omission in
+Tables~\ref{tab:supp_shift_phase_2_fixed}--
+\ref{tab:supp_shift_phase_5_adaptive}.
+An eligible within-source-IP edge belongs to
+the quarter of its \emph{later} event. The
+audit counts 96 cross-quarter within-proxy
+edges, rather than silently dropping them;
+the machine CSV also records action switches
+on those edges and on version boundaries.
+
+At the 2\% cap, fixed hysteresis has
+whole-trace SR 1.8401\%, direct FAR 0.1373\%,
+and benign MFA 1.5467\%. Adaptive hysteresis
+has 1.8799\%, 0.1542\% and 1.9042\%,
+respectively: no improvement on these
+aggregate coordinates. In the \(-12\) quarter,
+their benign-MFA rates are 2.1607\% and
+3.4472\%, so both violate that phase's
+2\% burden screen despite passing the
+whole-trace test cap. At the 5\% cap,
+fixed SMA and EMA each exceed 26\% benign
+MFA under this shift; adaptive versions
+lower their aggregate burden to about
+2.1--2.2\% but have higher SR.
+The outcome is method- and endpoint-dependent.
+The previously inspected source-IP-proxy test
+makes this an exploratory sensitivity. An
+independent audit checks
+1,360 metrics and counts, including
+480 boundary items, across the 20 method
+and 80 phase rows. The score-shift GP
+receives 18,600 queried losses while
+46,500 full-bank candidate-window metric
+vectors are computed; no runtime efficiency
+claim follows.
+\input{supp_s3_shift_methods.tex}
+\begin{figure}[!t]
+\centering
+\includegraphics[width=\textwidth,height=5.6in,keepaspectratio]{figures/fig_supp_score_shift5.pdf}
+\caption{Fixed and adaptive hysteresis/EMA under the 5\% benign-MFA cap in the same four-quarter calibration stress. Offsets are $0,+12,-12,0$ on unchanged flows and base actions. Open markers identify phase-screen failures. The negative-offset quarter exposes the high fixed-EMA verification burden and the different adaptive operating point.}
+\label{fig:supp_shift5}
+\end{figure}
+
+\input{supp_s3_shift_phase_2_fixed.tex}
+\input{supp_s3_shift_phase_2_adaptive.tex}
+\input{supp_s3_shift_phase_5_fixed.tex}
+\input{supp_s3_shift_phase_5_adaptive.tex}
+
+\clearpage
+\section{Matched endpoints and timestamp sensitivity}
+\label{sec:supp_matching}
+
+\subsection{Finite-library matching and uncertainty}
+For each 2\%- and 5\%-cap validation-selected
+hysteresis point, a whole-history randomized
+mixture over the fixed 200 simple policies
+(50 each single/SMA/EMA/counter) exactly matches
+the hysteresis point's \emph{validation} direct
+FAR and benign MFA and minimizes expected
+validation final-action SR. Its weights are
+nonnegative and sum to one; a draw chooses one
+complete policy for a whole history, not a new
+random action at every event. Hard FDR is
+structurally common under conservative fusion.
+At both caps, the optimum uses
+single\_02 with weight 0.149369,
+single\_28 with 0.696374 and
+sma\_16 with 0.154257. Its validation SR
+is 1.877602\% versus hysteresis 1.800723\%.
+The 200-policy envelope is larger than any
+single family's 50-candidate bank; the
+result is a finite-library diagnostic.
+
+The mixture was frozen before test scoring.
+Its test SR is 1.890382\% versus hysteresis
+1.825949\%, but its direct FAR is
+0.057769 percentage points higher and
+benign MFA 0.005231 points lower. Therefore
+this is \emph{not} an exactly matched test
+comparison. A separate explicitly post hoc
+test-label LP has no exact match in the
+finite simple library. An independent
+minimum-\(L_\infty\) program finds a nearest
+two-endpoint gap of
+\(7.67718\times10^{-6}\) in rate units
+(0.000768 percentage points), not zero.
+No general matched-rate superiority or
+uniqueness follows.
+\input{supp_s4_matching.tex}
+
+On this one already inspected 40-proxy trace,
+5,000 paired resamples of complete source-IP
+trajectories (seed 20261008) give a descriptive
+hysteresis-minus-validation-selected SMA SR
+difference at the 2\% cap of
+\(+0.07691\) percentage points with
+2.5/97.5 percentiles
+\([+0.01155,+0.15861]\). Relative to
+selected EMA at the 5\% cap the difference
+is \(+0.09646\) points, interval
+\([+0.02088,+0.18899]\).
+These are micro-rate proxy-trace descriptions,
+not independent users, sites, retrained-model
+variation or the submitted ten-pair Wilcoxon
+test. The old exact bilateral \(p<0.001\)
+claim is withdrawn because original paired
+observations were unavailable.
+
+\subsection{Second-resolution tie ordering}
+Primary within-source-IP order is recorded
+start second then original row ID.
+Of 761,960 eligible adjacent edges,
+576,912 (75.7\%) link equal-second
+records. Before reading alternative-order
+outcomes, a separate additive protocol
+fixed two deterministic sensitivities
+(SHA-256
+\texttt{a60a3ff154ef873a7427c6274286a160491831594443684da600b58100a68c5d}).
+Analysis A drops those 576,912 edges
+from only the SR numerator and denominator,
+leaving 185,048 distinct-second edges,
+while every saved action remains unchanged.
+It neither bridges across dropped events
+nor samples one event per second. The
+base SR changes from 2.1212\% to 5.2867\%
+and selected hysteresis from 1.8259\%
+to 4.4713\%. This is a different
+adjacency estimand, not an improvement
+from a rerun controller.
+
+Analysis B reverses row-ID order within
+each source-IP/second group while
+preserving group and second order.
+It moves 672,390 event rows. The unchanged
+original action builder reruns the same
+validation-selected hysteresis, single,
+SMA, EMA and counter candidates at the
+2\% and 5\% caps without reselection
+or dynamic feedback. Selected hysteresis
+SR is 1.8376\%, up 0.0117 percentage
+points. Selected SMA becomes 1.7674\%
+at the 2\% cap and 1.7489\% at the 5\%
+cap. All frozen selected points retain
+their test point-estimate safety/MFA caps
+under this particular alternate order.
+Class-specific rates and proxy cost can
+change when sequence-dependent actions
+change; full endpoints and counts are
+retained in the JSON/CSV.
+Table~\ref{tab:supp_ties} shows the
+principal coordinates. Neither arbitrary
+tie rule recovers true subsecond
+request order, and source IP is not an
+authenticated principal.
+\input{supp_s4_ties.tex}
+
+\section{Runtime resolution and retained original-topic execution}
+\label{sec:supp_runtime}
+
+\subsection{Current fixed-controller arithmetic}
+A separate frozen engineering protocol exercises
+a Python dictionary implementation of the
+\emph{fixed} 40/60 safe hysteresis update
+after score and base action are available.
+It walks all 762,000 test events to preserve
+per-source-IP state, warms 1,024 events,
+then samples 4,096 equally spaced calls
+on each of three passes (\(n=12,288\)).
+All actions match the frozen reference and
+42 boundary-semantic checks pass.
+On one Windows 11 workstation
+(Python 3.13.6, NumPy 2.3.2,
+Intel Family 6 Model 191, 16 logical CPUs),
+p50/p95/p99 are 0.2/0.3/0.5 microseconds,
+with maximum 23.8 microseconds.
+Ten thousand empty timer pairs have
+p50/p95/p99 0.0/0.1/0.1 microseconds;
+their overhead is not subtracted.
+The stated timer resolution is
+0.1 microsecond. Results near that
+resolution describe instrumented
+local arithmetic, not a precise
+submicrosecond guarantee.
+\begin{table}[!htbp]
+\centering
+\caption{Current fixed-controller engineering timing
+in microseconds. Repeated calls on one machine are
+not independent access-control trials.}
+\label{tab:supp_timing}
+\footnotesize
+\begin{tabular}{lrrrrr}
+\toprule
+Measurement & \(n\) & p50 & p95 & p99 & Max\\
+\midrule
+Fixed 40/60 safe controller & 12,288 & 0.2 & 0.3 & 0.5 & 23.8\\
+Empty timer pair, not subtracted & 10,000 & 0.0 & 0.1 & 0.1 & 22.8\\
+\bottomrule
+\end{tabular}
+\end{table}
+The measured path starts with an available score
+and base action. End-to-end time also includes
+feature formation, model inference, transport,
+HTTP/OPA, factor completion and human response;
+the submitted submillisecond path assertion is
+withdrawn.
+
+\input{supp_s5_original_execution.tex}
+
+\section{Reproduction, provenance, and claim boundaries}
+\label{sec:supp_reproduction}
+
+The user-supplied original ZIP contains
+\texttt{main.tex}, \texttt{references.bib}
+and 16 PNGs. It is retained unchanged
+for the revision trail, but it lacks
+the originally submitted experiment
+code, PPO weights and paired runs.
+The earlier 11-page CCS manuscript
+and Archive S1--S20 are intermediate
+reconstructions, not the original
+reviewer-facing dual-threshold source.
+
+For the new original-topic replay,
+the main protocol lock (SHA-256 prefix
+\texttt{d3615939f45acc79}) fixes the
+250 candidates, three caps, endpoints,
+tie rule and primary feedback conditions.
+In the public repository
+(\url{https://github.com/shumiss/RAAH-ZT}),
+only the two local input paths in this
+file are replaced by relative paths,
+which gives the prefix
+\texttt{e2ce7f42c09e9bec};
+\texttt{frozen/PROVENANCE.md} records
+both hashes.
+The separate post-primary feedback lock
+(prefix \texttt{ff5b325a112379fe})
+adds two feedback conditions.
+The validation-selection lock
+(prefix \texttt{32e38d257b3e7b58})
+fixes static choices and validation
+mixture weights before test-label reading.
+Compact validation and test timeline
+SHA-256 prefixes are
+\texttt{ac0579713cae9cb0} and
+\texttt{a08eeea9b7a50e0f}.
+The tie sensitivity has its own
+locked addendum (prefix
+\texttt{a60a3ff154ef873}).
+The separate 9 October synthetic
+score-shift diagnostic has a lock
+(prefix \texttt{dfb27373f83ee70b});
+it preserves the primary adaptive
+results and has an independent
+PASS audit.
+Complete digests, memberships and
+source hashes are in the machine
+manifests; prefixes here are reading aids.
+
+\texttt{paper\_table\_static.csv}
+contains all 15 cap/family cells;
+\texttt{paper\_table\_dynamic\_all75.csv}
+contains all primary and post-primary
+feedback cells with a phase field.
+\texttt{paper\_table\_matching.csv},
+\texttt{paper\_table\_ablations.csv},
+per-update ledgers, selected action
+NPZ files and the separate NF/tie
+audit CSVs retain exact inputs,
+supports, outcomes and cap failures.
+The score-shift directory additionally
+retains all 20 method rows,
+80 phase rows, the exact shifted-score
+transform audit, boundary-edge checks,
+and selected action arrays.
+Rates in machine CSVs are fractions;
+displayed tables multiply by 100
+for percent. A deterministic table
+builder checks the expected 8 retained
+evaluator rows, 6 retained PPO policies,
+12 NF static model/prior rows,
+15 static cap cells, 5 feedback conditions,
+75 dynamic cells, 5 diagnostics,
+3 matching caps and 11 tie-policy rows.
+The separate score-shift builder checks
+all 20 method and 80 phase cells.
+
+Independent checks find zero mismatches
+between ten selected static action
+arrays and an earlier controller
+implementation, recalculate 270
+primary and 180 additive metric values,
+check label arrival before decisions,
+and independently bound the matched
+LP endpoint gap. The S2 NF table
+was recomputed from 40 saved prediction
+files and 120 seed/model/prior cells.
+Finite theorem diagnostics cover
+101 flip cases, 15,936 active-boundary
+cases, 39,050 variation cases and
+22,620 fusion cases; their general
+conditional claims follow from the
+proofs, not from enumeration.
+
+The portable artifact arranges the exact hashed validation
+and test timelines under \texttt{inputs/}. From its root,
+\texttt{python experiments/reproduce\_portable.py} runs the
+standard-library integrity check; adding \texttt{--replay}
+runs a disposable full numerical replay.
+Both modes passed on an independently
+copied package without mutating frozen
+sources. Full replay used Python 3.13.6,
+NumPy 2.3.2, SciPy 1.16.2,
+scikit-learn 1.7.2 and Numba 0.62.0
+on Windows x64; the quick check needs
+only the Python standard library.
+The replay estimates proxy decisions under
+injected feedback on the inspected public-flow
+trace. Deployment validation requires
+authenticated session histories and measured
+human and enforcement outcomes.
+
+\input{supp_s7.tex}
+
+\bibliographystyle{IEEEtran}
+\bibliography{raahzt_refs_20261012}
+\end{document}

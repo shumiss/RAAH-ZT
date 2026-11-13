@@ -1,0 +1,27 @@
+% Static flow-label proxy outcomes; no chronology, SR or temporal cost.
+% Requires booktabs. Three horizontal rules, no vertical rules.
+\begin{suppnonfloattable}
+\centering
+\caption{Previously constructed row-disjoint NF-ToN-IoT-v2 static holdout under class-prior stress. Ten fixed training seeds; means across seeds. Thresholds were frozen on validation before scoring the new holdout. The 95/5 and 99/1 rows retain 50,000 benign flows and resample attack flows under a pure-prior-shift assumption. FAR is direct attack Allow; hard FDR is benign Deny; MFA rates are class conditional; strict accuracy credits benign Allow and attack Deny only. These flow-label proxies do not measure authentication completion, switch rate, or temporal cost.}
+\label{tab:supp_nf_static}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llrrrrrr}
+\toprule
+Evaluator & Attack prior & Attack $n$ & FAR (\%) & Hard FDR (\%) & Benign MFA (\%) & Attack MFA (\%) & Strict Acc. (\%) \\
+\midrule
+RF & 50\% & 50,000 & 0.235 & 3.740 & 0.000 & 0.000 & 98.012 \\
+RF & 5\% & 2,632 & 0.266 & 3.720 & 0.000 & 0.000 & 96.453 \\
+RF & 1\% & 505 & 0.396 & 3.720 & 0.000 & 0.000 & 96.314 \\
+HGB & 50\% & 50,000 & 0.258 & 4.402 & 0.003 & 0.000 & 97.668 \\
+HGB & 5\% & 2,632 & 0.255 & 4.373 & 0.003 & 0.000 & 95.830 \\
+HGB & 1\% & 505 & 0.337 & 4.372 & 0.003 & 0.000 & 95.665 \\
+LR & 50\% & 50,000 & 0.238 & 4.987 & 91.751 & 71.667 & 15.679 \\
+LR & 5\% & 2,632 & 0.281 & 4.987 & 91.751 & 71.809 & 4.495 \\
+LR & 1\% & 505 & 0.297 & 4.987 & 91.751 & 71.069 & 3.516 \\
+MLP & 50\% & 50,000 & 0.338 & 5.115 & 3.855 & 0.560 & 95.066 \\
+MLP & 5\% & 2,632 & 0.300 & 5.115 & 3.855 & 0.593 & 91.434 \\
+MLP & 1\% & 505 & 0.376 & 5.115 & 3.855 & 0.733 & 91.108 \\
+\bottomrule
+\end{tabular}
+\end{suppnonfloattable}

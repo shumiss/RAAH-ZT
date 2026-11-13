@@ -1,0 +1,111 @@
+\subsection{Retained original-hysteresis guarded execution}
+\label{sec:supp_guard_execution}
+An earlier, independently audited original-topic local
+prototype provides functional evidence for the corrected
+fusion and PEP boundary. Its protocol and sources were
+hashed before execution. Four frozen completed-flow HGB
+fixtures produce attack probabilities
+\(5.710469\times10^{-6}\), \(0.0584236372\),
+\(0.2761961010\), and \(0.7403871971\),
+exercising high-confidence Allow, intermediate
+Allow, MFA and Deny. The scoped hysteresis
+thresholds are Low \(85.1032613\) and High
+\(97.4001092\); the base-action cutoffs are
+Allow below \(0.2173913043\) and Deny at or above
+\(0.5384615385\). These fixture values and
+thresholds are frozen engineering inputs, not
+new attack-rate estimates. The test uses a
+local HGB reload, actual password/TOTP checks,
+OPA decisions, a synthetic protected HTTP
+resource, current policy versions, roles,
+pending obligations and request binding.
+The 16 prescribed scenarios each repeat four
+times. They are not independent people or
+unknown adversarial trials, and complete-flow
+features are not demonstrated available at
+physical request onset.
+
+\begin{table}[!htbp]
+\centering
+\caption{All 16 retained original-hysteresis
+functional scenarios, four repetitions each.
+Each passed its specified branch check.
+Challenge and delivery counts are totals
+over the four repetitions, not rates.}
+\label{tab:supp_execution}
+\footnotesize
+\begin{tabular}{p{.58\textwidth}rr}
+\toprule
+Scenario & Challenges & Deliveries\\
+\midrule
+Direct high-confidence Allow & 0 & 4\\
+Low-state Allow, correct MFA & 4 & 4\\
+Low-state Allow, wrong MFA & 4 & 0\\
+High-history intermediate Allow & 0 & 4\\
+Prior High, raw MFA, correct factor & 4 & 4\\
+Prior High, raw MFA, wrong factor & 4 & 0\\
+Prior High, raw Deny & 0 & 0\\
+Role denied despite model Allow & 0 & 0\\
+Attacker has password only & 4 & 0\\
+Attacker controls both factors & 4 & 4\\
+Granted request, later risk Deny & 0 & 4\\
+Pending MFA, then risk Deny & 4 & 0\\
+Client action/state injection & 0 & 0\\
+Consumed challenge replay & 4 & 4\\
+Expired session & 0 & 0\\
+Role denied despite second factor & 0 & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All 64 trials meet their expected branch result.
+The run includes 32 created challenges,
+28 resource deliveries and 172 real HGB
+inferences. The retained audit reloaded the
+model and source records, recalculates raw
+actions and guarded transitions, joins 84
+distinct OPA decision IDs to console logs and
+joins all 28 resource deliveries. The maximum
+source-probability discrepancy is
+\(5.55\times10^{-17}\); six RFC 6238 TOTP
+test vectors pass. A prior High state still
+requires the current raw MFA and respects a
+current raw Deny; role denial and expired
+sessions block a resource call. A risk-version
+change invalidates a pending challenge. A
+consumed challenge cannot be replayed.
+After a previous delivery, a subsequent
+request is denied when its current risk
+turns to Deny; already delivered bytes
+are not retracted.
+
+The attacker-with-both-factors scenario
+delivers a resource in all four scripted
+trials because the configured factor
+checks pass. This is a deliberate
+counterexample to interpreting
+authentication success as proof of
+benign intent. Its actor capability is
+selected by the scenario, not inferred
+from an UNSW label. Therefore the 64
+functional checks establish the specified
+local execution branches, not a
+population FAR, attack detection, or
+identity-risk model.
+
+The independently retained after-model
+risk-update to hard-Deny checkpoint
+medians are 102.393 ms for prior-High
+raw Deny, 48.748 ms for Deny on the
+next request after a grant, and
+53.560 ms for pending-MFA then
+risk-Deny (four observations each).
+These descriptive durations include
+driver scheduling and the next
+inference, stop before HTTP response
+completion, and do not measure
+physical attack-onset detection or
+general revocation latency. The
+local listeners were confirmed
+closed and published logs omit
+credential values.

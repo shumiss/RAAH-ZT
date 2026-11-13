@@ -1,0 +1,6 @@
+clean_D0 94s
+clean_D256 124s
+quarter_noisy_D256 182s
+quarter_clean_D256 211s
+full_noisy_D256 273s
+done 274s

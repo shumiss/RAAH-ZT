@@ -1,0 +1,18 @@
+\begin{table}[!htbp]
+\centering
+\caption{Fixed ablations and negative controls on the same UNSW test trace. Permissive accuracy credits MFA for either class and is shown solely to expose the submitted definition's failure. Unsafe legacy fusion is offline only and was never eligible for selection or execution.}
+\label{tab:supp_diagnostics}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Diagnostic & SR & FAR$_d$ & FDR$_h$ & MFA$_b$ & Strict Acc. & Permissive Acc. & Cost\\
+\midrule
+Base & 2.121 & 0.881 & 0.853 & 0.926 & 97.968 & 99.141 & 0.02804 \\
+Always MFA & 0.000 & 0.000 & 0.000 & 100.000 & 0.000 & 100.000 & 0.25000 \\
+Constant trust 50 & 1.729 & 0.000 & 0.853 & 99.147 & 18.895 & 99.313 & 0.20878 \\
+Fixed Hyst 40/60 & 2.121 & 0.881 & 0.853 & 0.926 & 97.968 & 99.141 & 0.02804 \\
+Unsafe legacy fusion & 1.829 & 2.364 & 0.794 & 0.264 & 98.520 & 98.900 & 0.05435 \\
+\bottomrule
+\end{tabular}
+\end{table}

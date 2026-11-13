@@ -1,0 +1,21 @@
+\begin{table}[!htbp]
+\centering
+\caption{Retained exploratory chronological UNSW-NB15 source-IP-proxy comparisons from the earlier reconstruction (percent). Hyst is validation-selected BO hysteresis; SMA received the same 50-candidate tuning budget. These rounded results are not recovered original-submission numbers. Benign MFA is a pending challenge, not a completed access result.}
+\label{tab:supp_retained_evaluators}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrr}
+\toprule
+Evaluator & Score & Base SR & Hyst SR & SMA SR & Hyst MFA$_b$ & Hyst FAR$_d$\\
+\midrule
+RF & Centroid & 0.40 & 1.76 & 0.44 & 12.67 & 0.037 \\
+RF & Classifier & 0.40 & 0.40 & 0.40 & 0.02 & 0.037 \\
+HGB & Centroid & 2.10 & 3.50 & 2.14 & 7.21 & 0.917 \\
+HGB & Classifier & 2.10 & 1.82 & 1.72 & 1.35 & 0.092 \\
+LR & Centroid & 1.58 & 2.98 & 1.62 & 6.93 & 0.391 \\
+LR & Classifier & 1.58 & 1.54 & 1.47 & 0.67 & 0.199 \\
+MLP & Centroid & 0.97 & 2.30 & 1.00 & 12.89 & 0.526 \\
+MLP & Classifier & 0.97 & 0.94 & 0.89 & 0.29 & 0.321 \\
+\bottomrule
+\end{tabular}
+\end{table}

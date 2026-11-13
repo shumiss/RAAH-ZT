@@ -1,0 +1,28 @@
+\begin{table}[!htbp]
+\centering
+\caption{All 15 static validation family/cap outcomes on the purged HGB UNSW trace. Cap and rates are percent; cost uses declared proxy units. All 2\% and 5\% rows use the validation-selected candidate unchanged on test. At 1\% none is feasible on validation, so test endpoints are intentionally absent. Hard FDR is 0.853\% for each selected test row. Full numerators, denominators and candidate parameters are in the paired artifact CSV.}
+\label{tab:supp_static_all}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrlrrrrrrl}
+\toprule
+Cap & Family & Val. feasible & Selected ID & SR & FAR$_d$ & MFA$_b$ & MFA$_a$ & Strict Acc. & Cost & Test caps\\
+\midrule
+1 & Hyst & 0 & -- & -- & -- & -- & -- & -- & -- & NA \\
+1 & Single & 0 & -- & -- & -- & -- & -- & -- & -- & NA \\
+1 & SMA & 0 & -- & -- & -- & -- & -- & -- & -- & NA \\
+1 & EMA & 0 & -- & -- & -- & -- & -- & -- & -- & NA \\
+1 & Counter & 0 & -- & -- & -- & -- & -- & -- & -- & NA \\
+2 & Hyst & 21 & hysteresis\_27 & 1.826 & 0.036 & 1.417 & 3.042 & 97.572 & 0.01282 & Yes \\
+2 & Single & 9 & single\_28 & 1.878 & 0.021 & 1.436 & 3.058 & 97.557 & 0.01259 & Yes \\
+2 & SMA & 30 & sma\_10 & 1.749 & 0.053 & 1.799 & 3.025 & 97.265 & 0.01387 & Yes \\
+2 & EMA & 27 & ema\_42 & 1.759 & 0.071 & 1.769 & 3.008 & 97.289 & 0.01415 & Yes \\
+2 & Counter & 3 & counter\_05\_k4 & 1.809 & 0.190 & 1.768 & 2.889 & 97.290 & 0.01644 & Yes \\
+5 & Hyst & 22 & hysteresis\_27 & 1.826 & 0.036 & 1.417 & 3.042 & 97.572 & 0.01282 & Yes \\
+5 & Single & 10 & single\_21 & 1.779 & 0.000 & 2.192 & 3.078 & 96.948 & 0.01367 & Yes \\
+5 & SMA & 38 & sma\_20 & 1.730 & 0.000 & 2.103 & 3.078 & 97.020 & 0.01346 & Yes \\
+5 & EMA & 33 & ema\_06 & 1.729 & 0.000 & 2.120 & 3.078 & 97.007 & 0.01350 & Yes \\
+5 & Counter & 49 & counter\_47\_k47 & 1.733 & 0.032 & 2.251 & 3.046 & 96.901 & 0.01438 & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}

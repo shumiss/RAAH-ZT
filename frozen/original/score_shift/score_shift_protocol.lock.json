@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-09",
+  "status": "FROZEN_ADDITIVE_SYNTHETIC_SCORE_SHIFT_BEFORE_OUTPUT",
+  "prior_test_status": "Original UNSW test period was inspected previously; this is exploratory sensitivity only.",
+  "unchanged_inputs": [
+    "event_id",
+    "label",
+    "group",
+    "timestamp",
+    "base_action"
+  ],
+  "input_test_npz_sha256": "a08eeea9b7a50e0ff66f5da7d41667565f552382b8a8f7492a059ab82fce005f",
+  "input_test_npz_bytes": 2065293,
+  "test_events": 762000,
+  "global_event_order": "Ascending observed start-second then original global row ID, across source-IP proxies.",
+  "phase_rule": "Four contiguous equal global-rank quarters of 190500 events; boundaries at ranks 190500,381000,571500; each edge belongs to the quarter of its later event, including edges from an earlier quarter.",
+  "phase_offsets_on_trust_score_points": [
+    0.0,
+    12.0,
+    -12.0,
+    0.0
+  ],
+  "transform": "shifted_trust=clip(original_trust+phase_offset,0,100); base actions and labels unchanged. Abrupt synthetic score calibration shifts, not traffic/concept drift, not original generator recovery.",
+  "fixed_selected_indices_from_unshifted_validation": {
+    "0.02": {
+      "hysteresis": 27,
+      "single": 78,
+      "sma": 110,
+      "ema": 192,
+      "counter": 205
+    },
+    "0.05": {
+      "hysteresis": 27,
+      "single": 71,
+      "sma": 120,
+      "ema": 156,
+      "counter": 247
+    }
+  },
+  "budgets_mfa_benign": [
+    0.02,
+    0.05
+  ],
+  "families": [
+    "hysteresis",
+    "single",
+    "sma",
+    "ema",
+    "counter"
+  ],
+  "adaptive_feedback_condition": {
+    "name": "clean_D256",
+    "delay_events": 256,
+    "coverage": 1.0,
+    "flip_probability": 0.0
+  },
+  "adaptive_rule": "Unchanged original candidate bank, W16384/J4096/support gates/10 queried GP-LCB losses per supported update, feedback seed20261008; full 250 shadow candidate window metrics precomputed. Initial and failed-update fallback is frozen base.",
+  "fixed_rule": "Run each of the ten previously validation-selected fixed candidate IDs on shifted scores. No test-stage parameter reselection.",
+  "phase_endpoints": [
+    "events",
+    "benign",
+    "attack",
+    "direct_FAR",
+    "hard_FDR",
+    "benign_MFA",
+    "attack_MFA",
+    "strict_accuracy",
+    "final_action_SR",
+    "internal_state_SR_if_available",
+    "explicit_proxy_cost",
+    "phase_boundary_edges_and_switches",
+    "candidate_version_boundary_edges_and_switches",
+    "phase_and_version_boundary_intersection"
+  ],
+  "primary_protocol_sha256": "d3615939f45acc79440ba2fec73397b8f4bebb0994a6229bd399d36257babd0b",
+  "validation_selection_sha256": "32e38d257b3e7b58c2fa2e39f870a5926352a1e39001031c4e730c2df0488398",
+  "original_runner_sha256": "67c0bb39c41430b12025498ff28b32f276fa70a6c19c0c2946a0a87b876dd695",
+  "score_shift_runner_sha256": "445cbb4c20410258cda71b1ccfdf9baf0fee47894da4c8f60c1ff56f3968da58",
+  "primary_adaptive_results_sha256": "ad48b51821b3e8898d6b5869ab1a496c8fdc30325b0042d0300da1eb00929996",
+  "supplementary_adaptive_results_sha256": "1a66e58d2fa17ed438fefb88048ab18572d34fc5bf045d30613d27743948638b",
+  "negative_result_rule": "Keep all 20 policy rows and 80 phase rows, including unsupported and cap-failing outcomes; no favorable phase/policy selection."
+}

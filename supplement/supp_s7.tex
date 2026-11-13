@@ -1,0 +1,913 @@
+\section{R1 revision evidence}
+\label{sec:supp_r1}
+This section contains every result added in the first revision. Rates are percentages; ``Ver.'' counts active-version
+changes and ``Infeas.'' counts supported updates with no feasible queried candidate (186 scheduled updates).
+All runs use the frozen validation and test timelines, the frozen candidate bank and the frozen runner. A
+reimplementation of the delayed-feedback engine reproduces the submitted clean-D256 and full-noisy rows and the
+submitted score-shift rows with zero difference before the start and fallback rules are changed. All code,
+protocols and results are available at \url{https://github.com/shumiss/RAAH-ZT}. Scripts (folder \texttt{r1}):
+\texttt{r1\_lib.py}, \texttt{exp\_static.py}, \texttt{exp\_dynamic.py}, \texttt{exp\_robust.py},
+\texttt{exp\_timing\_local.py}, \texttt{exp\_causal\_features.py}, \texttt{exp\_rerun75.py},
+\texttt{exp\_score\_shift\_R1.py}, \texttt{exp\_misspec\_R1.py}; figures: \texttt{make\_figures.py}.
+
+\subsection{Revised delayed-feedback controller: all 75 rows}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{lllrrrrrl}
+\caption{Revised controller (start from and revert to the validation-selected configuration; raw window rates).}\label{tab:s7_dyn75}\\
+\toprule
+Condition & Cap & Family & Ver. & Infeas. & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endfirsthead
+\toprule
+Condition & Cap & Family & Ver. & Infeas. & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Clean D0 & 1 & Hyst. & 51 & 92 & 2.044 & 0.668 & 1.092 & \textbf{No}\\
+Clean D0 & 1 & Single & 46 & 90 & 2.086 & 0.732 & 1.027 & \textbf{No}\\
+Clean D0 & 1 & SMA & 68 & 92 & 2.052 & 0.712 & 1.062 & \textbf{No}\\
+Clean D0 & 1 & EMA & 64 & 92 & 2.047 & 0.666 & 1.108 & \textbf{No}\\
+Clean D0 & 1 & Counter & 48 & 99 & 2.064 & 0.725 & 1.081 & \textbf{No}\\
+Clean D0 & 2 & Hyst. & 73 & 35 & 1.838 & 0.051 & 1.458 & Yes\\
+Clean D0 & 2 & Single & 49 & 36 & 1.915 & 0.139 & 1.325 & Yes\\
+Clean D0 & 2 & SMA & 89 & 40 & 1.789 & 0.146 & 1.597 & Yes\\
+Clean D0 & 2 & EMA & 72 & 40 & 1.792 & 0.065 & 1.674 & Yes\\
+Clean D0 & 2 & Counter & 73 & 45 & 1.823 & 0.203 & 1.678 & Yes\\
+Clean D0 & 5 & Hyst. & 69 & 0 & 1.834 & 0.032 & 1.627 & Yes\\
+Clean D0 & 5 & Single & 47 & 8 & 1.913 & 0.141 & 1.361 & Yes\\
+Clean D0 & 5 & SMA & 64 & 5 & 1.755 & 0.102 & 1.848 & Yes\\
+Clean D0 & 5 & EMA & 47 & 4 & 1.747 & 0.015 & 2.012 & Yes\\
+Clean D0 & 5 & Counter & 69 & 14 & 1.751 & 0.108 & 2.139 & Yes\\
+Clean D256 & 1 & Hyst. & 51 & 92 & 2.044 & 0.668 & 1.092 & \textbf{No}\\
+Clean D256 & 1 & Single & 44 & 90 & 2.086 & 0.728 & 1.031 & \textbf{No}\\
+Clean D256 & 1 & SMA & 69 & 92 & 2.050 & 0.710 & 1.064 & \textbf{No}\\
+Clean D256 & 1 & EMA & 65 & 92 & 2.046 & 0.666 & 1.111 & \textbf{No}\\
+Clean D256 & 1 & Counter & 48 & 99 & 2.062 & 0.724 & 1.083 & \textbf{No}\\
+Clean D256 & 2 & Hyst. & 73 & 34 & 1.837 & 0.048 & 1.459 & Yes\\
+Clean D256 & 2 & Single & 51 & 37 & 1.915 & 0.139 & 1.325 & Yes\\
+Clean D256 & 2 & SMA & 89 & 40 & 1.789 & 0.147 & 1.596 & Yes\\
+Clean D256 & 2 & EMA & 74 & 40 & 1.794 & 0.063 & 1.687 & Yes\\
+Clean D256 & 2 & Counter & 73 & 45 & 1.822 & 0.201 & 1.688 & Yes\\
+Clean D256 & 5 & Hyst. & 65 & 0 & 1.832 & 0.030 & 1.645 & Yes\\
+Clean D256 & 5 & Single & 47 & 10 & 1.910 & 0.139 & 1.364 & Yes\\
+Clean D256 & 5 & SMA & 65 & 5 & 1.754 & 0.102 & 1.855 & Yes\\
+Clean D256 & 5 & EMA & 47 & 4 & 1.747 & 0.015 & 2.012 & Yes\\
+Clean D256 & 5 & Counter & 70 & 14 & 1.751 & 0.108 & 2.139 & Yes\\
+25\% clean D256 & 1 & Hyst. & 58 & 88 & 2.039 & 0.659 & 1.097 & \textbf{No}\\
+25\% clean D256 & 1 & Single & 40 & 92 & 2.083 & 0.722 & 1.031 & \textbf{No}\\
+25\% clean D256 & 1 & SMA & 65 & 88 & 2.037 & 0.706 & 1.101 & \textbf{No}\\
+25\% clean D256 & 1 & EMA & 67 & 90 & 2.040 & 0.683 & 1.127 & \textbf{No}\\
+25\% clean D256 & 1 & Counter & 53 & 95 & 2.056 & 0.720 & 1.112 & \textbf{No}\\
+25\% clean D256 & 2 & Hyst. & 66 & 38 & 1.836 & 0.049 & 1.499 & Yes\\
+25\% clean D256 & 2 & Single & 37 & 51 & 1.912 & 0.120 & 1.335 & Yes\\
+25\% clean D256 & 2 & SMA & 85 & 38 & 1.801 & 0.145 & 1.619 & Yes\\
+25\% clean D256 & 2 & EMA & 75 & 39 & 1.802 & 0.097 & 1.645 & Yes\\
+25\% clean D256 & 2 & Counter & 78 & 45 & 1.820 & 0.208 & 1.714 & Yes\\
+25\% clean D256 & 5 & Hyst. & 66 & 3 & 1.833 & 0.034 & 1.606 & Yes\\
+25\% clean D256 & 5 & Single & 46 & 33 & 1.889 & 0.114 & 1.499 & Yes\\
+25\% clean D256 & 5 & SMA & 63 & 9 & 1.753 & 0.099 & 1.872 & Yes\\
+25\% clean D256 & 5 & EMA & 50 & 8 & 1.752 & 0.032 & 2.000 & Yes\\
+25\% clean D256 & 5 & Counter & 68 & 12 & 1.755 & 0.113 & 2.132 & Yes\\
+25\% 10\% flip D256 & 1 & Hyst. & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+25\% 10\% flip D256 & 1 & Single & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+25\% 10\% flip D256 & 1 & SMA & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+25\% 10\% flip D256 & 1 & EMA & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+25\% 10\% flip D256 & 1 & Counter & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+25\% 10\% flip D256 & 2 & Hyst. & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+25\% 10\% flip D256 & 2 & Single & 0 & 186 & 1.878 & 0.021 & 1.436 & Yes\\
+25\% 10\% flip D256 & 2 & SMA & 0 & 186 & 1.749 & 0.053 & 1.799 & Yes\\
+25\% 10\% flip D256 & 2 & EMA & 0 & 186 & 1.759 & 0.071 & 1.769 & Yes\\
+25\% 10\% flip D256 & 2 & Counter & 0 & 186 & 1.809 & 0.190 & 1.768 & Yes\\
+25\% 10\% flip D256 & 5 & Hyst. & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+25\% 10\% flip D256 & 5 & Single & 0 & 186 & 1.779 & 0.000 & 2.192 & Yes\\
+25\% 10\% flip D256 & 5 & SMA & 0 & 186 & 1.730 & 0.000 & 2.103 & Yes\\
+25\% 10\% flip D256 & 5 & EMA & 0 & 186 & 1.729 & 0.000 & 2.120 & Yes\\
+25\% 10\% flip D256 & 5 & Counter & 0 & 186 & 1.733 & 0.032 & 2.251 & Yes\\
+Full 10\% flip D256 & 1 & Hyst. & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+Full 10\% flip D256 & 1 & Single & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+Full 10\% flip D256 & 1 & SMA & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+Full 10\% flip D256 & 1 & EMA & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+Full 10\% flip D256 & 1 & Counter & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+Full 10\% flip D256 & 2 & Hyst. & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+Full 10\% flip D256 & 2 & Single & 0 & 186 & 1.878 & 0.021 & 1.436 & Yes\\
+Full 10\% flip D256 & 2 & SMA & 0 & 186 & 1.749 & 0.053 & 1.799 & Yes\\
+Full 10\% flip D256 & 2 & EMA & 0 & 186 & 1.759 & 0.071 & 1.769 & Yes\\
+Full 10\% flip D256 & 2 & Counter & 0 & 186 & 1.809 & 0.190 & 1.768 & Yes\\
+Full 10\% flip D256 & 5 & Hyst. & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+Full 10\% flip D256 & 5 & Single & 0 & 186 & 1.779 & 0.000 & 2.192 & Yes\\
+Full 10\% flip D256 & 5 & SMA & 0 & 186 & 1.730 & 0.000 & 2.103 & Yes\\
+Full 10\% flip D256 & 5 & EMA & 0 & 186 & 1.729 & 0.000 & 2.120 & Yes\\
+Full 10\% flip D256 & 5 & Counter & 0 & 186 & 1.733 & 0.032 & 2.251 & Yes\\
+\end{longtable}}
+\noindent{\footnotesize At the 1\% cap validation selects no feasible configuration, so the start and fallback configuration is the base.}\par\medskip
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{lllrrrrrl}
+\caption{Revised controller with the noise-corrected estimator (assumed flip rate equal to the true 10\%).}\label{tab:s7_dyn_corr}\\
+\toprule
+Condition & Cap & Family & Ver. & Infeas. & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endfirsthead
+\toprule
+Condition & Cap & Family & Ver. & Infeas. & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+25\% 10\% flip D256 & 1 & Hyst. & 58 & 117 & 2.077 & 0.786 & 1.037 & \textbf{No}\\
+25\% 10\% flip D256 & 1 & Single & 53 & 118 & 2.098 & 0.810 & 0.998 & \textbf{No}\\
+25\% 10\% flip D256 & 1 & SMA & 65 & 116 & 2.069 & 0.798 & 1.045 & \textbf{No}\\
+25\% 10\% flip D256 & 1 & EMA & 63 & 115 & 2.073 & 0.785 & 1.059 & \textbf{No}\\
+25\% 10\% flip D256 & 1 & Counter & 60 & 118 & 2.071 & 0.790 & 1.072 & \textbf{No}\\
+25\% 10\% flip D256 & 2 & Hyst. & 69 & 82 & 1.839 & 0.061 & 1.444 & Yes\\
+25\% 10\% flip D256 & 2 & Single & 56 & 83 & 1.908 & 0.102 & 1.353 & Yes\\
+25\% 10\% flip D256 & 2 & SMA & 82 & 81 & 1.790 & 0.118 & 1.613 & Yes\\
+25\% 10\% flip D256 & 2 & EMA & 78 & 82 & 1.800 & 0.110 & 1.652 & Yes\\
+25\% 10\% flip D256 & 2 & Counter & 76 & 83 & 1.829 & 0.220 & 1.701 & Yes\\
+25\% 10\% flip D256 & 5 & Hyst. & 63 & 68 & 1.832 & 0.032 & 1.609 & Yes\\
+25\% 10\% flip D256 & 5 & Single & 54 & 71 & 1.869 & 0.104 & 1.616 & Yes\\
+25\% 10\% flip D256 & 5 & SMA & 69 & 68 & 1.754 & 0.051 & 1.938 & Yes\\
+25\% 10\% flip D256 & 5 & EMA & 61 & 67 & 1.754 & 0.029 & 2.031 & Yes\\
+25\% 10\% flip D256 & 5 & Counter & 76 & 69 & 1.749 & 0.054 & 2.171 & Yes\\
+Full 10\% flip D256 & 1 & Hyst. & 57 & 117 & 2.073 & 0.746 & 1.028 & \textbf{No}\\
+Full 10\% flip D256 & 1 & Single & 53 & 117 & 2.099 & 0.783 & 0.990 & \textbf{No}\\
+Full 10\% flip D256 & 1 & SMA & 69 & 114 & 2.071 & 0.753 & 1.025 & \textbf{No}\\
+Full 10\% flip D256 & 1 & EMA & 67 & 116 & 2.068 & 0.738 & 1.032 & \textbf{No}\\
+Full 10\% flip D256 & 1 & Counter & 55 & 117 & 2.074 & 0.769 & 1.023 & \textbf{No}\\
+Full 10\% flip D256 & 2 & Hyst. & 66 & 75 & 1.851 & 0.090 & 1.427 & Yes\\
+Full 10\% flip D256 & 2 & Single & 61 & 78 & 1.922 & 0.161 & 1.320 & Yes\\
+Full 10\% flip D256 & 2 & SMA & 99 & 73 & 1.828 & 0.166 & 1.512 & Yes\\
+Full 10\% flip D256 & 2 & EMA & 82 & 75 & 1.831 & 0.153 & 1.546 & Yes\\
+Full 10\% flip D256 & 2 & Counter & 79 & 76 & 1.866 & 0.282 & 1.548 & Yes\\
+Full 10\% flip D256 & 5 & Hyst. & 69 & 59 & 1.829 & 0.028 & 1.652 & Yes\\
+Full 10\% flip D256 & 5 & Single & 63 & 65 & 1.918 & 0.139 & 1.531 & Yes\\
+Full 10\% flip D256 & 5 & SMA & 88 & 60 & 1.750 & 0.040 & 1.969 & Yes\\
+Full 10\% flip D256 & 5 & EMA & 70 & 59 & 1.749 & 0.022 & 1.990 & Yes\\
+Full 10\% flip D256 & 5 & Counter & 83 & 63 & 1.747 & 0.073 & 2.182 & Yes\\
+\end{longtable}}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{llrrrl}
+\caption{Fixed validation-selected reference for the same caps.}\label{tab:s7_static_ref}\\
+\toprule
+Cap & Family & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endfirsthead
+\toprule
+Cap & Family & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+1 & Hyst. & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+1 & Single & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+1 & SMA & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+1 & EMA & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+1 & Counter & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+2 & Hyst. & 1.826 & 0.036 & 1.417 & Yes\\
+2 & Single & 1.878 & 0.021 & 1.436 & Yes\\
+2 & SMA & 1.749 & 0.053 & 1.799 & Yes\\
+2 & EMA & 1.759 & 0.071 & 1.769 & Yes\\
+2 & Counter & 1.809 & 0.190 & 1.768 & Yes\\
+5 & Hyst. & 1.826 & 0.036 & 1.417 & Yes\\
+5 & Single & 1.779 & 0.000 & 2.192 & Yes\\
+5 & SMA & 1.730 & 0.000 & 2.103 & Yes\\
+5 & EMA & 1.729 & 0.000 & 2.120 & Yes\\
+5 & Counter & 1.733 & 0.032 & 2.251 & Yes\\
+\end{longtable}}
+\subsection{Start and fallback designs}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{llllrrrrrl}
+\caption{Hysteresis family under four start/fallback rules (GP-LCB, raw rates).}\label{tab:s7_fallback}\\
+\toprule
+Condition & Cap & Start & Fallback & Ver. & Infeas. & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endfirsthead
+\toprule
+Condition & Cap & Start & Fallback & Ver. & Infeas. & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Clean D0 & 1 & base & conservative & 51 & 92 & 1.827 & 0.047 & 50.440 & \textbf{No}\\
+Clean D0 & 1 & base & retain & 37 & 92 & 1.870 & 0.135 & 1.478 & \textbf{No}\\
+Clean D0 & 1 & validated & retain & 37 & 92 & 1.870 & 0.135 & 1.478 & \textbf{No}\\
+Clean D0 & 1 & validated & validated & 51 & 92 & 2.044 & 0.668 & 1.092 & \textbf{No}\\
+Clean D0 & 2 & base & conservative & 78 & 35 & 1.849 & 0.055 & 20.635 & \textbf{No}\\
+Clean D0 & 2 & base & retain & 68 & 35 & 1.850 & 0.078 & 1.443 & Yes\\
+Clean D0 & 2 & validated & retain & 68 & 35 & 1.847 & 0.067 & 1.445 & Yes\\
+Clean D0 & 2 & validated & validated & 73 & 35 & 1.838 & 0.051 & 1.458 & Yes\\
+Clean D0 & 5 & base & conservative & 69 & 0 & 1.838 & 0.044 & 1.626 & Yes\\
+Clean D0 & 5 & base & retain & 69 & 0 & 1.838 & 0.044 & 1.626 & Yes\\
+Clean D0 & 5 & validated & retain & 69 & 0 & 1.834 & 0.032 & 1.627 & Yes\\
+Clean D0 & 5 & validated & validated & 69 & 0 & 1.834 & 0.032 & 1.627 & Yes\\
+Clean D256 & 1 & base & conservative & 51 & 92 & 1.827 & 0.047 & 50.440 & \textbf{No}\\
+Clean D256 & 1 & base & retain & 37 & 92 & 1.870 & 0.135 & 1.478 & \textbf{No}\\
+Clean D256 & 1 & validated & retain & 37 & 92 & 1.870 & 0.135 & 1.478 & \textbf{No}\\
+Clean D256 & 1 & validated & validated & 51 & 92 & 2.044 & 0.668 & 1.092 & \textbf{No}\\
+Clean D256 & 2 & base & conservative & 77 & 34 & 1.856 & 0.058 & 20.084 & \textbf{No}\\
+Clean D256 & 2 & base & retain & 67 & 34 & 1.852 & 0.079 & 1.439 & Yes\\
+Clean D256 & 2 & validated & retain & 67 & 34 & 1.849 & 0.068 & 1.440 & Yes\\
+Clean D256 & 2 & validated & validated & 73 & 34 & 1.837 & 0.048 & 1.459 & Yes\\
+Clean D256 & 5 & base & conservative & 65 & 0 & 1.836 & 0.041 & 1.644 & Yes\\
+Clean D256 & 5 & base & retain & 65 & 0 & 1.836 & 0.041 & 1.644 & Yes\\
+Clean D256 & 5 & validated & retain & 65 & 0 & 1.832 & 0.030 & 1.645 & Yes\\
+Clean D256 & 5 & validated & validated & 65 & 0 & 1.832 & 0.030 & 1.645 & Yes\\
+25\% clean D256 & 1 & base & conservative & 58 & 88 & 1.834 & 0.050 & 48.528 & \textbf{No}\\
+25\% clean D256 & 1 & base & retain & 44 & 88 & 1.854 & 0.116 & 1.446 & \textbf{No}\\
+25\% clean D256 & 1 & validated & retain & 44 & 88 & 1.854 & 0.116 & 1.446 & \textbf{No}\\
+25\% clean D256 & 1 & validated & validated & 58 & 88 & 2.039 & 0.659 & 1.097 & \textbf{No}\\
+25\% clean D256 & 2 & base & conservative & 74 & 38 & 1.869 & 0.054 & 22.319 & \textbf{No}\\
+25\% clean D256 & 2 & base & retain & 61 & 38 & 1.861 & 0.087 & 1.499 & Yes\\
+25\% clean D256 & 2 & validated & retain & 61 & 38 & 1.858 & 0.075 & 1.500 & Yes\\
+25\% clean D256 & 2 & validated & validated & 66 & 38 & 1.836 & 0.049 & 1.499 & Yes\\
+25\% clean D256 & 5 & base & conservative & 67 & 3 & 1.845 & 0.046 & 3.428 & Yes\\
+25\% clean D256 & 5 & base & retain & 65 & 3 & 1.837 & 0.046 & 1.607 & Yes\\
+25\% clean D256 & 5 & validated & retain & 65 & 3 & 1.833 & 0.034 & 1.608 & Yes\\
+25\% clean D256 & 5 & validated & validated & 66 & 3 & 1.833 & 0.034 & 1.606 & Yes\\
+25\% 10\% flip D256 & 1 & base & conservative & 1 & 186 & 1.735 & 0.011 & 98.529 & \textbf{No}\\
+25\% 10\% flip D256 & 1 & base & retain & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+25\% 10\% flip D256 & 1 & validated & retain & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+25\% 10\% flip D256 & 1 & validated & validated & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+25\% 10\% flip D256 & 2 & base & conservative & 1 & 186 & 1.735 & 0.011 & 98.529 & \textbf{No}\\
+25\% 10\% flip D256 & 2 & base & retain & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+25\% 10\% flip D256 & 2 & validated & retain & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+25\% 10\% flip D256 & 2 & validated & validated & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+25\% 10\% flip D256 & 5 & base & conservative & 1 & 186 & 1.735 & 0.011 & 98.529 & \textbf{No}\\
+25\% 10\% flip D256 & 5 & base & retain & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+25\% 10\% flip D256 & 5 & validated & retain & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+25\% 10\% flip D256 & 5 & validated & validated & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+Full 10\% flip D256 & 1 & base & conservative & 1 & 186 & 1.735 & 0.011 & 98.529 & \textbf{No}\\
+Full 10\% flip D256 & 1 & base & retain & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+Full 10\% flip D256 & 1 & validated & retain & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+Full 10\% flip D256 & 1 & validated & validated & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+Full 10\% flip D256 & 2 & base & conservative & 1 & 186 & 1.735 & 0.011 & 98.529 & \textbf{No}\\
+Full 10\% flip D256 & 2 & base & retain & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+Full 10\% flip D256 & 2 & validated & retain & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+Full 10\% flip D256 & 2 & validated & validated & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+Full 10\% flip D256 & 5 & base & conservative & 1 & 186 & 1.735 & 0.011 & 98.529 & \textbf{No}\\
+Full 10\% flip D256 & 5 & base & retain & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+Full 10\% flip D256 & 5 & validated & retain & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+Full 10\% flip D256 & 5 & validated & validated & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+\end{longtable}}
+\noindent{\footnotesize The other four families are in \texttt{A3\_fallback.csv}.}\par\medskip
+\subsection{Label-noise curve and flip-rate misspecification}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{rlllrrrrrl}
+\caption{Hysteresis at the 2\% cap, full coverage, D256, symmetric flips 0--10\%.}\label{tab:s7_noise}\\
+\toprule
+Flip & Start & Fallback & Estimator & Ver. & Infeas. & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endfirsthead
+\toprule
+Flip & Start & Fallback & Estimator & Ver. & Infeas. & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+0 & base & retain & raw & 67 & 34 & 1.852 & 0.079 & 1.439 & Yes\\
+0 & validated & retain & corrected & 67 & 34 & 1.849 & 0.068 & 1.440 & Yes\\
+0 & validated & retain & raw & 67 & 34 & 1.849 & 0.068 & 1.440 & Yes\\
+0 & validated & validated & corrected & 73 & 34 & 1.837 & 0.048 & 1.459 & Yes\\
+0 & validated & validated & raw & 73 & 34 & 1.837 & 0.048 & 1.459 & Yes\\
+0.1 & base & retain & raw & 45 & 80 & 1.922 & 0.264 & 1.316 & Yes\\
+0.1 & validated & retain & corrected & 65 & 41 & 1.848 & 0.074 & 1.434 & Yes\\
+0.1 & validated & retain & raw & 45 & 80 & 1.846 & 0.076 & 1.417 & Yes\\
+0.1 & validated & validated & corrected & 72 & 41 & 1.839 & 0.054 & 1.450 & Yes\\
+0.1 & validated & validated & raw & 52 & 80 & 1.837 & 0.044 & 1.452 & Yes\\
+0.2 & base & retain & raw & 13 & 161 & 1.924 & 0.288 & 1.316 & Yes\\
+0.2 & validated & retain & corrected & 60 & 45 & 1.846 & 0.058 & 1.438 & Yes\\
+0.2 & validated & retain & raw & 13 & 161 & 1.845 & 0.098 & 1.425 & Yes\\
+0.2 & validated & validated & corrected & 69 & 45 & 1.837 & 0.049 & 1.448 & Yes\\
+0.2 & validated & validated & raw & 25 & 161 & 1.830 & 0.046 & 1.411 & Yes\\
+0.5 & base & retain & raw & 1 & 185 & 1.993 & 0.470 & 1.450 & Yes\\
+0.5 & validated & retain & corrected & 65 & 43 & 1.849 & 0.077 & 1.434 & Yes\\
+0.5 & validated & retain & raw & 1 & 185 & 1.819 & 0.011 & 1.703 & Yes\\
+0.5 & validated & validated & corrected & 75 & 43 & 1.836 & 0.053 & 1.455 & Yes\\
+0.5 & validated & validated & raw & 2 & 185 & 1.826 & 0.036 & 1.417 & Yes\\
+1 & base & retain & raw & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+1 & validated & retain & corrected & 66 & 39 & 1.881 & 0.177 & 1.421 & Yes\\
+1 & validated & retain & raw & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+1 & validated & validated & corrected & 79 & 39 & 1.846 & 0.077 & 1.439 & Yes\\
+1 & validated & validated & raw & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+2 & base & retain & raw & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+2 & validated & retain & corrected & 54 & 58 & 1.867 & 0.156 & 1.491 & Yes\\
+2 & validated & retain & raw & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+2 & validated & validated & corrected & 71 & 58 & 1.844 & 0.069 & 1.433 & Yes\\
+2 & validated & validated & raw & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+5 & base & retain & raw & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+5 & validated & retain & corrected & 45 & 75 & 1.838 & 0.044 & 1.560 & Yes\\
+5 & validated & retain & raw & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+5 & validated & validated & corrected & 54 & 75 & 1.833 & 0.049 & 1.460 & Yes\\
+5 & validated & validated & raw & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+10 & base & retain & raw & 0 & 186 & 2.121 & 0.881 & 0.926 & \textbf{No}\\
+10 & validated & retain & corrected & 54 & 74 & 1.895 & 0.263 & 1.354 & Yes\\
+10 & validated & retain & raw & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+10 & validated & validated & corrected & 81 & 74 & 1.844 & 0.087 & 1.425 & Yes\\
+10 & validated & validated & raw & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+\end{longtable}}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{rrrrrrrl}
+\caption{Corrected estimator with a misspecified flip rate (revised controller, hysteresis, 2\% cap).}\label{tab:s7_misspec}\\
+\toprule
+True flip & Assumed & Ver. & Infeas. & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endfirsthead
+\toprule
+True flip & Assumed & Ver. & Infeas. & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+5 & 2.5 & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+5 & 5 & 54 & 75 & 1.833 & 0.049 & 1.460 & Yes\\
+5 & 10 & 66 & 12 & 1.891 & 0.238 & 1.391 & Yes\\
+10 & 5 & 0 & 186 & 1.826 & 0.036 & 1.417 & Yes\\
+10 & 10 & 81 & 74 & 1.844 & 0.087 & 1.425 & Yes\\
+\end{longtable}}
+\subsection{Why adaptation trails the fixed policy on stationary data}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{llrrrrrrr}
+\caption{Decomposition of adaptive switching (clean D256, 2\% cap, retain fallback).}\label{tab:s7_decomp}\\
+\toprule
+Start & Family & Switches & On version edges & SR & SR excl. edges & Static share & Candidates & Static SR\\
+\midrule
+\endfirsthead
+\toprule
+Start & Family & Switches & On version edges & SR & SR excl. edges & Static share & Candidates & Static SR\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+base & Hyst. & 14113 & 53 & 1.852 & 1.849 & 18.8 & 9 & 1.826\\
+base & Single & 14825 & 32 & 1.946 & 1.944 & 9.7 & 10 & 1.878\\
+base & SMA & 13871 & 46 & 1.820 & 1.818 & 0.0 & 20 & 1.749\\
+base & EMA & 13808 & 39 & 1.812 & 1.810 & 9.7 & 17 & 1.759\\
+base & Counter & 13897 & 47 & 1.824 & 1.821 & 0.5 & 14 & 1.809\\
+validated & Hyst. & 14085 & 53 & 1.849 & 1.845 & 19.4 & 8 & 1.826\\
+validated & Single & 14797 & 32 & 1.942 & 1.940 & 10.2 & 9 & 1.878\\
+validated & SMA & 13843 & 46 & 1.817 & 1.815 & 0.5 & 20 & 1.749\\
+validated & EMA & 13780 & 39 & 1.808 & 1.807 & 10.2 & 16 & 1.759\\
+validated & Counter & 13881 & 45 & 1.822 & 1.819 & 1.6 & 13 & 1.809\\
+\end{longtable}}
+\noindent{\footnotesize ``Static share'' is the percentage of events on which the validation-selected candidate is active.}\par\medskip
+\subsection{Query rules and replicates}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{lllrrrrr}
+\caption{Query rules at the 2\% cap (submitted base/retain controller; random10 averaged over five seeds).}\label{tab:s7_selectors}\\
+\toprule
+Condition & Family & Rule & Ver. & SR & FAR$_d$ & MFA$_b$ & Update time (s)\\
+\midrule
+\endfirsthead
+\toprule
+Condition & Family & Rule & Ver. & SR & FAR$_d$ & MFA$_b$ & Update time (s)\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Clean D0 & Hyst. & gp & 68 & 1.850 & 0.078 & 1.443 & 13.8\\
+Clean D0 & Single & gp & 44 & 1.945 & 0.192 & 1.291 & 13.8\\
+Clean D0 & SMA & gp & 78 & 1.820 & 0.256 & 1.534 & 13.8\\
+Clean D0 & EMA & gp & 61 & 1.810 & 0.106 & 1.689 & 13.8\\
+Clean D0 & Counter & gp & 62 & 1.835 & 0.230 & 1.681 & 13.8\\
+Clean D0 & Hyst. & all50 & 80 & 1.860 & 0.072 & 1.424 & 2.8\\
+Clean D0 & Single & all50 & 72 & 1.877 & 0.069 & 1.488 & 2.8\\
+Clean D0 & SMA & all50 & 85 & 1.831 & 0.249 & 1.505 & 2.8\\
+Clean D0 & EMA & all50 & 82 & 1.834 & 0.164 & 1.616 & 2.8\\
+Clean D0 & Counter & all50 & 70 & 1.835 & 0.229 & 1.679 & 2.8\\
+Clean D0 & Hyst. & greedy10 & 57 & 1.862 & 0.092 & 1.381 & 3.0\\
+Clean D0 & Single & greedy10 & 70 & 1.886 & 0.083 & 1.464 & 3.0\\
+Clean D0 & SMA & greedy10 & 71 & 1.830 & 0.260 & 1.556 & 3.0\\
+Clean D0 & EMA & greedy10 & 71 & 1.828 & 0.166 & 1.630 & 3.0\\
+Clean D0 & Counter & greedy10 & 63 & 1.835 & 0.230 & 1.679 & 3.0\\
+Clean D0 & Hyst. & random10 & 135 & 1.868 & 0.112 & 1.356 & 3.0\\
+Clean D0 & Single & random10 & 114 & 1.911 & 0.145 & 1.408 & 3.0\\
+Clean D0 & SMA & random10 & 132 & 1.824 & 0.204 & 1.573 & 3.0\\
+Clean D0 & EMA & random10 & 134 & 1.831 & 0.176 & 1.598 & 3.0\\
+Clean D0 & Counter & random10 & 109 & 1.784 & 0.184 & 1.856 & 3.0\\
+Clean D256 & Hyst. & gp & 67 & 1.852 & 0.079 & 1.439 & 10.6\\
+Clean D256 & Single & gp & 46 & 1.946 & 0.193 & 1.291 & 10.6\\
+Clean D256 & SMA & gp & 78 & 1.820 & 0.258 & 1.534 & 10.6\\
+Clean D256 & EMA & gp & 63 & 1.812 & 0.104 & 1.702 & 10.6\\
+Clean D256 & Counter & gp & 62 & 1.824 & 0.217 & 1.703 & 10.6\\
+Clean D256 & Hyst. & all50 & 80 & 1.864 & 0.075 & 1.419 & 2.6\\
+Clean D256 & Single & all50 & 71 & 1.877 & 0.067 & 1.489 & 2.6\\
+Clean D256 & SMA & all50 & 85 & 1.843 & 0.277 & 1.490 & 2.6\\
+Clean D256 & EMA & all50 & 77 & 1.828 & 0.167 & 1.617 & 2.6\\
+Clean D256 & Counter & all50 & 69 & 1.823 & 0.216 & 1.703 & 2.6\\
+Clean D256 & Hyst. & greedy10 & 58 & 1.866 & 0.097 & 1.371 & 2.8\\
+Clean D256 & Single & greedy10 & 69 & 1.886 & 0.081 & 1.465 & 2.8\\
+Clean D256 & SMA & greedy10 & 74 & 1.830 & 0.259 & 1.556 & 2.8\\
+Clean D256 & EMA & greedy10 & 69 & 1.828 & 0.168 & 1.633 & 2.8\\
+Clean D256 & Counter & greedy10 & 63 & 1.823 & 0.217 & 1.707 & 2.8\\
+Clean D256 & Hyst. & random10 & 135 & 1.868 & 0.110 & 1.357 & 2.7\\
+Clean D256 & Single & random10 & 114 & 1.911 & 0.144 & 1.409 & 2.7\\
+Clean D256 & SMA & random10 & 132 & 1.829 & 0.214 & 1.566 & 2.7\\
+Clean D256 & EMA & random10 & 134 & 1.831 & 0.177 & 1.599 & 2.7\\
+Clean D256 & Counter & random10 & 110 & 1.792 & 0.190 & 1.829 & 2.7\\
+\end{longtable}}
+\noindent{\footnotesize Update time is the total wall time of all updates for all families and caps in one replay.}\par\medskip
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{llrrrrr}
+\caption{Replicated comparison (hysteresis, 2\% cap): mean over replicates.}\label{tab:s7_rep}\\
+\toprule
+Replicates & Rule$|$start$|$fallback & SR & SD & FAR$_d$ & MFA$_b$ & Ver.\\
+\midrule
+\endfirsthead
+\toprule
+Replicates & Rule$|$start$|$fallback & SR & SD & FAR$_d$ & MFA$_b$ & Ver.\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+25\% clean, 10 seeds & gp$|$base$|$retain & 1.854 & 0.007 & 0.078 & 1.448 & 64.6\\
+25\% clean, 10 seeds & all50$|$base$|$retain & 1.859 & 0.005 & 0.080 & 1.436 & 77.3\\
+25\% clean, 10 seeds & greedy10$|$base$|$retain & 1.861 & 0.006 & 0.097 & 1.376 & 56.8\\
+25\% clean, 10 seeds & random10$|$base$|$retain & 1.863 & 0.006 & 0.104 & 1.383 & 132.1\\
+25\% clean, 10 seeds & gp$|$validated$|$validated & 1.836 & 0.003 & 0.051 & 1.454 & 72.3\\
+25\% clean, 10 seeds & all50$|$validated$|$validated & 1.841 & 0.004 & 0.055 & 1.427 & 84.4\\
+Full clean, 8 phases & gp$|$base$|$retain & 1.851 & 0.003 & 0.078 & 1.449 & 63.0\\
+Full clean, 8 phases & all50$|$base$|$retain & 1.864 & 0.005 & 0.080 & 1.423 & 75.4\\
+Full clean, 8 phases & greedy10$|$base$|$retain & 1.868 & 0.004 & 0.103 & 1.364 & 61.5\\
+Full clean, 8 phases & random10$|$base$|$retain & 1.871 & 0.005 & 0.107 & 1.370 & 132.4\\
+Full clean, 8 phases & gp$|$validated$|$validated & 1.837 & 0.001 & 0.052 & 1.463 & 66.9\\
+Full clean, 8 phases & all50$|$validated$|$validated & 1.848 & 0.004 & 0.064 & 1.423 & 82.0\\
+5\% flip + corr., 5 seeds & gp$|$base$|$retain & 1.871 & 0.012 & 0.144 & 1.445 & 54.6\\
+5\% flip + corr., 5 seeds & all50$|$base$|$retain & 1.873 & 0.013 & 0.107 & 1.413 & 68.4\\
+5\% flip + corr., 5 seeds & greedy10$|$base$|$retain & 1.881 & 0.014 & 0.167 & 1.354 & 51.2\\
+5\% flip + corr., 5 seeds & random10$|$base$|$retain & 1.889 & 0.010 & 0.143 & 1.356 & 105.8\\
+5\% flip + corr., 5 seeds & gp$|$validated$|$validated & 1.842 & 0.009 & 0.069 & 1.443 & 72.8\\
+5\% flip + corr., 5 seeds & all50$|$validated$|$validated & 1.846 & 0.009 & 0.069 & 1.417 & 85.4\\
+\end{longtable}}
+\subsection{Validation-selected frontier with source-IP bootstrap intervals}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{llllrlrl}
+\caption{Hysteresis minus comparator (percentage points) with 95\% paired bootstrap intervals over source-IP histories (5,000 resamples). Policies are selected on validation at each cap.}\label{tab:s7_boot}\\
+\toprule
+Evaluator & Cap & vs & $\Delta$SR & & $\Delta$FAR$_d$ & & $\Delta$MFA$_b$\\
+\midrule
+\endfirsthead
+\toprule
+Evaluator & Cap & vs & $\Delta$SR & & $\Delta$FAR$_d$ & & $\Delta$MFA$_b$\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Primary & 1.25 & Single & -0.024 & [-0.050, -0.002] & +0.030 & [+0.008, +0.080] & -0.033 [-0.087, -0.004]\\
+Primary & 1.25 & SMA & +0.012 & [-0.010, +0.040] & +0.005 & [-0.063, +0.064] & -0.118 [-0.354, -0.010]\\
+Primary & 1.25 & EMA & +0.030 & [+0.000, +0.065] & +0.065 & [-0.054, +0.410] & -0.147 [-0.435, -0.013]\\
+Primary & 1.4 & Single & -0.079 & [-0.157, -0.018] & -0.036 & [-0.090, -0.008] & +0.005 [-0.005, +0.021]\\
+Primary & 1.4 & SMA & -0.013 & [-0.066, +0.038] & -0.141 & [-0.180, -0.024] & -0.128 [-0.463, +0.011]\\
+Primary & 1.4 & EMA & -0.068 & [-0.146, -0.006] & -0.236 & [-0.291, -0.185] & -0.036 [-0.238, +0.074]\\
+Primary & 1.5 & Single & -0.103 & [-0.205, -0.019] & -0.066 & [-0.129, -0.038] & +0.054 [+0.006, +0.146]\\
+Primary & 1.5 & SMA & -0.032 & [-0.095, +0.015] & -0.210 & [-0.260, -0.109] & -0.095 [-0.413, +0.063]\\
+Primary & 1.5 & EMA & -0.031 & [-0.095, +0.018] & -0.199 & [-0.254, -0.097] & -0.094 [-0.412, +0.065]\\
+Primary & 1.75 & Single & -0.052 & [-0.104, -0.008] & +0.015 & [+0.006, +0.113] & -0.019 [-0.051, -0.003]\\
+Primary & 1.75 & SMA & +0.031 & [-0.002, +0.074] & -0.160 & [-0.245, -0.015] & -0.204 [-0.614, +0.013]\\
+Primary & 1.75 & EMA & -0.000 & [-0.021, +0.019] & -0.183 & [-0.270, -0.027] & -0.146 [-0.475, +0.027]\\
+Primary & 1.75 & Counter & -0.167 & [-0.328, -0.040] & -0.339 & [-0.587, -0.185] & -0.028 [-0.150, +0.086]\\
+Primary & 2 & Single & -0.052 & [-0.104, -0.008] & +0.015 & [+0.006, +0.113] & -0.019 [-0.051, -0.003]\\
+Primary & 2 & SMA & +0.077 & [+0.012, +0.160] & -0.017 & [-0.089, +0.096] & -0.381 [-1.048, -0.027]\\
+Primary & 2 & EMA & +0.067 & [+0.009, +0.141] & -0.034 & [-0.097, +0.032] & -0.352 [-0.981, -0.018]\\
+Primary & 2 & Counter & +0.017 & [-0.009, +0.054] & -0.153 & [-0.268, -0.010] & -0.350 [-0.921, -0.054]\\
+Start-time & 1.25 & SMA & -0.003 & [-0.024, +0.016] & +0.042 & [+0.016, +0.080] & -0.051 [-0.167, -0.003]\\
+Start-time & 1.25 & EMA & -0.016 & [-0.039, -0.001] & +0.018 & [+0.006, +0.040] & -0.006 [-0.029, +0.013]\\
+Start-time & 1.4 & Single & -0.093 & [-0.188, -0.020] & -0.101 & [-0.185, -0.078] & +0.057 [+0.002, +0.161]\\
+Start-time & 1.4 & SMA & -0.005 & [-0.051, +0.047] & +0.013 & [-0.041, +0.113] & -0.084 [-0.316, +0.007]\\
+Start-time & 1.4 & EMA & -0.032 & [-0.082, +0.007] & -0.008 & [-0.083, +0.113] & -0.053 [-0.226, +0.022]\\
+Start-time & 1.5 & Single & -0.121 & [-0.242, -0.029] & -0.117 & [-0.233, -0.061] & +0.094 [+0.016, +0.250]\\
+Start-time & 1.5 & SMA & +0.007 & [-0.026, +0.056] & +0.007 & [-0.056, +0.084] & -0.090 [-0.320, +0.006]\\
+Start-time & 1.5 & EMA & -0.067 & [-0.153, +0.001] & -0.054 & [-0.156, +0.054] & +0.005 [-0.149, +0.134]\\
+Start-time & 1.75 & Single & -0.105 & [-0.213, -0.025] & -0.026 & [-0.080, -0.005] & +0.100 [-0.012, +0.295]\\
+Start-time & 1.75 & SMA & +0.029 & [-0.008, +0.080] & +0.050 & [-0.113, +0.155] & -0.030 [-0.176, +0.080]\\
+Start-time & 1.75 & EMA & +0.033 & [-0.002, +0.078] & +0.102 & [-0.056, +0.218] & -0.066 [-0.224, +0.031]\\
+Start-time & 1.75 & Counter & -0.120 & [-0.232, -0.030] & -0.150 & [-0.450, -0.073] & +0.127 [+0.014, +0.347]\\
+Start-time & 2 & Single & -0.100 & [-0.204, -0.025] & +0.007 & [-0.008, +0.019] & -0.018 [-0.094, +0.035]\\
+Start-time & 2 & SMA & +0.012 & [-0.014, +0.044] & -0.013 & [-0.064, +0.036] & -0.054 [-0.153, +0.015]\\
+Start-time & 2 & EMA & +0.009 & [-0.019, +0.041] & +0.015 & [-0.064, +0.082] & -0.010 [-0.109, +0.097]\\
+Start-time & 2 & Counter & +0.003 & [-0.023, +0.030] & -0.040 & [-0.137, +0.008] & -0.056 [-0.160, +0.028]\\
+\end{longtable}}
+\subsection{Ordering, inactivity timeouts and start-time features}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{lrrrrr}
+\caption{Twenty random within-second permutations (selected parameters retained).}\label{tab:s7_ties}\\
+\toprule
+Policy & SR mean & SR min & SR max & FAR$_d$ & MFA$_b$\\
+\midrule
+\endfirsthead
+\toprule
+Policy & SR mean & SR min & SR max & FAR$_d$ & MFA$_b$\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+base & 2.219 & 2.206 & 2.229 & 0.881 & 0.926\\
+$\rho$=0.02 counter & 1.912 & 1.898 & 1.920 & 0.133 & 1.775\\
+$\rho$=0.02 ema & 1.865 & 1.848 & 1.875 & 0.039 & 1.770\\
+$\rho$=0.02 hysteresis & 1.927 & 1.912 & 1.939 & 0.039 & 1.418\\
+$\rho$=0.02 single & 1.978 & 1.965 & 1.987 & 0.021 & 1.436\\
+$\rho$=0.02 sma & 1.854 & 1.838 & 1.865 & 0.028 & 1.801\\
+$\rho$=0.05 counter & 1.837 & 1.822 & 1.847 & 0.003 & 2.250\\
+$\rho$=0.05 ema & 1.834 & 1.819 & 1.844 & 0.000 & 2.120\\
+$\rho$=0.05 hysteresis & 1.927 & 1.912 & 1.939 & 0.039 & 1.418\\
+$\rho$=0.05 single & 1.935 & 1.922 & 1.944 & 0.000 & 2.192\\
+$\rho$=0.05 sma & 1.835 & 1.819 & 1.844 & 0.000 & 2.103\\
+\end{longtable}}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{rrlllrrrr}
+\caption{Inactivity-timeout resets with re-selection on validation (empty $\tau$: no timeout).}\label{tab:s7_timeout}\\
+\toprule
+$\tau$ (s) & Sessions & Cap & Family & Candidate & SR & SR within & FAR$_d$ & MFA$_b$\\
+\midrule
+\endfirsthead
+\toprule
+$\tau$ (s) & Sessions & Cap & Family & Candidate & SR & SR within & FAR$_d$ & MFA$_b$\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+1 & 66692 & 2 & Hyst. & hysteresis\_27 & 1.831 & 1.665 & 0.032 & 1.423\\
+1 & 66692 & 2 & Single & single\_28 & 1.878 & 1.714 & 0.021 & 1.436\\
+1 & 66692 & 2 & SMA & sma\_45 & 1.801 & 1.609 & 0.131 & 1.689\\
+1 & 66692 & 2 & EMA & ema\_04 & 1.778 & 1.596 & 0.053 & 1.772\\
+1 & 66692 & 5 & Hyst. & hysteresis\_27 & 1.831 & 1.665 & 0.032 & 1.423\\
+1 & 66692 & 5 & Single & single\_21 & 1.779 & 1.578 & 0.000 & 2.192\\
+1 & 66692 & 5 & SMA & sma\_20 & 1.750 & 1.573 & 0.000 & 1.991\\
+1 & 66692 & 5 & EMA & ema\_34 & 1.748 & 1.572 & 0.001 & 2.002\\
+1 & 66692 & -- & Base & -- & 2.121 & -- & 0.881 & 0.926\\
+5 & 6715 & 2 & Hyst. & hysteresis\_27 & 1.827 & 1.826 & 0.036 & 1.419\\
+5 & 6715 & 2 & Single & single\_28 & 1.878 & 1.877 & 0.021 & 1.436\\
+5 & 6715 & 2 & SMA & sma\_45 & 1.744 & 1.743 & 0.025 & 1.848\\
+5 & 6715 & 2 & EMA & ema\_42 & 1.760 & 1.759 & 0.073 & 1.767\\
+5 & 6715 & 5 & Hyst. & hysteresis\_27 & 1.827 & 1.826 & 0.036 & 1.419\\
+5 & 6715 & 5 & Single & single\_21 & 1.779 & 1.752 & 0.000 & 2.192\\
+5 & 6715 & 5 & SMA & sma\_20 & 1.731 & 1.729 & 0.000 & 2.082\\
+5 & 6715 & 5 & EMA & ema\_34 & 1.732 & 1.729 & 0.000 & 2.086\\
+5 & 6715 & 5 & Counter & counter\_14\_k14 & 2.007 & 1.874 & 0.117 & 4.727\\
+5 & 6715 & -- & Base & -- & 2.121 & -- & 0.881 & 0.926\\
+30 & 2049 & 2 & Hyst. & hysteresis\_27 & 1.827 & 1.829 & 0.036 & 1.419\\
+30 & 2049 & 2 & Single & single\_28 & 1.878 & 1.880 & 0.021 & 1.436\\
+30 & 2049 & 2 & SMA & sma\_10 & 1.749 & 1.752 & 0.053 & 1.798\\
+30 & 2049 & 2 & EMA & ema\_42 & 1.759 & 1.763 & 0.071 & 1.769\\
+30 & 2049 & 2 & Counter & counter\_01\_k2 & 2.220 & 2.110 & 0.376 & 1.768\\
+30 & 2049 & 5 & Hyst. & hysteresis\_27 & 1.827 & 1.829 & 0.036 & 1.419\\
+30 & 2049 & 5 & Single & single\_21 & 1.779 & 1.759 & 0.000 & 2.192\\
+30 & 2049 & 5 & SMA & sma\_20 & 1.731 & 1.733 & 0.000 & 2.089\\
+30 & 2049 & 5 & EMA & ema\_34 & 1.731 & 1.733 & 0.000 & 2.086\\
+30 & 2049 & 5 & Counter & counter\_45\_k45 & 1.742 & 1.740 & 0.036 & 2.986\\
+30 & 2049 & -- & Base & -- & 2.121 & -- & 0.881 & 0.926\\
+60 & 660 & 2 & Hyst. & hysteresis\_27 & 1.827 & 1.826 & 0.036 & 1.419\\
+60 & 660 & 2 & Single & single\_28 & 1.878 & 1.876 & 0.021 & 1.436\\
+60 & 660 & 2 & SMA & sma\_10 & 1.749 & 1.749 & 0.053 & 1.798\\
+60 & 660 & 2 & EMA & ema\_42 & 1.759 & 1.760 & 0.071 & 1.769\\
+60 & 660 & 2 & Counter & counter\_04\_k3 & 1.891 & 1.875 & 0.238 & 1.792\\
+60 & 660 & 5 & Hyst. & hysteresis\_27 & 1.827 & 1.826 & 0.036 & 1.419\\
+60 & 660 & 5 & Single & single\_21 & 1.779 & 1.769 & 0.000 & 2.192\\
+60 & 660 & 5 & SMA & sma\_20 & 1.731 & 1.729 & 0.000 & 2.089\\
+60 & 660 & 5 & EMA & ema\_34 & 1.731 & 1.729 & 0.000 & 2.086\\
+60 & 660 & 5 & Counter & counter\_45\_k45 & 1.745 & 1.739 & 0.036 & 2.772\\
+60 & 660 & -- & Base & -- & 2.121 & -- & 0.881 & 0.926\\
+300 & 130 & 2 & Hyst. & hysteresis\_27 & 1.827 & 1.825 & 0.036 & 1.419\\
+300 & 130 & 2 & Single & single\_28 & 1.878 & 1.875 & 0.021 & 1.436\\
+300 & 130 & 2 & SMA & sma\_10 & 1.749 & 1.748 & 0.053 & 1.798\\
+300 & 130 & 2 & EMA & ema\_42 & 1.759 & 1.758 & 0.071 & 1.769\\
+300 & 130 & 2 & Counter & counter\_05\_k4 & 1.818 & 1.812 & 0.190 & 1.790\\
+300 & 130 & 5 & Hyst. & hysteresis\_27 & 1.827 & 1.825 & 0.036 & 1.419\\
+300 & 130 & 5 & Single & single\_21 & 1.779 & 1.775 & 0.000 & 2.192\\
+300 & 130 & 5 & SMA & sma\_20 & 1.731 & 1.729 & 0.000 & 2.092\\
+300 & 130 & 5 & EMA & ema\_06 & 1.730 & 1.728 & 0.000 & 2.114\\
+300 & 130 & 5 & Counter & counter\_47\_k47 & 1.742 & 1.737 & 0.032 & 2.522\\
+300 & 130 & -- & Base & -- & 2.121 & -- & 0.881 & 0.926\\
+1800 & 74 & 2 & Hyst. & hysteresis\_27 & 1.827 & 1.825 & 0.036 & 1.419\\
+1800 & 74 & 2 & Single & single\_28 & 1.878 & 1.876 & 0.021 & 1.436\\
+1800 & 74 & 2 & SMA & sma\_10 & 1.749 & 1.748 & 0.053 & 1.799\\
+1800 & 74 & 2 & EMA & ema\_42 & 1.760 & 1.759 & 0.071 & 1.770\\
+1800 & 74 & 2 & Counter & counter\_05\_k4 & 1.809 & 1.808 & 0.190 & 1.773\\
+1800 & 74 & 5 & Hyst. & hysteresis\_27 & 1.827 & 1.825 & 0.036 & 1.419\\
+1800 & 74 & 5 & Single & single\_21 & 1.779 & 1.778 & 0.000 & 2.192\\
+1800 & 74 & 5 & SMA & sma\_20 & 1.731 & 1.729 & 0.000 & 2.095\\
+1800 & 74 & 5 & EMA & ema\_06 & 1.730 & 1.729 & 0.000 & 2.115\\
+1800 & 74 & 5 & Counter & counter\_47\_k47 & 1.734 & 1.733 & 0.032 & 2.267\\
+1800 & 74 & -- & Base & -- & 2.121 & -- & 0.881 & 0.926\\
+-- & 40 & 2 & Hyst. & hysteresis\_27 & 1.826 & 1.826 & 0.036 & 1.417\\
+-- & 40 & 2 & Single & single\_28 & 1.878 & 1.878 & 0.021 & 1.436\\
+-- & 40 & 2 & SMA & sma\_10 & 1.749 & 1.749 & 0.053 & 1.799\\
+-- & 40 & 2 & EMA & ema\_42 & 1.759 & 1.759 & 0.071 & 1.769\\
+-- & 40 & 2 & Counter & counter\_05\_k4 & 1.809 & 1.809 & 0.190 & 1.768\\
+-- & 40 & 5 & Hyst. & hysteresis\_27 & 1.826 & 1.826 & 0.036 & 1.417\\
+-- & 40 & 5 & Single & single\_21 & 1.779 & 1.779 & 0.000 & 2.192\\
+-- & 40 & 5 & SMA & sma\_20 & 1.730 & 1.730 & 0.000 & 2.103\\
+-- & 40 & 5 & EMA & ema\_06 & 1.729 & 1.729 & 0.000 & 2.120\\
+-- & 40 & 5 & Counter & counter\_47\_k47 & 1.733 & 1.733 & 0.032 & 2.251\\
+-- & 40 & -- & Base & -- & 2.121 & -- & 0.881 & 0.926\\
+\end{longtable}}
+\noindent{\footnotesize ``SR within'' excludes pairs that cross a timeout reset.}\par\medskip
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{llllrrrl}
+\caption{Start-time-feature evaluator (test AUC 0.999): base and validation selections.}\label{tab:s7_start}\\
+\toprule
+Policy & Cap & Status & Candidate & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endfirsthead
+\toprule
+Policy & Cap & Status & Candidate & SR & FAR$_d$ & MFA$_b$ & Caps\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Base & -- & -- & -- & 1.991 & 0.668 & 1.094 & --\\
+Hyst. & 1 & NO\_SELECTION & -- & -- & -- & -- & --\\
+Single & 1 & NO\_SELECTION & -- & -- & -- & -- & --\\
+SMA & 1 & NO\_SELECTION & -- & -- & -- & -- & --\\
+EMA & 1 & NO\_SELECTION & -- & -- & -- & -- & --\\
+Counter & 1 & NO\_SELECTION & -- & -- & -- & -- & --\\
+Hyst. & 2 & SELECTED & hysteresis\_27 & 1.702 & 0.156 & 1.767 & Yes\\
+Single & 2 & SELECTED & single\_28 & 1.802 & 0.148 & 1.785 & Yes\\
+SMA & 2 & SELECTED & sma\_13 & 1.690 & 0.169 & 1.820 & Yes\\
+EMA & 2 & SELECTED & ema\_42 & 1.694 & 0.141 & 1.776 & Yes\\
+Counter & 2 & SELECTED & counter\_06\_k5 & 1.699 & 0.196 & 1.822 & Yes\\
+Hyst. & 5 & SELECTED & hysteresis\_44 & 1.681 & 0.133 & 2.072 & Yes\\
+Single & 5 & SELECTED & single\_21 & 1.726 & 0.133 & 2.447 & Yes\\
+SMA & 5 & SELECTED & sma\_20 & 1.654 & 0.019 & 2.277 & Yes\\
+EMA & 5 & SELECTED & ema\_34 & 1.653 & 0.000 & 2.384 & Yes\\
+Counter & 5 & SELECTED & counter\_47\_k47 & 1.657 & 0.032 & 2.351 & Yes\\
+\end{longtable}}
+\subsection{Tightness of Theorem 4 per source-IP history}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{rrrrrr}
+\caption{Selected pair (66.83, 98.83), $\Delta=32.00$. Two proxies with a single flow are omitted. Totals: $\sum V_n=1,113,812$, bound 34,846, $K_h=2,438$, single-threshold flips 2,852.}\label{tab:s7_thm4}\\
+\toprule
+Proxy & Flows & $V_n$ & $1+V_n/\Delta$ & $K_h$ & Single flips\\
+\midrule
+\endfirsthead
+\toprule
+Proxy & Flows & $V_n$ & $1+V_n/\Delta$ & $K_h$ & Single flips\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+0 & 365 & 1.3 & 1.0 & 0 & 0\\
+1 & 682 & 0.1 & 1.0 & 0 & 0\\
+2 & 370 & 5.3 & 1.2 & 0 & 0\\
+3 & 1,747 & 5.5 & 1.2 & 0 & 0\\
+4 & 698 & 5.5 & 1.2 & 0 & 0\\
+5 & 394 & 44.9 & 2.4 & 0 & 0\\
+6 & 371 & 0.0 & 1.0 & 0 & 0\\
+8 & 5 & 0.0 & 1.0 & 0 & 0\\
+9 & 30,359 & 19.0 & 1.6 & 1 & 1\\
+10 & 8 & 1.7 & 1.1 & 0 & 0\\
+11 & 8 & 133.6 & 5.2 & 2 & 2\\
+12 & 208 & 14.8 & 1.5 & 1 & 2\\
+13 & 41,044 & 160.5 & 6.0 & 2 & 4\\
+14 & 44,868 & 133.4 & 5.2 & 2 & 2\\
+16 & 4 & 64.7 & 3.0 & 0 & 0\\
+17 & 8 & 142.4 & 5.5 & 3 & 4\\
+18 & 12 & 245.5 & 8.7 & 3 & 5\\
+19 & 4 & 0.0 & 1.0 & 0 & 0\\
+20 & 3 & 0.0 & 1.0 & 0 & 0\\
+21 & 6 & 0.0 & 1.0 & 0 & 0\\
+22 & 4 & 0.0 & 1.0 & 0 & 0\\
+23 & 3 & 0.0 & 1.0 & 0 & 0\\
+24 & 3 & 0.0 & 1.0 & 0 & 0\\
+25 & 4 & 0.0 & 1.0 & 0 & 0\\
+26 & 45,036 & 254,650.1 & 7,959.2 & 676 & 786\\
+27 & 51,617 & 265,520.0 & 8,298.9 & 332 & 448\\
+28 & 17,038 & 261,214.8 & 8,164.4 & 606 & 674\\
+29 & 52,823 & 331,439.9 & 10,359.0 & 810 & 924\\
+30 & 47,843 & 0.9 & 1.0 & 0 & 0\\
+31 & 48,496 & 1.0 & 1.0 & 0 & 0\\
+32 & 47,927 & 0.9 & 1.0 & 0 & 0\\
+33 & 48,020 & 1.0 & 1.0 & 0 & 0\\
+34 & 48,753 & 1.0 & 1.0 & 0 & 0\\
+35 & 48,602 & 1.0 & 1.0 & 0 & 0\\
+36 & 45,863 & 0.9 & 1.0 & 0 & 0\\
+37 & 46,068 & 0.9 & 1.0 & 0 & 0\\
+38 & 45,862 & 0.9 & 1.0 & 0 & 0\\
+39 & 46,872 & 0.9 & 1.0 & 0 & 0\\
+\end{longtable}}
+\subsection{Score-calibration shift with the revised controller}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{lllrrrrrl}
+\caption{Full-trace rows under offsets $0,+12,-12,0$ (clean D256 feedback).}\label{tab:s7_shift}\\
+\toprule
+Selection & Cap & Family & SR & FAR$_d$ & MFA$_b$ & Local max & Windows $>$2\% & Caps\\
+\midrule
+\endfirsthead
+\toprule
+Selection & Cap & Family & SR & FAR$_d$ & MFA$_b$ & Local max & Windows $>$2\% & Caps\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Fixed & 2 & Counter & 1.809 & 0.190 & 1.768 & 6.29 & 35.0 & Yes\\
+Adaptive (submitted) & 2 & Counter & 1.824 & 0.217 & 1.703 & 6.50 & 33.9 & Yes\\
+Adaptive (revised) & 2 & Counter & 1.822 & 0.201 & 1.688 & 6.29 & 32.8 & Yes\\
+Fixed & 2 & EMA & 1.761 & 0.088 & 1.823 & 6.44 & 35.5 & Yes\\
+Adaptive (submitted) & 2 & EMA & 1.823 & 0.154 & 1.799 & 11.33 & 33.9 & Yes\\
+Adaptive (revised) & 2 & EMA & 1.796 & 0.075 & 1.805 & 11.33 & 34.4 & Yes\\
+Fixed & 2 & Hyst. & 1.840 & 0.137 & 1.547 & 5.66 & 31.1 & Yes\\
+Adaptive (submitted) & 2 & Hyst. & 1.880 & 0.154 & 1.904 & 27.70 & 29.5 & Yes\\
+Adaptive (revised) & 2 & Hyst. & 1.865 & 0.153 & 1.911 & 27.70 & 30.6 & Yes\\
+Fixed & 2 & Single & 1.886 & 0.158 & 25.687 & 99.77 & 44.8 & \textbf{No}\\
+Adaptive (submitted) & 2 & Single & 2.033 & 0.563 & 1.112 & 4.90 & 16.4 & \textbf{No}\\
+Adaptive (revised) & 2 & Single & 1.937 & 0.275 & 11.468 & 99.43 & 29.0 & \textbf{No}\\
+Fixed & 2 & SMA & 1.752 & 0.072 & 1.858 & 6.49 & 36.6 & Yes\\
+Adaptive (submitted) & 2 & SMA & 1.829 & 0.222 & 1.925 & 22.20 & 33.3 & Yes\\
+Adaptive (revised) & 2 & SMA & 1.787 & 0.093 & 1.989 & 22.20 & 33.9 & Yes\\
+Fixed & 5 & Counter & 1.733 & 0.032 & 2.251 & 7.57 & 45.9 & Yes\\
+Adaptive (submitted) & 5 & Counter & 1.755 & 0.120 & 2.053 & 7.09 & 42.6 & Yes\\
+Adaptive (revised) & 5 & Counter & 1.751 & 0.108 & 2.139 & 7.09 & 43.2 & Yes\\
+Fixed & 5 & EMA & 1.734 & 0.000 & 26.469 & 99.77 & 60.1 & \textbf{No}\\
+Adaptive (submitted) & 5 & EMA & 1.769 & 0.051 & 2.104 & 11.33 & 41.5 & Yes\\
+Adaptive (revised) & 5 & EMA & 1.767 & 0.040 & 2.124 & 11.33 & 42.1 & Yes\\
+Fixed & 5 & Hyst. & 1.840 & 0.137 & 1.547 & 5.66 & 31.1 & Yes\\
+Adaptive (submitted) & 5 & Hyst. & 1.857 & 0.122 & 2.134 & 27.70 & 35.0 & Yes\\
+Adaptive (revised) & 5 & Hyst. & 1.855 & 0.135 & 2.119 & 27.70 & 35.0 & Yes\\
+Fixed & 5 & Single & 1.826 & 0.075 & 26.116 & 99.77 & 54.1 & \textbf{No}\\
+Adaptive (submitted) & 5 & Single & 2.017 & 0.454 & 1.154 & 4.88 & 16.9 & Yes\\
+Adaptive (revised) & 5 & Single & 1.938 & 0.226 & 10.621 & 99.43 & 30.1 & \textbf{No}\\
+Fixed & 5 & SMA & 1.735 & 0.000 & 26.352 & 99.77 & 60.7 & \textbf{No}\\
+Adaptive (submitted) & 5 & SMA & 1.768 & 0.069 & 2.196 & 22.20 & 39.9 & Yes\\
+Adaptive (revised) & 5 & SMA & 1.766 & 0.057 & 2.214 & 22.20 & 40.4 & Yes\\
+\end{longtable}}
+\noindent{\footnotesize Local values use trailing 16,384-event windows with step 4,096.}\par\medskip
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{lllrrrrl}
+\caption{Per-quarter rows (edges belong to the quarter of their later event).}\label{tab:s7_shift_q}\\
+\toprule
+Selection & Cap & Family & Quarter & SR & FAR$_d$ & MFA$_b$ & Screen\\
+\midrule
+\endfirsthead
+\toprule
+Selection & Cap & Family & Quarter & SR & FAR$_d$ & MFA$_b$ & Screen\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Fixed & 2 & Counter & 1 & 1.747 & 0.206 & 1.892 & Yes\\
+Fixed & 2 & Counter & 2 & 1.707 & 0.229 & 1.652 & Yes\\
+Fixed & 2 & Counter & 3 & 2.055 & 0.217 & 1.868 & Yes\\
+Fixed & 2 & Counter & 4 & 1.728 & 0.115 & 1.658 & Yes\\
+Adaptive (submitted) & 2 & Counter & 1 & 1.757 & 0.262 & 1.890 & Yes\\
+Adaptive (submitted) & 2 & Counter & 2 & 1.714 & 0.286 & 1.609 & Yes\\
+Adaptive (submitted) & 2 & Counter & 3 & 2.098 & 0.222 & 1.698 & Yes\\
+Adaptive (submitted) & 2 & Counter & 4 & 1.727 & 0.110 & 1.613 & Yes\\
+Adaptive (revised) & 2 & Counter & 1 & 1.772 & 0.231 & 1.857 & Yes\\
+Adaptive (revised) & 2 & Counter & 2 & 1.713 & 0.252 & 1.573 & Yes\\
+Adaptive (revised) & 2 & Counter & 3 & 2.082 & 0.228 & 1.721 & Yes\\
+Adaptive (revised) & 2 & Counter & 4 & 1.722 & 0.105 & 1.597 & Yes\\
+Fixed & 2 & EMA & 1 & 1.693 & 0.076 & 1.887 & Yes\\
+Fixed & 2 & EMA & 2 & 1.689 & 0.198 & 1.701 & Yes\\
+Fixed & 2 & EMA & 3 & 1.993 & 0.000 & 2.126 & \textbf{No}\\
+Fixed & 2 & EMA & 4 & 1.670 & 0.083 & 1.575 & Yes\\
+Adaptive (submitted) & 2 & EMA & 1 & 1.737 & 0.166 & 1.930 & Yes\\
+Adaptive (submitted) & 2 & EMA & 2 & 1.707 & 0.082 & 1.620 & Yes\\
+Adaptive (submitted) & 2 & EMA & 3 & 2.111 & 0.196 & 2.177 & \textbf{No}\\
+Adaptive (submitted) & 2 & EMA & 4 & 1.735 & 0.168 & 1.466 & Yes\\
+Adaptive (revised) & 2 & EMA & 1 & 1.728 & 0.119 & 1.781 & Yes\\
+Adaptive (revised) & 2 & EMA & 2 & 1.712 & 0.048 & 1.614 & Yes\\
+Adaptive (revised) & 2 & EMA & 3 & 2.064 & 0.050 & 2.301 & \textbf{No}\\
+Adaptive (revised) & 2 & EMA & 4 & 1.681 & 0.085 & 1.526 & Yes\\
+Fixed & 2 & Hyst. & 1 & 1.745 & 0.017 & 1.541 & Yes\\
+Fixed & 2 & Hyst. & 2 & 1.904 & 0.484 & 1.163 & Yes\\
+Fixed & 2 & Hyst. & 3 & 1.988 & 0.000 & 2.161 & \textbf{No}\\
+Fixed & 2 & Hyst. & 4 & 1.723 & 0.068 & 1.324 & Yes\\
+Adaptive (submitted) & 2 & Hyst. & 1 & 1.795 & 0.107 & 1.513 & Yes\\
+Adaptive (submitted) & 2 & Hyst. & 2 & 1.904 & 0.362 & 1.256 & Yes\\
+Adaptive (submitted) & 2 & Hyst. & 3 & 2.091 & 0.103 & 3.447 & \textbf{No}\\
+Adaptive (submitted) & 2 & Hyst. & 4 & 1.730 & 0.060 & 1.410 & Yes\\
+Adaptive (revised) & 2 & Hyst. & 1 & 1.779 & 0.059 & 1.519 & Yes\\
+Adaptive (revised) & 2 & Hyst. & 2 & 1.910 & 0.467 & 1.190 & Yes\\
+Adaptive (revised) & 2 & Hyst. & 3 & 2.059 & 0.069 & 3.507 & \textbf{No}\\
+Adaptive (revised) & 2 & Hyst. & 4 & 1.711 & 0.038 & 1.440 & Yes\\
+Fixed & 2 & Single & 1 & 1.776 & 0.014 & 1.565 & Yes\\
+Fixed & 2 & Single & 2 & 1.944 & 0.611 & 1.212 & \textbf{No}\\
+Fixed & 2 & Single & 3 & 2.002 & 0.000 & 99.045 & \textbf{No}\\
+Fixed & 2 & Single & 4 & 1.822 & 0.033 & 1.328 & Yes\\
+Adaptive (submitted) & 2 & Single & 1 & 1.842 & 0.152 & 1.461 & Yes\\
+Adaptive (submitted) & 2 & Single & 2 & 2.032 & 0.965 & 0.984 & \textbf{No}\\
+Adaptive (submitted) & 2 & Single & 3 & 2.333 & 0.752 & 0.930 & \textbf{No}\\
+Adaptive (submitted) & 2 & Single & 4 & 1.924 & 0.395 & 1.071 & Yes\\
+Adaptive (revised) & 2 & Single & 1 & 1.820 & 0.090 & 1.474 & Yes\\
+Adaptive (revised) & 2 & Single & 2 & 1.960 & 0.670 & 1.136 & \textbf{No}\\
+Adaptive (revised) & 2 & Single & 3 & 2.141 & 0.196 & 42.242 & \textbf{No}\\
+Adaptive (revised) & 2 & Single & 4 & 1.827 & 0.165 & 1.187 & Yes\\
+Fixed & 2 & SMA & 1 & 1.683 & 0.068 & 1.913 & Yes\\
+Fixed & 2 & SMA & 2 & 1.678 & 0.144 & 1.726 & Yes\\
+Fixed & 2 & SMA & 3 & 1.990 & 0.000 & 2.155 & \textbf{No}\\
+Fixed & 2 & SMA & 4 & 1.656 & 0.080 & 1.637 & Yes\\
+Adaptive (submitted) & 2 & SMA & 1 & 1.771 & 0.288 & 1.690 & Yes\\
+Adaptive (submitted) & 2 & SMA & 2 & 1.721 & 0.099 & 1.615 & Yes\\
+Adaptive (submitted) & 2 & SMA & 3 & 2.088 & 0.238 & 2.995 & \textbf{No}\\
+Adaptive (submitted) & 2 & SMA & 4 & 1.734 & 0.258 & 1.401 & Yes\\
+Adaptive (revised) & 2 & SMA & 1 & 1.724 & 0.121 & 1.788 & Yes\\
+Adaptive (revised) & 2 & SMA & 2 & 1.718 & 0.068 & 1.588 & Yes\\
+Adaptive (revised) & 2 & SMA & 3 & 2.034 & 0.034 & 3.111 & \textbf{No}\\
+Adaptive (revised) & 2 & SMA & 4 & 1.675 & 0.145 & 1.472 & Yes\\
+Fixed & 5 & Counter & 1 & 1.680 & 0.000 & 2.713 & Yes\\
+Fixed & 5 & Counter & 2 & 1.653 & 0.048 & 1.876 & Yes\\
+Fixed & 5 & Counter & 3 & 1.989 & 0.077 & 2.167 & Yes\\
+Fixed & 5 & Counter & 4 & 1.609 & 0.005 & 2.247 & Yes\\
+Adaptive (submitted) & 5 & Counter & 1 & 1.718 & 0.155 & 2.189 & Yes\\
+Adaptive (submitted) & 5 & Counter & 2 & 1.668 & 0.201 & 1.787 & Yes\\
+Adaptive (submitted) & 5 & Counter & 3 & 2.003 & 0.071 & 2.098 & Yes\\
+Adaptive (submitted) & 5 & Counter & 4 & 1.631 & 0.065 & 2.141 & Yes\\
+Adaptive (revised) & 5 & Counter & 1 & 1.707 & 0.107 & 2.518 & Yes\\
+Adaptive (revised) & 5 & Counter & 2 & 1.666 & 0.201 & 1.794 & Yes\\
+Adaptive (revised) & 5 & Counter & 3 & 2.003 & 0.071 & 2.098 & Yes\\
+Adaptive (revised) & 5 & Counter & 4 & 1.628 & 0.060 & 2.144 & Yes\\
+Fixed & 5 & EMA & 1 & 1.670 & 0.000 & 2.206 & Yes\\
+Fixed & 5 & EMA & 2 & 1.652 & 0.000 & 1.814 & Yes\\
+Fixed & 5 & EMA & 3 & 1.998 & 0.000 & 98.717 & \textbf{No}\\
+Fixed & 5 & EMA & 4 & 1.617 & 0.000 & 3.565 & Yes\\
+Adaptive (submitted) & 5 & EMA & 1 & 1.696 & 0.076 & 2.071 & Yes\\
+Adaptive (submitted) & 5 & EMA & 2 & 1.662 & 0.011 & 1.799 & Yes\\
+Adaptive (submitted) & 5 & EMA & 3 & 2.067 & 0.045 & 2.512 & Yes\\
+Adaptive (submitted) & 5 & EMA & 4 & 1.649 & 0.070 & 2.039 & Yes\\
+Adaptive (revised) & 5 & EMA & 1 & 1.681 & 0.028 & 2.082 & Yes\\
+Adaptive (revised) & 5 & EMA & 2 & 1.662 & 0.011 & 1.799 & Yes\\
+Adaptive (revised) & 5 & EMA & 3 & 2.067 & 0.045 & 2.512 & Yes\\
+Adaptive (revised) & 5 & EMA & 4 & 1.657 & 0.070 & 2.110 & Yes\\
+Fixed & 5 & Hyst. & 1 & 1.745 & 0.017 & 1.541 & Yes\\
+Fixed & 5 & Hyst. & 2 & 1.904 & 0.484 & 1.163 & Yes\\
+Fixed & 5 & Hyst. & 3 & 1.988 & 0.000 & 2.161 & Yes\\
+Fixed & 5 & Hyst. & 4 & 1.723 & 0.068 & 1.324 & Yes\\
+Adaptive (submitted) & 5 & Hyst. & 1 & 1.782 & 0.071 & 1.563 & Yes\\
+Adaptive (submitted) & 5 & Hyst. & 2 & 1.904 & 0.362 & 1.256 & Yes\\
+Adaptive (submitted) & 5 & Hyst. & 3 & 2.048 & 0.061 & 3.889 & Yes\\
+Adaptive (submitted) & 5 & Hyst. & 4 & 1.696 & 0.013 & 1.846 & Yes\\
+Adaptive (revised) & 5 & Hyst. & 1 & 1.767 & 0.023 & 1.568 & Yes\\
+Adaptive (revised) & 5 & Hyst. & 2 & 1.910 & 0.467 & 1.190 & Yes\\
+Adaptive (revised) & 5 & Hyst. & 3 & 2.048 & 0.061 & 3.889 & Yes\\
+Adaptive (revised) & 5 & Hyst. & 4 & 1.696 & 0.013 & 1.846 & Yes\\
+Fixed & 5 & Single & 1 & 1.724 & 0.000 & 2.263 & Yes\\
+Fixed & 5 & Single & 2 & 1.912 & 0.317 & 1.274 & Yes\\
+Fixed & 5 & Single & 3 & 2.002 & 0.000 & 99.045 & \textbf{No}\\
+Fixed & 5 & Single & 4 & 1.665 & 0.000 & 2.290 & Yes\\
+Adaptive (submitted) & 5 & Single & 1 & 1.837 & 0.150 & 1.477 & Yes\\
+Adaptive (submitted) & 5 & Single & 2 & 2.032 & 0.965 & 0.984 & \textbf{No}\\
+Adaptive (submitted) & 5 & Single & 3 & 2.310 & 0.442 & 1.019 & Yes\\
+Adaptive (submitted) & 5 & Single & 4 & 1.891 & 0.283 & 1.133 & Yes\\
+Adaptive (revised) & 5 & Single & 1 & 1.821 & 0.087 & 1.502 & Yes\\
+Adaptive (revised) & 5 & Single & 2 & 1.930 & 0.407 & 1.177 & Yes\\
+Adaptive (revised) & 5 & Single & 3 & 2.176 & 0.193 & 38.646 & \textbf{No}\\
+Adaptive (revised) & 5 & Single & 4 & 1.824 & 0.220 & 1.314 & Yes\\
+Fixed & 5 & SMA & 1 & 1.670 & 0.000 & 2.148 & Yes\\
+Fixed & 5 & SMA & 2 & 1.652 & 0.000 & 1.837 & Yes\\
+Fixed & 5 & SMA & 3 & 2.002 & 0.000 & 98.995 & \textbf{No}\\
+Fixed & 5 & SMA & 4 & 1.617 & 0.000 & 2.841 & Yes\\
+Adaptive (submitted) & 5 & SMA & 1 & 1.704 & 0.079 & 1.904 & Yes\\
+Adaptive (submitted) & 5 & SMA & 2 & 1.678 & 0.037 & 1.789 & Yes\\
+Adaptive (submitted) & 5 & SMA & 3 & 2.024 & 0.019 & 3.261 & Yes\\
+Adaptive (submitted) & 5 & SMA & 4 & 1.666 & 0.135 & 1.837 & Yes\\
+Adaptive (revised) & 5 & SMA & 1 & 1.690 & 0.031 & 1.909 & Yes\\
+Adaptive (revised) & 5 & SMA & 2 & 1.678 & 0.037 & 1.789 & Yes\\
+Adaptive (revised) & 5 & SMA & 3 & 2.024 & 0.019 & 3.261 & Yes\\
+Adaptive (revised) & 5 & SMA & 4 & 1.672 & 0.133 & 1.904 & Yes\\
+\end{longtable}}
+\subsection{Local benign-MFA burden in the primary replay}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{llrrrrr}
+\caption{Benign MFA in trailing 16,384-event windows (step 4,096).}\label{tab:s7_local}\\
+\toprule
+Setting & Policy & Windows & Global & p95 & Max & Windows $>$2\%\\
+\midrule
+\endfirsthead
+\toprule
+Setting & Policy & Windows & Global & p95 & Max & Windows $>$2\%\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Primary & fixed hysteresis & 183 & 1.42 & 3.38 & 4.74 & 26.8\\
+Primary & adaptive hysteresis (clean D256) & 183 & 1.44 & 3.41 & 4.78 & 28.4\\
+Primary & fixed sma & 183 & 1.80 & 4.72 & 6.49 & 37.2\\
+Primary & adaptive sma (clean D256) & 183 & 1.53 & 4.19 & 5.65 & 29.5\\
+Primary & base & 183 & 0.93 & 2.37 & 3.30 & 7.1\\
+Score shift & fixed hysteresis & 183 & 1.55 & 4.14 & 5.66 & 31.1\\
+Score shift & adaptive hysteresis & 183 & 1.90 & 4.17 & 27.70 & 29.5\\
+Score shift & fixed sma & 183 & 1.86 & 4.82 & 6.49 & 36.6\\
+Score shift & adaptive sma & 183 & 1.93 & 4.64 & 22.20 & 33.3\\
+\end{longtable}}
+\noindent{\footnotesize The score-shift rows in this table use the submitted adaptive controller; Table~\ref{tab:s7_shift} gives the revised one.}\par\medskip
+\subsection{Per-layer timing of the adaptive controller}
+{\footnotesize\setlength{\tabcolsep}{4pt}
+\begin{longtable}{lr}
+\caption{Python 3.13.6, NumPy 2.3.2, Windows-11-10.0.26200-SP0.}\label{tab:s7_timing}\\
+\toprule
+Layer & Time\\
+\midrule
+\endfirsthead
+\toprule
+Layer & Time\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+Per-event decision, selected pair (p50/p95/p99) & 0.5/0.9/1.3 \textmu s\\
+50 hysteresis shadow states per event, NumPy (p50/p95/p99) & 5.1/8.3/11.7 \textmu s\\
+250 shadow candidates, compiled, amortized per event & 0.20 \textmu s\\
+Window metrics, 250 candidates, per update & 13.8 ms\\
+GP-LCB, 5 families $\times$ 3 caps, per update & 122 ms\\
+Exhaustive 50, 5 families $\times$ 3 caps, per update & 0.66 ms\\
+Update interval & 4,096 events\\
+\end{longtable}}

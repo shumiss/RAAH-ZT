@@ -1,0 +1,3166 @@
+{
+  "date": "2026-10-08",
+  "status": "FROZEN_BEFORE_THIS_REPLAY_BUT_AFTER_PRIOR_TEST_INSPECTION",
+  "evidence_class": "Exploratory reconstruction on a previously inspected UNSW test period; not independent confirmation or authenticated-principal outcomes.",
+  "inputs": {
+    "validation": {
+      "path": "data/validation_timeline.npz",
+      "bytes": 695013,
+      "sha256": "ac0579713cae9cb01ea21b08af505fd6e70ddbe3080aa2eff160e3302df934a6"
+    },
+    "test": {
+      "path": "data/test_timeline.npz",
+      "bytes": 2065293,
+      "sha256": "a08eeea9b7a50e0ff66f5da7d41667565f552382b8a8f7492a059ab82fce005f"
+    }
+  },
+  "runner_sha256": "67c0bb39c41430b12025498ff28b32f276fa70a6c19c0c2946a0a87b876dd695",
+  "source_policy": "Safe fusion: preserve Deny and MFA; only proposed Allow may become pending MFA; no factor success or resource delivery inferred.",
+  "event_order": "Within each source-IP proxy, (observed start-second, original row ID); global feedback replay uses (start-second, row ID). Reset every method at validation/test boundary; exact-second order is an explicit proxy convention.",
+  "candidate_bank": [
+    {
+      "id": "hysteresis_00",
+      "family": "hysteresis",
+      "family_index": 0,
+      "parameters": {
+        "low": 0.0,
+        "high": 100.0
+      },
+      "coordinate": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "id": "hysteresis_01",
+      "family": "hysteresis",
+      "family_index": 1,
+      "parameters": {
+        "low": 24.975,
+        "high": 75.27475
+      },
+      "coordinate": [
+        0.24975000000000003,
+        0.7527475
+      ]
+    },
+    {
+      "id": "hysteresis_02",
+      "family": "hysteresis",
+      "family_index": 2,
+      "parameters": {
+        "low": 39.96,
+        "high": 60.03998
+      },
+      "coordinate": [
+        0.3996,
+        0.6003998
+      ]
+    },
+    {
+      "id": "hysteresis_03",
+      "family": "hysteresis",
+      "family_index": 3,
+      "parameters": {
+        "low": 79.92,
+        "high": 95.005
+      },
+      "coordinate": [
+        0.7992,
+        0.95005
+      ]
+    },
+    {
+      "id": "hysteresis_04",
+      "family": "hysteresis",
+      "family_index": 4,
+      "parameters": {
+        "low": 54.020629,
+        "high": 54.149935
+      },
+      "coordinate": [
+        0.54020629,
+        0.54149935
+      ]
+    },
+    {
+      "id": "hysteresis_05",
+      "family": "hysteresis",
+      "family_index": 5,
+      "parameters": {
+        "low": 45.625202,
+        "high": 81.833738
+      },
+      "coordinate": [
+        0.45625202000000004,
+        0.81833738
+      ]
+    },
+    {
+      "id": "hysteresis_06",
+      "family": "hysteresis",
+      "family_index": 6,
+      "parameters": {
+        "low": 15.719015,
+        "high": 35.74945
+      },
+      "coordinate": [
+        0.15719015,
+        0.35749450000000005
+      ]
+    },
+    {
+      "id": "hysteresis_07",
+      "family": "hysteresis",
+      "family_index": 7,
+      "parameters": {
+        "low": 88.310042,
+        "high": 95.167552
+      },
+      "coordinate": [
+        0.88310042,
+        0.95167552
+      ]
+    },
+    {
+      "id": "hysteresis_08",
+      "family": "hysteresis",
+      "family_index": 8,
+      "parameters": {
+        "low": 91.349435,
+        "high": 92.046347
+      },
+      "coordinate": [
+        0.91349435,
+        0.92046347
+      ]
+    },
+    {
+      "id": "hysteresis_09",
+      "family": "hysteresis",
+      "family_index": 9,
+      "parameters": {
+        "low": 13.13866,
+        "high": 78.266554
+      },
+      "coordinate": [
+        0.1313866,
+        0.78266554
+      ]
+    },
+    {
+      "id": "hysteresis_10",
+      "family": "hysteresis",
+      "family_index": 10,
+      "parameters": {
+        "low": 96.901813,
+        "high": 98.36445
+      },
+      "coordinate": [
+        0.96901813,
+        0.9836445
+      ]
+    },
+    {
+      "id": "hysteresis_11",
+      "family": "hysteresis",
+      "family_index": 11,
+      "parameters": {
+        "low": 68.82215,
+        "high": 80.917286
+      },
+      "coordinate": [
+        0.6882214999999999,
+        0.80917286
+      ]
+    },
+    {
+      "id": "hysteresis_12",
+      "family": "hysteresis",
+      "family_index": 12,
+      "parameters": {
+        "low": 27.152342,
+        "high": 61.948134
+      },
+      "coordinate": [
+        0.27152342,
+        0.61948134
+      ]
+    },
+    {
+      "id": "hysteresis_13",
+      "family": "hysteresis",
+      "family_index": 13,
+      "parameters": {
+        "low": 61.534571,
+        "high": 67.809749
+      },
+      "coordinate": [
+        0.61534571,
+        0.67809749
+      ]
+    },
+    {
+      "id": "hysteresis_14",
+      "family": "hysteresis",
+      "family_index": 14,
+      "parameters": {
+        "low": 9.869186,
+        "high": 18.089431
+      },
+      "coordinate": [
+        0.09869185999999999,
+        0.18089431
+      ]
+    },
+    {
+      "id": "hysteresis_15",
+      "family": "hysteresis",
+      "family_index": 15,
+      "parameters": {
+        "low": 19.321324,
+        "high": 61.129929
+      },
+      "coordinate": [
+        0.19321324,
+        0.6112992899999999
+      ]
+    },
+    {
+      "id": "hysteresis_16",
+      "family": "hysteresis",
+      "family_index": 16,
+      "parameters": {
+        "low": 24.873517,
+        "high": 39.558629
+      },
+      "coordinate": [
+        0.24873517,
+        0.39558629
+      ]
+    },
+    {
+      "id": "hysteresis_17",
+      "family": "hysteresis",
+      "family_index": 17,
+      "parameters": {
+        "low": 8.211638,
+        "high": 32.679771
+      },
+      "coordinate": [
+        0.08211638,
+        0.32679771
+      ]
+    },
+    {
+      "id": "hysteresis_18",
+      "family": "hysteresis",
+      "family_index": 18,
+      "parameters": {
+        "low": 19.5621,
+        "high": 91.783822
+      },
+      "coordinate": [
+        0.19562100000000002,
+        0.91783822
+      ]
+    },
+    {
+      "id": "hysteresis_19",
+      "family": "hysteresis",
+      "family_index": 19,
+      "parameters": {
+        "low": 28.977487,
+        "high": 53.475828
+      },
+      "coordinate": [
+        0.28977487,
+        0.53475828
+      ]
+    },
+    {
+      "id": "hysteresis_20",
+      "family": "hysteresis",
+      "family_index": 20,
+      "parameters": {
+        "low": 22.5794,
+        "high": 27.464769
+      },
+      "coordinate": [
+        0.225794,
+        0.27464769
+      ]
+    },
+    {
+      "id": "hysteresis_21",
+      "family": "hysteresis",
+      "family_index": 21,
+      "parameters": {
+        "low": 76.503577,
+        "high": 81.211774
+      },
+      "coordinate": [
+        0.7650357700000001,
+        0.81211774
+      ]
+    },
+    {
+      "id": "hysteresis_22",
+      "family": "hysteresis",
+      "family_index": 22,
+      "parameters": {
+        "low": 80.824276,
+        "high": 94.340761
+      },
+      "coordinate": [
+        0.80824276,
+        0.94340761
+      ]
+    },
+    {
+      "id": "hysteresis_23",
+      "family": "hysteresis",
+      "family_index": 23,
+      "parameters": {
+        "low": 43.998274,
+        "high": 67.770984
+      },
+      "coordinate": [
+        0.43998274000000004,
+        0.67770984
+      ]
+    },
+    {
+      "id": "hysteresis_24",
+      "family": "hysteresis",
+      "family_index": 24,
+      "parameters": {
+        "low": 85.389839,
+        "high": 85.946287
+      },
+      "coordinate": [
+        0.8538983899999999,
+        0.85946287
+      ]
+    },
+    {
+      "id": "hysteresis_25",
+      "family": "hysteresis",
+      "family_index": 25,
+      "parameters": {
+        "low": 43.007079,
+        "high": 84.449992
+      },
+      "coordinate": [
+        0.43007079,
+        0.84449992
+      ]
+    },
+    {
+      "id": "hysteresis_26",
+      "family": "hysteresis",
+      "family_index": 26,
+      "parameters": {
+        "low": 63.879384,
+        "high": 92.366667
+      },
+      "coordinate": [
+        0.6387938400000001,
+        0.92366667
+      ]
+    },
+    {
+      "id": "hysteresis_27",
+      "family": "hysteresis",
+      "family_index": 27,
+      "parameters": {
+        "low": 66.832986,
+        "high": 98.831311
+      },
+      "coordinate": [
+        0.66832986,
+        0.98831311
+      ]
+    },
+    {
+      "id": "hysteresis_28",
+      "family": "hysteresis",
+      "family_index": 28,
+      "parameters": {
+        "low": 71.675493,
+        "high": 75.88969
+      },
+      "coordinate": [
+        0.71675493,
+        0.7588969
+      ]
+    },
+    {
+      "id": "hysteresis_29",
+      "family": "hysteresis",
+      "family_index": 29,
+      "parameters": {
+        "low": 78.932864,
+        "high": 93.57378
+      },
+      "coordinate": [
+        0.7893286399999999,
+        0.9357378
+      ]
+    },
+    {
+      "id": "hysteresis_30",
+      "family": "hysteresis",
+      "family_index": 30,
+      "parameters": {
+        "low": 75.963849,
+        "high": 94.572682
+      },
+      "coordinate": [
+        0.7596384899999999,
+        0.94572682
+      ]
+    },
+    {
+      "id": "hysteresis_31",
+      "family": "hysteresis",
+      "family_index": 31,
+      "parameters": {
+        "low": 12.49951,
+        "high": 88.96986
+      },
+      "coordinate": [
+        0.12499510000000001,
+        0.8896986
+      ]
+    },
+    {
+      "id": "hysteresis_32",
+      "family": "hysteresis",
+      "family_index": 32,
+      "parameters": {
+        "low": 33.836555,
+        "high": 66.855703
+      },
+      "coordinate": [
+        0.33836554999999996,
+        0.6685570300000001
+      ]
+    },
+    {
+      "id": "hysteresis_33",
+      "family": "hysteresis",
+      "family_index": 33,
+      "parameters": {
+        "low": 70.918528,
+        "high": 78.553928
+      },
+      "coordinate": [
+        0.7091852799999999,
+        0.78553928
+      ]
+    },
+    {
+      "id": "hysteresis_34",
+      "family": "hysteresis",
+      "family_index": 34,
+      "parameters": {
+        "low": 84.359705,
+        "high": 97.458049
+      },
+      "coordinate": [
+        0.8435970500000001,
+        0.97458049
+      ]
+    },
+    {
+      "id": "hysteresis_35",
+      "family": "hysteresis",
+      "family_index": 35,
+      "parameters": {
+        "low": 89.056839,
+        "high": 99.456765
+      },
+      "coordinate": [
+        0.89056839,
+        0.99456765
+      ]
+    },
+    {
+      "id": "hysteresis_36",
+      "family": "hysteresis",
+      "family_index": 36,
+      "parameters": {
+        "low": 51.883744,
+        "high": 65.953176
+      },
+      "coordinate": [
+        0.51883744,
+        0.65953176
+      ]
+    },
+    {
+      "id": "hysteresis_37",
+      "family": "hysteresis",
+      "family_index": 37,
+      "parameters": {
+        "low": 59.993075,
+        "high": 64.816393
+      },
+      "coordinate": [
+        0.59993075,
+        0.64816393
+      ]
+    },
+    {
+      "id": "hysteresis_38",
+      "family": "hysteresis",
+      "family_index": 38,
+      "parameters": {
+        "low": 30.432006,
+        "high": 95.27087
+      },
+      "coordinate": [
+        0.30432006,
+        0.9527087000000001
+      ]
+    },
+    {
+      "id": "hysteresis_39",
+      "family": "hysteresis",
+      "family_index": 39,
+      "parameters": {
+        "low": 55.217681,
+        "high": 94.110668
+      },
+      "coordinate": [
+        0.55217681,
+        0.9411066800000001
+      ]
+    },
+    {
+      "id": "hysteresis_40",
+      "family": "hysteresis",
+      "family_index": 40,
+      "parameters": {
+        "low": 1.59234,
+        "high": 32.059983
+      },
+      "coordinate": [
+        0.0159234,
+        0.32059983000000003
+      ]
+    },
+    {
+      "id": "hysteresis_41",
+      "family": "hysteresis",
+      "family_index": 41,
+      "parameters": {
+        "low": 40.938137,
+        "high": 79.098762
+      },
+      "coordinate": [
+        0.40938136999999997,
+        0.7909876199999999
+      ]
+    },
+    {
+      "id": "hysteresis_42",
+      "family": "hysteresis",
+      "family_index": 42,
+      "parameters": {
+        "low": 94.493199,
+        "high": 96.822
+      },
+      "coordinate": [
+        0.94493199,
+        0.9682200000000001
+      ]
+    },
+    {
+      "id": "hysteresis_43",
+      "family": "hysteresis",
+      "family_index": 43,
+      "parameters": {
+        "low": 2.211586,
+        "high": 98.230464
+      },
+      "coordinate": [
+        0.02211586,
+        0.98230464
+      ]
+    },
+    {
+      "id": "hysteresis_44",
+      "family": "hysteresis",
+      "family_index": 44,
+      "parameters": {
+        "low": 99.704709,
+        "high": 99.873383
+      },
+      "coordinate": [
+        0.9970470899999999,
+        0.99873383
+      ]
+    },
+    {
+      "id": "hysteresis_45",
+      "family": "hysteresis",
+      "family_index": 45,
+      "parameters": {
+        "low": 49.592068,
+        "high": 77.505436
+      },
+      "coordinate": [
+        0.49592068,
+        0.77505436
+      ]
+    },
+    {
+      "id": "hysteresis_46",
+      "family": "hysteresis",
+      "family_index": 46,
+      "parameters": {
+        "low": 5.095212,
+        "high": 62.768853
+      },
+      "coordinate": [
+        0.050952120000000004,
+        0.62768853
+      ]
+    },
+    {
+      "id": "hysteresis_47",
+      "family": "hysteresis",
+      "family_index": 47,
+      "parameters": {
+        "low": 38.37524,
+        "high": 77.018345
+      },
+      "coordinate": [
+        0.3837524,
+        0.77018345
+      ]
+    },
+    {
+      "id": "hysteresis_48",
+      "family": "hysteresis",
+      "family_index": 48,
+      "parameters": {
+        "low": 58.596769,
+        "high": 80.473037
+      },
+      "coordinate": [
+        0.58596769,
+        0.80473037
+      ]
+    },
+    {
+      "id": "hysteresis_49",
+      "family": "hysteresis",
+      "family_index": 49,
+      "parameters": {
+        "low": 36.784997,
+        "high": 88.81846
+      },
+      "coordinate": [
+        0.36784996999999997,
+        0.8881846
+      ]
+    },
+    {
+      "id": "single_00",
+      "family": "single",
+      "family_index": 0,
+      "parameters": {
+        "threshold": 0.0
+      },
+      "coordinate": [
+        0.0
+      ]
+    },
+    {
+      "id": "single_01",
+      "family": "single",
+      "family_index": 1,
+      "parameters": {
+        "threshold": 50.0
+      },
+      "coordinate": [
+        0.5
+      ]
+    },
+    {
+      "id": "single_02",
+      "family": "single",
+      "family_index": 2,
+      "parameters": {
+        "threshold": 90.0
+      },
+      "coordinate": [
+        0.9
+      ]
+    },
+    {
+      "id": "single_03",
+      "family": "single",
+      "family_index": 3,
+      "parameters": {
+        "threshold": 100.0
+      },
+      "coordinate": [
+        1.0
+      ]
+    },
+    {
+      "id": "single_04",
+      "family": "single",
+      "family_index": 4,
+      "parameters": {
+        "threshold": 16.363255
+      },
+      "coordinate": [
+        0.16363255
+      ]
+    },
+    {
+      "id": "single_05",
+      "family": "single",
+      "family_index": 5,
+      "parameters": {
+        "threshold": 11.701389
+      },
+      "coordinate": [
+        0.11701389000000001
+      ]
+    },
+    {
+      "id": "single_06",
+      "family": "single",
+      "family_index": 6,
+      "parameters": {
+        "threshold": 21.843081
+      },
+      "coordinate": [
+        0.21843081
+      ]
+    },
+    {
+      "id": "single_07",
+      "family": "single",
+      "family_index": 7,
+      "parameters": {
+        "threshold": 17.536704
+      },
+      "coordinate": [
+        0.17536704
+      ]
+    },
+    {
+      "id": "single_08",
+      "family": "single",
+      "family_index": 8,
+      "parameters": {
+        "threshold": 71.391953
+      },
+      "coordinate": [
+        0.71391953
+      ]
+    },
+    {
+      "id": "single_09",
+      "family": "single",
+      "family_index": 9,
+      "parameters": {
+        "threshold": 28.918504
+      },
+      "coordinate": [
+        0.28918504
+      ]
+    },
+    {
+      "id": "single_10",
+      "family": "single",
+      "family_index": 10,
+      "parameters": {
+        "threshold": 63.724847
+      },
+      "coordinate": [
+        0.63724847
+      ]
+    },
+    {
+      "id": "single_11",
+      "family": "single",
+      "family_index": 11,
+      "parameters": {
+        "threshold": 14.492108
+      },
+      "coordinate": [
+        0.14492108
+      ]
+    },
+    {
+      "id": "single_12",
+      "family": "single",
+      "family_index": 12,
+      "parameters": {
+        "threshold": 72.075909
+      },
+      "coordinate": [
+        0.7207590899999999
+      ]
+    },
+    {
+      "id": "single_13",
+      "family": "single",
+      "family_index": 13,
+      "parameters": {
+        "threshold": 66.075531
+      },
+      "coordinate": [
+        0.66075531
+      ]
+    },
+    {
+      "id": "single_14",
+      "family": "single",
+      "family_index": 14,
+      "parameters": {
+        "threshold": 83.280372
+      },
+      "coordinate": [
+        0.83280372
+      ]
+    },
+    {
+      "id": "single_15",
+      "family": "single",
+      "family_index": 15,
+      "parameters": {
+        "threshold": 89.225476
+      },
+      "coordinate": [
+        0.89225476
+      ]
+    },
+    {
+      "id": "single_16",
+      "family": "single",
+      "family_index": 16,
+      "parameters": {
+        "threshold": 86.1168
+      },
+      "coordinate": [
+        0.8611679999999999
+      ]
+    },
+    {
+      "id": "single_17",
+      "family": "single",
+      "family_index": 17,
+      "parameters": {
+        "threshold": 3.617563
+      },
+      "coordinate": [
+        0.03617563
+      ]
+    },
+    {
+      "id": "single_18",
+      "family": "single",
+      "family_index": 18,
+      "parameters": {
+        "threshold": 52.729888
+      },
+      "coordinate": [
+        0.52729888
+      ]
+    },
+    {
+      "id": "single_19",
+      "family": "single",
+      "family_index": 19,
+      "parameters": {
+        "threshold": 46.006775
+      },
+      "coordinate": [
+        0.46006775
+      ]
+    },
+    {
+      "id": "single_20",
+      "family": "single",
+      "family_index": 20,
+      "parameters": {
+        "threshold": 35.583867
+      },
+      "coordinate": [
+        0.35583866999999997
+      ]
+    },
+    {
+      "id": "single_21",
+      "family": "single",
+      "family_index": 21,
+      "parameters": {
+        "threshold": 99.982527
+      },
+      "coordinate": [
+        0.9998252700000001
+      ]
+    },
+    {
+      "id": "single_22",
+      "family": "single",
+      "family_index": 22,
+      "parameters": {
+        "threshold": 51.229052
+      },
+      "coordinate": [
+        0.5122905200000001
+      ]
+    },
+    {
+      "id": "single_23",
+      "family": "single",
+      "family_index": 23,
+      "parameters": {
+        "threshold": 81.444858
+      },
+      "coordinate": [
+        0.81444858
+      ]
+    },
+    {
+      "id": "single_24",
+      "family": "single",
+      "family_index": 24,
+      "parameters": {
+        "threshold": 55.283667
+      },
+      "coordinate": [
+        0.55283667
+      ]
+    },
+    {
+      "id": "single_25",
+      "family": "single",
+      "family_index": 25,
+      "parameters": {
+        "threshold": 49.2985
+      },
+      "coordinate": [
+        0.49298499999999995
+      ]
+    },
+    {
+      "id": "single_26",
+      "family": "single",
+      "family_index": 26,
+      "parameters": {
+        "threshold": 94.251156
+      },
+      "coordinate": [
+        0.9425115599999999
+      ]
+    },
+    {
+      "id": "single_27",
+      "family": "single",
+      "family_index": 27,
+      "parameters": {
+        "threshold": 32.796648
+      },
+      "coordinate": [
+        0.32796647999999995
+      ]
+    },
+    {
+      "id": "single_28",
+      "family": "single",
+      "family_index": 28,
+      "parameters": {
+        "threshold": 97.798074
+      },
+      "coordinate": [
+        0.97798074
+      ]
+    },
+    {
+      "id": "single_29",
+      "family": "single",
+      "family_index": 29,
+      "parameters": {
+        "threshold": 28.095806
+      },
+      "coordinate": [
+        0.28095806
+      ]
+    },
+    {
+      "id": "single_30",
+      "family": "single",
+      "family_index": 30,
+      "parameters": {
+        "threshold": 60.163572
+      },
+      "coordinate": [
+        0.60163572
+      ]
+    },
+    {
+      "id": "single_31",
+      "family": "single",
+      "family_index": 31,
+      "parameters": {
+        "threshold": 38.775722
+      },
+      "coordinate": [
+        0.38775722
+      ]
+    },
+    {
+      "id": "single_32",
+      "family": "single",
+      "family_index": 32,
+      "parameters": {
+        "threshold": 5.329753
+      },
+      "coordinate": [
+        0.05329753
+      ]
+    },
+    {
+      "id": "single_33",
+      "family": "single",
+      "family_index": 33,
+      "parameters": {
+        "threshold": 21.254212
+      },
+      "coordinate": [
+        0.21254212
+      ]
+    },
+    {
+      "id": "single_34",
+      "family": "single",
+      "family_index": 34,
+      "parameters": {
+        "threshold": 67.95072
+      },
+      "coordinate": [
+        0.6795072000000001
+      ]
+    },
+    {
+      "id": "single_35",
+      "family": "single",
+      "family_index": 35,
+      "parameters": {
+        "threshold": 42.368057
+      },
+      "coordinate": [
+        0.42368057
+      ]
+    },
+    {
+      "id": "single_36",
+      "family": "single",
+      "family_index": 36,
+      "parameters": {
+        "threshold": 7.59561
+      },
+      "coordinate": [
+        0.0759561
+      ]
+    },
+    {
+      "id": "single_37",
+      "family": "single",
+      "family_index": 37,
+      "parameters": {
+        "threshold": 56.561318
+      },
+      "coordinate": [
+        0.56561318
+      ]
+    },
+    {
+      "id": "single_38",
+      "family": "single",
+      "family_index": 38,
+      "parameters": {
+        "threshold": 2.006369
+      },
+      "coordinate": [
+        0.02006369
+      ]
+    },
+    {
+      "id": "single_39",
+      "family": "single",
+      "family_index": 39,
+      "parameters": {
+        "threshold": 30.813421
+      },
+      "coordinate": [
+        0.30813421
+      ]
+    },
+    {
+      "id": "single_40",
+      "family": "single",
+      "family_index": 40,
+      "parameters": {
+        "threshold": 77.668352
+      },
+      "coordinate": [
+        0.77668352
+      ]
+    },
+    {
+      "id": "single_41",
+      "family": "single",
+      "family_index": 41,
+      "parameters": {
+        "threshold": 74.086015
+      },
+      "coordinate": [
+        0.74086015
+      ]
+    },
+    {
+      "id": "single_42",
+      "family": "single",
+      "family_index": 42,
+      "parameters": {
+        "threshold": 9.539662
+      },
+      "coordinate": [
+        0.09539662
+      ]
+    },
+    {
+      "id": "single_43",
+      "family": "single",
+      "family_index": 43,
+      "parameters": {
+        "threshold": 43.829443
+      },
+      "coordinate": [
+        0.43829442999999996
+      ]
+    },
+    {
+      "id": "single_44",
+      "family": "single",
+      "family_index": 44,
+      "parameters": {
+        "threshold": 78.53577
+      },
+      "coordinate": [
+        0.7853577
+      ]
+    },
+    {
+      "id": "single_45",
+      "family": "single",
+      "family_index": 45,
+      "parameters": {
+        "threshold": 87.299609
+      },
+      "coordinate": [
+        0.87299609
+      ]
+    },
+    {
+      "id": "single_46",
+      "family": "single",
+      "family_index": 46,
+      "parameters": {
+        "threshold": 92.163252
+      },
+      "coordinate": [
+        0.92163252
+      ]
+    },
+    {
+      "id": "single_47",
+      "family": "single",
+      "family_index": 47,
+      "parameters": {
+        "threshold": 25.166024
+      },
+      "coordinate": [
+        0.25166024
+      ]
+    },
+    {
+      "id": "single_48",
+      "family": "single",
+      "family_index": 48,
+      "parameters": {
+        "threshold": 62.122208
+      },
+      "coordinate": [
+        0.62122208
+      ]
+    },
+    {
+      "id": "single_49",
+      "family": "single",
+      "family_index": 49,
+      "parameters": {
+        "threshold": 39.67359
+      },
+      "coordinate": [
+        0.3967359
+      ]
+    },
+    {
+      "id": "sma_00",
+      "family": "sma",
+      "family_index": 0,
+      "parameters": {
+        "threshold": 50.0,
+        "window": 1
+      },
+      "coordinate": [
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "id": "sma_01",
+      "family": "sma",
+      "family_index": 1,
+      "parameters": {
+        "threshold": 50.0,
+        "window": 15
+      },
+      "coordinate": [
+        0.5,
+        0.2222222222222222
+      ]
+    },
+    {
+      "id": "sma_02",
+      "family": "sma",
+      "family_index": 2,
+      "parameters": {
+        "threshold": 75.0,
+        "window": 15
+      },
+      "coordinate": [
+        0.75,
+        0.2222222222222222
+      ]
+    },
+    {
+      "id": "sma_03",
+      "family": "sma",
+      "family_index": 3,
+      "parameters": {
+        "threshold": 90.0,
+        "window": 64
+      },
+      "coordinate": [
+        0.9,
+        1.0
+      ]
+    },
+    {
+      "id": "sma_04",
+      "family": "sma",
+      "family_index": 4,
+      "parameters": {
+        "threshold": 65.495244,
+        "window": 6
+      },
+      "coordinate": [
+        0.65495244,
+        0.07936507936507936
+      ]
+    },
+    {
+      "id": "sma_05",
+      "family": "sma",
+      "family_index": 5,
+      "parameters": {
+        "threshold": 41.239986,
+        "window": 4
+      },
+      "coordinate": [
+        0.41239986,
+        0.047619047619047616
+      ]
+    },
+    {
+      "id": "sma_06",
+      "family": "sma",
+      "family_index": 6,
+      "parameters": {
+        "threshold": 54.91806,
+        "window": 39
+      },
+      "coordinate": [
+        0.5491806,
+        0.6031746031746031
+      ]
+    },
+    {
+      "id": "sma_07",
+      "family": "sma",
+      "family_index": 7,
+      "parameters": {
+        "threshold": 44.887125,
+        "window": 17
+      },
+      "coordinate": [
+        0.44887125,
+        0.25396825396825395
+      ]
+    },
+    {
+      "id": "sma_08",
+      "family": "sma",
+      "family_index": 8,
+      "parameters": {
+        "threshold": 73.176016,
+        "window": 61
+      },
+      "coordinate": [
+        0.73176016,
+        0.9523809523809523
+      ]
+    },
+    {
+      "id": "sma_09",
+      "family": "sma",
+      "family_index": 9,
+      "parameters": {
+        "threshold": 79.656123,
+        "window": 19
+      },
+      "coordinate": [
+        0.7965612299999999,
+        0.2857142857142857
+      ]
+    },
+    {
+      "id": "sma_10",
+      "family": "sma",
+      "family_index": 10,
+      "parameters": {
+        "threshold": 82.584372,
+        "window": 46
+      },
+      "coordinate": [
+        0.8258437200000001,
+        0.7142857142857143
+      ]
+    },
+    {
+      "id": "sma_11",
+      "family": "sma",
+      "family_index": 11,
+      "parameters": {
+        "threshold": 31.156254,
+        "window": 25
+      },
+      "coordinate": [
+        0.31156254,
+        0.38095238095238093
+      ]
+    },
+    {
+      "id": "sma_12",
+      "family": "sma",
+      "family_index": 12,
+      "parameters": {
+        "threshold": 36.609716,
+        "window": 1
+      },
+      "coordinate": [
+        0.36609716,
+        0.0
+      ]
+    },
+    {
+      "id": "sma_13",
+      "family": "sma",
+      "family_index": 13,
+      "parameters": {
+        "threshold": 86.967542,
+        "window": 11
+      },
+      "coordinate": [
+        0.86967542,
+        0.15873015873015872
+      ]
+    },
+    {
+      "id": "sma_14",
+      "family": "sma",
+      "family_index": 14,
+      "parameters": {
+        "threshold": 45.813979,
+        "window": 60
+      },
+      "coordinate": [
+        0.45813979000000005,
+        0.9365079365079365
+      ]
+    },
+    {
+      "id": "sma_15",
+      "family": "sma",
+      "family_index": 15,
+      "parameters": {
+        "threshold": 16.49882,
+        "window": 55
+      },
+      "coordinate": [
+        0.16498819999999997,
+        0.8571428571428571
+      ]
+    },
+    {
+      "id": "sma_16",
+      "family": "sma",
+      "family_index": 16,
+      "parameters": {
+        "threshold": 61.649824,
+        "window": 26
+      },
+      "coordinate": [
+        0.61649824,
+        0.3968253968253968
+      ]
+    },
+    {
+      "id": "sma_17",
+      "family": "sma",
+      "family_index": 17,
+      "parameters": {
+        "threshold": 5.252456,
+        "window": 30
+      },
+      "coordinate": [
+        0.05252456,
+        0.4603174603174603
+      ]
+    },
+    {
+      "id": "sma_18",
+      "family": "sma",
+      "family_index": 18,
+      "parameters": {
+        "threshold": 27.369293,
+        "window": 13
+      },
+      "coordinate": [
+        0.27369293,
+        0.19047619047619047
+      ]
+    },
+    {
+      "id": "sma_19",
+      "family": "sma",
+      "family_index": 19,
+      "parameters": {
+        "threshold": 96.173944,
+        "window": 32
+      },
+      "coordinate": [
+        0.9617394400000001,
+        0.49206349206349204
+      ]
+    },
+    {
+      "id": "sma_20",
+      "family": "sma",
+      "family_index": 20,
+      "parameters": {
+        "threshold": 99.031908,
+        "window": 56
+      },
+      "coordinate": [
+        0.99031908,
+        0.873015873015873
+      ]
+    },
+    {
+      "id": "sma_21",
+      "family": "sma",
+      "family_index": 21,
+      "parameters": {
+        "threshold": 64.164738,
+        "window": 14
+      },
+      "coordinate": [
+        0.64164738,
+        0.20634920634920634
+      ]
+    },
+    {
+      "id": "sma_22",
+      "family": "sma",
+      "family_index": 22,
+      "parameters": {
+        "threshold": 74.568704,
+        "window": 9
+      },
+      "coordinate": [
+        0.74568704,
+        0.12698412698412698
+      ]
+    },
+    {
+      "id": "sma_23",
+      "family": "sma",
+      "family_index": 23,
+      "parameters": {
+        "threshold": 38.560719,
+        "window": 6
+      },
+      "coordinate": [
+        0.38560719,
+        0.07936507936507936
+      ]
+    },
+    {
+      "id": "sma_24",
+      "family": "sma",
+      "family_index": 24,
+      "parameters": {
+        "threshold": 50.190979,
+        "window": 28
+      },
+      "coordinate": [
+        0.50190979,
+        0.42857142857142855
+      ]
+    },
+    {
+      "id": "sma_25",
+      "family": "sma",
+      "family_index": 25,
+      "parameters": {
+        "threshold": 48.632433,
+        "window": 18
+      },
+      "coordinate": [
+        0.48632432999999997,
+        0.2698412698412698
+      ]
+    },
+    {
+      "id": "sma_26",
+      "family": "sma",
+      "family_index": 26,
+      "parameters": {
+        "threshold": 42.425318,
+        "window": 44
+      },
+      "coordinate": [
+        0.42425317999999995,
+        0.6825396825396826
+      ]
+    },
+    {
+      "id": "sma_27",
+      "family": "sma",
+      "family_index": 27,
+      "parameters": {
+        "threshold": 89.303784,
+        "window": 40
+      },
+      "coordinate": [
+        0.89303784,
+        0.6190476190476191
+      ]
+    },
+    {
+      "id": "sma_28",
+      "family": "sma",
+      "family_index": 28,
+      "parameters": {
+        "threshold": 24.510253,
+        "window": 23
+      },
+      "coordinate": [
+        0.24510252999999999,
+        0.3492063492063492
+      ]
+    },
+    {
+      "id": "sma_29",
+      "family": "sma",
+      "family_index": 29,
+      "parameters": {
+        "threshold": 68.563602,
+        "window": 54
+      },
+      "coordinate": [
+        0.68563602,
+        0.8412698412698413
+      ]
+    },
+    {
+      "id": "sma_30",
+      "family": "sma",
+      "family_index": 30,
+      "parameters": {
+        "threshold": 34.778677,
+        "window": 12
+      },
+      "coordinate": [
+        0.34778677,
+        0.1746031746031746
+      ]
+    },
+    {
+      "id": "sma_31",
+      "family": "sma",
+      "family_index": 31,
+      "parameters": {
+        "threshold": 84.195877,
+        "window": 51
+      },
+      "coordinate": [
+        0.84195877,
+        0.7936507936507936
+      ]
+    },
+    {
+      "id": "sma_32",
+      "family": "sma",
+      "family_index": 32,
+      "parameters": {
+        "threshold": 21.701063,
+        "window": 49
+      },
+      "coordinate": [
+        0.21701063,
+        0.7619047619047619
+      ]
+    },
+    {
+      "id": "sma_33",
+      "family": "sma",
+      "family_index": 33,
+      "parameters": {
+        "threshold": 53.28619,
+        "window": 36
+      },
+      "coordinate": [
+        0.5328619,
+        0.5555555555555556
+      ]
+    },
+    {
+      "id": "sma_34",
+      "family": "sma",
+      "family_index": 34,
+      "parameters": {
+        "threshold": 60.42302,
+        "window": 50
+      },
+      "coordinate": [
+        0.6042302,
+        0.7777777777777778
+      ]
+    },
+    {
+      "id": "sma_35",
+      "family": "sma",
+      "family_index": 35,
+      "parameters": {
+        "threshold": 71.480812,
+        "window": 10
+      },
+      "coordinate": [
+        0.71480812,
+        0.14285714285714285
+      ]
+    },
+    {
+      "id": "sma_36",
+      "family": "sma",
+      "family_index": 36,
+      "parameters": {
+        "threshold": 76.19732,
+        "window": 42
+      },
+      "coordinate": [
+        0.7619732,
+        0.6507936507936508
+      ]
+    },
+    {
+      "id": "sma_37",
+      "family": "sma",
+      "family_index": 37,
+      "parameters": {
+        "threshold": 22.120569,
+        "window": 33
+      },
+      "coordinate": [
+        0.22120569,
+        0.5079365079365079
+      ]
+    },
+    {
+      "id": "sma_38",
+      "family": "sma",
+      "family_index": 38,
+      "parameters": {
+        "threshold": 29.46683,
+        "window": 62
+      },
+      "coordinate": [
+        0.2946683,
+        0.9682539682539683
+      ]
+    },
+    {
+      "id": "sma_39",
+      "family": "sma",
+      "family_index": 39,
+      "parameters": {
+        "threshold": 11.019908,
+        "window": 58
+      },
+      "coordinate": [
+        0.11019907999999999,
+        0.9047619047619048
+      ]
+    },
+    {
+      "id": "sma_40",
+      "family": "sma",
+      "family_index": 40,
+      "parameters": {
+        "threshold": 18.389918,
+        "window": 37
+      },
+      "coordinate": [
+        0.18389918000000002,
+        0.5714285714285714
+      ]
+    },
+    {
+      "id": "sma_41",
+      "family": "sma",
+      "family_index": 41,
+      "parameters": {
+        "threshold": 94.166847,
+        "window": 30
+      },
+      "coordinate": [
+        0.9416684700000001,
+        0.4603174603174603
+      ]
+    },
+    {
+      "id": "sma_42",
+      "family": "sma",
+      "family_index": 42,
+      "parameters": {
+        "threshold": 13.646341,
+        "window": 2
+      },
+      "coordinate": [
+        0.13646341,
+        0.015873015873015872
+      ]
+    },
+    {
+      "id": "sma_43",
+      "family": "sma",
+      "family_index": 43,
+      "parameters": {
+        "threshold": 92.968278,
+        "window": 21
+      },
+      "coordinate": [
+        0.9296827799999999,
+        0.31746031746031744
+      ]
+    },
+    {
+      "id": "sma_44",
+      "family": "sma",
+      "family_index": 44,
+      "parameters": {
+        "threshold": 7.703466,
+        "window": 47
+      },
+      "coordinate": [
+        0.07703465999999999,
+        0.7301587301587301
+      ]
+    },
+    {
+      "id": "sma_45",
+      "family": "sma",
+      "family_index": 45,
+      "parameters": {
+        "threshold": 85.134241,
+        "window": 63
+      },
+      "coordinate": [
+        0.85134241,
+        0.9841269841269841
+      ]
+    },
+    {
+      "id": "sma_46",
+      "family": "sma",
+      "family_index": 46,
+      "parameters": {
+        "threshold": 9.558334,
+        "window": 43
+      },
+      "coordinate": [
+        0.09558334,
+        0.6666666666666666
+      ]
+    },
+    {
+      "id": "sma_47",
+      "family": "sma",
+      "family_index": 47,
+      "parameters": {
+        "threshold": 1.108044,
+        "window": 34
+      },
+      "coordinate": [
+        0.01108044,
+        0.5238095238095238
+      ]
+    },
+    {
+      "id": "sma_48",
+      "family": "sma",
+      "family_index": 48,
+      "parameters": {
+        "threshold": 58.28336,
+        "window": 24
+      },
+      "coordinate": [
+        0.5828336000000001,
+        0.36507936507936506
+      ]
+    },
+    {
+      "id": "sma_49",
+      "family": "sma",
+      "family_index": 49,
+      "parameters": {
+        "threshold": 3.41185,
+        "window": 52
+      },
+      "coordinate": [
+        0.034118499999999996,
+        0.8095238095238095
+      ]
+    },
+    {
+      "id": "ema_00",
+      "family": "ema",
+      "family_index": 0,
+      "parameters": {
+        "threshold": 50.0,
+        "alpha": 1.0
+      },
+      "coordinate": [
+        0.5,
+        1.0
+      ]
+    },
+    {
+      "id": "ema_01",
+      "family": "ema",
+      "family_index": 1,
+      "parameters": {
+        "threshold": 50.0,
+        "alpha": 0.2
+      },
+      "coordinate": [
+        0.5,
+        0.6505149978319905
+      ]
+    },
+    {
+      "id": "ema_02",
+      "family": "ema",
+      "family_index": 2,
+      "parameters": {
+        "threshold": 75.0,
+        "alpha": 0.2
+      },
+      "coordinate": [
+        0.75,
+        0.6505149978319905
+      ]
+    },
+    {
+      "id": "ema_03",
+      "family": "ema",
+      "family_index": 3,
+      "parameters": {
+        "threshold": 90.0,
+        "alpha": 0.01
+      },
+      "coordinate": [
+        0.9,
+        0.0
+      ]
+    },
+    {
+      "id": "ema_04",
+      "family": "ema",
+      "family_index": 4,
+      "parameters": {
+        "threshold": 90.380112,
+        "alpha": 0.020107
+      },
+      "coordinate": [
+        0.90380112,
+        0.15167363896229097
+      ]
+    },
+    {
+      "id": "ema_05",
+      "family": "ema",
+      "family_index": 5,
+      "parameters": {
+        "threshold": 42.781308,
+        "alpha": 0.01534
+      },
+      "coordinate": [
+        0.42781308,
+        0.09291267980648092
+      ]
+    },
+    {
+      "id": "ema_06",
+      "family": "ema",
+      "family_index": 6,
+      "parameters": {
+        "threshold": 96.865971,
+        "alpha": 0.010914
+      },
+      "coordinate": [
+        0.9686597100000001,
+        0.018991974723563433
+      ]
+    },
+    {
+      "id": "ema_07",
+      "family": "ema",
+      "family_index": 7,
+      "parameters": {
+        "threshold": 21.875281,
+        "alpha": 0.0168
+      },
+      "coordinate": [
+        0.21875281000000002,
+        0.11265464086293131
+      ]
+    },
+    {
+      "id": "ema_08",
+      "family": "ema",
+      "family_index": 8,
+      "parameters": {
+        "threshold": 63.734492,
+        "alpha": 0.465189
+      },
+      "coordinate": [
+        0.63734492,
+        0.8338147183594795
+      ]
+    },
+    {
+      "id": "ema_09",
+      "family": "ema",
+      "family_index": 9,
+      "parameters": {
+        "threshold": 17.267774,
+        "alpha": 0.139561
+      },
+      "coordinate": [
+        0.17267774,
+        0.5723820363242861
+      ]
+    },
+    {
+      "id": "ema_10",
+      "family": "ema",
+      "family_index": 10,
+      "parameters": {
+        "threshold": 26.351756,
+        "alpha": 0.206193
+      },
+      "coordinate": [
+        0.26351756000000004,
+        0.6571369587158054
+      ]
+    },
+    {
+      "id": "ema_11",
+      "family": "ema",
+      "family_index": 11,
+      "parameters": {
+        "threshold": 7.751781,
+        "alpha": 0.051026
+      },
+      "coordinate": [
+        0.07751781,
+        0.3538957623552618
+      ]
+    },
+    {
+      "id": "ema_12",
+      "family": "ema",
+      "family_index": 12,
+      "parameters": {
+        "threshold": 9.442854,
+        "alpha": 0.030729
+      },
+      "coordinate": [
+        0.09442854,
+        0.24377421371835573
+      ]
+    },
+    {
+      "id": "ema_13",
+      "family": "ema",
+      "family_index": 13,
+      "parameters": {
+        "threshold": 53.771946,
+        "alpha": 0.359985
+      },
+      "coordinate": [
+        0.53771946,
+        0.7781422023934361
+      ]
+    },
+    {
+      "id": "ema_14",
+      "family": "ema",
+      "family_index": 14,
+      "parameters": {
+        "threshold": 39.749749,
+        "alpha": 0.154178
+      },
+      "coordinate": [
+        0.39749749,
+        0.5940112038475978
+      ]
+    },
+    {
+      "id": "ema_15",
+      "family": "ema",
+      "family_index": 15,
+      "parameters": {
+        "threshold": 4.041871,
+        "alpha": 0.303057
+      },
+      "coordinate": [
+        0.040418710000000004,
+        0.7407621598903276
+      ]
+    },
+    {
+      "id": "ema_16",
+      "family": "ema",
+      "family_index": 16,
+      "parameters": {
+        "threshold": 6.266324,
+        "alpha": 0.042775
+      },
+      "coordinate": [
+        0.06266324,
+        0.3155950091065689
+      ]
+    },
+    {
+      "id": "ema_17",
+      "family": "ema",
+      "family_index": 17,
+      "parameters": {
+        "threshold": 66.424273,
+        "alpha": 0.012268
+      },
+      "coordinate": [
+        0.66424273,
+        0.04438688365522392
+      ]
+    },
+    {
+      "id": "ema_18",
+      "family": "ema",
+      "family_index": 18,
+      "parameters": {
+        "threshold": 85.415953,
+        "alpha": 0.52806
+      },
+      "coordinate": [
+        0.85415953,
+        0.8613416356878123
+      ]
+    },
+    {
+      "id": "ema_19",
+      "family": "ema",
+      "family_index": 19,
+      "parameters": {
+        "threshold": 59.439455,
+        "alpha": 0.039934
+      },
+      "coordinate": [
+        0.5943945500000001,
+        0.3006714067991755
+      ]
+    },
+    {
+      "id": "ema_20",
+      "family": "ema",
+      "family_index": 20,
+      "parameters": {
+        "threshold": 0.067746,
+        "alpha": 0.077071
+      },
+      "coordinate": [
+        0.00067746,
+        0.44344549700737035
+      ]
+    },
+    {
+      "id": "ema_21",
+      "family": "ema",
+      "family_index": 21,
+      "parameters": {
+        "threshold": 46.530717,
+        "alpha": 0.060849
+      },
+      "coordinate": [
+        0.46530717000000005,
+        0.3921267226877213
+      ]
+    },
+    {
+      "id": "ema_22",
+      "family": "ema",
+      "family_index": 22,
+      "parameters": {
+        "threshold": 13.964186,
+        "alpha": 0.560726
+      },
+      "coordinate": [
+        0.13964186,
+        0.8743753470654209
+      ]
+    },
+    {
+      "id": "ema_23",
+      "family": "ema",
+      "family_index": 23,
+      "parameters": {
+        "threshold": 76.819899,
+        "alpha": 0.035204
+      },
+      "coordinate": [
+        0.76819899,
+        0.2732960061599716
+      ]
+    },
+    {
+      "id": "ema_24",
+      "family": "ema",
+      "family_index": 24,
+      "parameters": {
+        "threshold": 55.484973,
+        "alpha": 0.225356
+      },
+      "coordinate": [
+        0.5548497299999999,
+        0.6764345627260241
+      ]
+    },
+    {
+      "id": "ema_25",
+      "family": "ema",
+      "family_index": 25,
+      "parameters": {
+        "threshold": 28.904608,
+        "alpha": 0.92001
+      },
+      "coordinate": [
+        0.28904608,
+        0.9818962739560473
+      ]
+    },
+    {
+      "id": "ema_26",
+      "family": "ema",
+      "family_index": 26,
+      "parameters": {
+        "threshold": 25.49328,
+        "alpha": 0.090298
+      },
+      "coordinate": [
+        0.25493279999999996,
+        0.4778390656407901
+      ]
+    },
+    {
+      "id": "ema_27",
+      "family": "ema",
+      "family_index": 27,
+      "parameters": {
+        "threshold": 67.763222,
+        "alpha": 0.103182
+      },
+      "coordinate": [
+        0.67763222,
+        0.5068019708234311
+      ]
+    },
+    {
+      "id": "ema_28",
+      "family": "ema",
+      "family_index": 28,
+      "parameters": {
+        "threshold": 17.839774,
+        "alpha": 0.669715
+      },
+      "coordinate": [
+        0.17839773999999997,
+        0.912945013096785
+      ]
+    },
+    {
+      "id": "ema_29",
+      "family": "ema",
+      "family_index": 29,
+      "parameters": {
+        "threshold": 36.33884,
+        "alpha": 0.011406
+      },
+      "coordinate": [
+        0.3633884,
+        0.0285666836245432
+      ]
+    },
+    {
+      "id": "ema_30",
+      "family": "ema",
+      "family_index": 30,
+      "parameters": {
+        "threshold": 50.55727,
+        "alpha": 0.18935
+      },
+      "coordinate": [
+        0.5055727,
+        0.6386326547284225
+      ]
+    },
+    {
+      "id": "ema_31",
+      "family": "ema",
+      "family_index": 31,
+      "parameters": {
+        "threshold": 11.324739,
+        "alpha": 0.046372
+      },
+      "coordinate": [
+        0.11324738999999999,
+        0.33312791359630245
+      ]
+    },
+    {
+      "id": "ema_32",
+      "family": "ema",
+      "family_index": 32,
+      "parameters": {
+        "threshold": 31.521399,
+        "alpha": 0.123711
+      },
+      "coordinate": [
+        0.31521399,
+        0.5462041587349563
+      ]
+    },
+    {
+      "id": "ema_33",
+      "family": "ema",
+      "family_index": 33,
+      "parameters": {
+        "threshold": 88.842671,
+        "alpha": 0.436849
+      },
+      "coordinate": [
+        0.88842671,
+        0.8201656729482587
+      ]
+    },
+    {
+      "id": "ema_34",
+      "family": "ema",
+      "family_index": 34,
+      "parameters": {
+        "threshold": 99.321141,
+        "alpha": 0.027546
+      },
+      "coordinate": [
+        0.99321141,
+        0.22002927157483215
+      ]
+    },
+    {
+      "id": "ema_35",
+      "family": "ema",
+      "family_index": 35,
+      "parameters": {
+        "threshold": 92.594376,
+        "alpha": 0.02579
+      },
+      "coordinate": [
+        0.92594376,
+        0.20572567106896866
+      ]
+    },
+    {
+      "id": "ema_36",
+      "family": "ema",
+      "family_index": 36,
+      "parameters": {
+        "threshold": 21.597066,
+        "alpha": 0.386466
+      },
+      "coordinate": [
+        0.21597066,
+        0.7935556460716763
+      ]
+    },
+    {
+      "id": "ema_37",
+      "family": "ema",
+      "family_index": 37,
+      "parameters": {
+        "threshold": 57.338258,
+        "alpha": 0.756024
+      },
+      "coordinate": [
+        0.5733825800000001,
+        0.9392677912043887
+      ]
+    },
+    {
+      "id": "ema_38",
+      "family": "ema",
+      "family_index": 38,
+      "parameters": {
+        "threshold": 80.226397,
+        "alpha": 0.094179
+      },
+      "coordinate": [
+        0.80226397,
+        0.4869770373791769
+      ]
+    },
+    {
+      "id": "ema_39",
+      "family": "ema",
+      "family_index": 39,
+      "parameters": {
+        "threshold": 45.613059,
+        "alpha": 0.273737
+      },
+      "coordinate": [
+        0.45613059,
+        0.7186667516641327
+      ]
+    },
+    {
+      "id": "ema_40",
+      "family": "ema",
+      "family_index": 40,
+      "parameters": {
+        "threshold": 70.02871,
+        "alpha": 0.022792
+      },
+      "coordinate": [
+        0.7002871,
+        0.17889121811571015
+      ]
+    },
+    {
+      "id": "ema_41",
+      "family": "ema",
+      "family_index": 41,
+      "parameters": {
+        "threshold": 84.47708,
+        "alpha": 0.01462
+      },
+      "coordinate": [
+        0.8447708,
+        0.08247368631092082
+      ]
+    },
+    {
+      "id": "ema_42",
+      "family": "ema",
+      "family_index": 42,
+      "parameters": {
+        "threshold": 82.225308,
+        "alpha": 0.072727
+      },
+      "coordinate": [
+        0.82225308,
+        0.4308478366131788
+      ]
+    },
+    {
+      "id": "ema_43",
+      "family": "ema",
+      "family_index": 43,
+      "parameters": {
+        "threshold": 73.516889,
+        "alpha": 0.739654
+      },
+      "coordinate": [
+        0.7351688900000001,
+        0.9345143051145279
+      ]
+    },
+    {
+      "id": "ema_44",
+      "family": "ema",
+      "family_index": 44,
+      "parameters": {
+        "threshold": 38.577625,
+        "alpha": 0.02021
+      },
+      "coordinate": [
+        0.38577625,
+        0.15278315675765192
+      ]
+    },
+    {
+      "id": "ema_45",
+      "family": "ema",
+      "family_index": 45,
+      "parameters": {
+        "threshold": 95.356042,
+        "alpha": 0.869955
+      },
+      "coordinate": [
+        0.9535604200000001,
+        0.9697483942649806
+      ]
+    },
+    {
+      "id": "ema_46",
+      "family": "ema",
+      "family_index": 46,
+      "parameters": {
+        "threshold": 33.422382,
+        "alpha": 0.250217
+      },
+      "coordinate": [
+        0.33422382,
+        0.6991584063864986
+      ]
+    },
+    {
+      "id": "ema_47",
+      "family": "ema",
+      "family_index": 47,
+      "parameters": {
+        "threshold": 48.586812,
+        "alpha": 0.11685
+      },
+      "coordinate": [
+        0.48586812,
+        0.5338143583641227
+      ]
+    },
+    {
+      "id": "ema_48",
+      "family": "ema",
+      "family_index": 48,
+      "parameters": {
+        "threshold": 74.578078,
+        "alpha": 0.171669
+      },
+      "coordinate": [
+        0.74578078,
+        0.617345938656602
+      ]
+    },
+    {
+      "id": "ema_49",
+      "family": "ema",
+      "family_index": 49,
+      "parameters": {
+        "threshold": 61.422948,
+        "alpha": 0.05676
+      },
+      "coordinate": [
+        0.61422948,
+        0.3770211933927181
+      ]
+    },
+    {
+      "id": "counter_00_k1",
+      "family": "counter",
+      "family_index": 0,
+      "parameters": {
+        "k": 1
+      },
+      "coordinate": [
+        0.0
+      ]
+    },
+    {
+      "id": "counter_01_k2",
+      "family": "counter",
+      "family_index": 1,
+      "parameters": {
+        "k": 2
+      },
+      "coordinate": [
+        0.02040816326530612
+      ]
+    },
+    {
+      "id": "counter_02_k8",
+      "family": "counter",
+      "family_index": 2,
+      "parameters": {
+        "k": 8
+      },
+      "coordinate": [
+        0.14285714285714285
+      ]
+    },
+    {
+      "id": "counter_03_k50",
+      "family": "counter",
+      "family_index": 3,
+      "parameters": {
+        "k": 50
+      },
+      "coordinate": [
+        1.0
+      ]
+    },
+    {
+      "id": "counter_04_k3",
+      "family": "counter",
+      "family_index": 4,
+      "parameters": {
+        "k": 3
+      },
+      "coordinate": [
+        0.04081632653061224
+      ]
+    },
+    {
+      "id": "counter_05_k4",
+      "family": "counter",
+      "family_index": 5,
+      "parameters": {
+        "k": 4
+      },
+      "coordinate": [
+        0.061224489795918366
+      ]
+    },
+    {
+      "id": "counter_06_k5",
+      "family": "counter",
+      "family_index": 6,
+      "parameters": {
+        "k": 5
+      },
+      "coordinate": [
+        0.08163265306122448
+      ]
+    },
+    {
+      "id": "counter_07_k6",
+      "family": "counter",
+      "family_index": 7,
+      "parameters": {
+        "k": 6
+      },
+      "coordinate": [
+        0.10204081632653061
+      ]
+    },
+    {
+      "id": "counter_08_k7",
+      "family": "counter",
+      "family_index": 8,
+      "parameters": {
+        "k": 7
+      },
+      "coordinate": [
+        0.12244897959183673
+      ]
+    },
+    {
+      "id": "counter_09_k9",
+      "family": "counter",
+      "family_index": 9,
+      "parameters": {
+        "k": 9
+      },
+      "coordinate": [
+        0.16326530612244897
+      ]
+    },
+    {
+      "id": "counter_10_k10",
+      "family": "counter",
+      "family_index": 10,
+      "parameters": {
+        "k": 10
+      },
+      "coordinate": [
+        0.1836734693877551
+      ]
+    },
+    {
+      "id": "counter_11_k11",
+      "family": "counter",
+      "family_index": 11,
+      "parameters": {
+        "k": 11
+      },
+      "coordinate": [
+        0.20408163265306123
+      ]
+    },
+    {
+      "id": "counter_12_k12",
+      "family": "counter",
+      "family_index": 12,
+      "parameters": {
+        "k": 12
+      },
+      "coordinate": [
+        0.22448979591836735
+      ]
+    },
+    {
+      "id": "counter_13_k13",
+      "family": "counter",
+      "family_index": 13,
+      "parameters": {
+        "k": 13
+      },
+      "coordinate": [
+        0.24489795918367346
+      ]
+    },
+    {
+      "id": "counter_14_k14",
+      "family": "counter",
+      "family_index": 14,
+      "parameters": {
+        "k": 14
+      },
+      "coordinate": [
+        0.2653061224489796
+      ]
+    },
+    {
+      "id": "counter_15_k15",
+      "family": "counter",
+      "family_index": 15,
+      "parameters": {
+        "k": 15
+      },
+      "coordinate": [
+        0.2857142857142857
+      ]
+    },
+    {
+      "id": "counter_16_k16",
+      "family": "counter",
+      "family_index": 16,
+      "parameters": {
+        "k": 16
+      },
+      "coordinate": [
+        0.30612244897959184
+      ]
+    },
+    {
+      "id": "counter_17_k17",
+      "family": "counter",
+      "family_index": 17,
+      "parameters": {
+        "k": 17
+      },
+      "coordinate": [
+        0.32653061224489793
+      ]
+    },
+    {
+      "id": "counter_18_k18",
+      "family": "counter",
+      "family_index": 18,
+      "parameters": {
+        "k": 18
+      },
+      "coordinate": [
+        0.3469387755102041
+      ]
+    },
+    {
+      "id": "counter_19_k19",
+      "family": "counter",
+      "family_index": 19,
+      "parameters": {
+        "k": 19
+      },
+      "coordinate": [
+        0.3673469387755102
+      ]
+    },
+    {
+      "id": "counter_20_k20",
+      "family": "counter",
+      "family_index": 20,
+      "parameters": {
+        "k": 20
+      },
+      "coordinate": [
+        0.3877551020408163
+      ]
+    },
+    {
+      "id": "counter_21_k21",
+      "family": "counter",
+      "family_index": 21,
+      "parameters": {
+        "k": 21
+      },
+      "coordinate": [
+        0.40816326530612246
+      ]
+    },
+    {
+      "id": "counter_22_k22",
+      "family": "counter",
+      "family_index": 22,
+      "parameters": {
+        "k": 22
+      },
+      "coordinate": [
+        0.42857142857142855
+      ]
+    },
+    {
+      "id": "counter_23_k23",
+      "family": "counter",
+      "family_index": 23,
+      "parameters": {
+        "k": 23
+      },
+      "coordinate": [
+        0.4489795918367347
+      ]
+    },
+    {
+      "id": "counter_24_k24",
+      "family": "counter",
+      "family_index": 24,
+      "parameters": {
+        "k": 24
+      },
+      "coordinate": [
+        0.46938775510204084
+      ]
+    },
+    {
+      "id": "counter_25_k25",
+      "family": "counter",
+      "family_index": 25,
+      "parameters": {
+        "k": 25
+      },
+      "coordinate": [
+        0.4897959183673469
+      ]
+    },
+    {
+      "id": "counter_26_k26",
+      "family": "counter",
+      "family_index": 26,
+      "parameters": {
+        "k": 26
+      },
+      "coordinate": [
+        0.5102040816326531
+      ]
+    },
+    {
+      "id": "counter_27_k27",
+      "family": "counter",
+      "family_index": 27,
+      "parameters": {
+        "k": 27
+      },
+      "coordinate": [
+        0.5306122448979592
+      ]
+    },
+    {
+      "id": "counter_28_k28",
+      "family": "counter",
+      "family_index": 28,
+      "parameters": {
+        "k": 28
+      },
+      "coordinate": [
+        0.5510204081632653
+      ]
+    },
+    {
+      "id": "counter_29_k29",
+      "family": "counter",
+      "family_index": 29,
+      "parameters": {
+        "k": 29
+      },
+      "coordinate": [
+        0.5714285714285714
+      ]
+    },
+    {
+      "id": "counter_30_k30",
+      "family": "counter",
+      "family_index": 30,
+      "parameters": {
+        "k": 30
+      },
+      "coordinate": [
+        0.5918367346938775
+      ]
+    },
+    {
+      "id": "counter_31_k31",
+      "family": "counter",
+      "family_index": 31,
+      "parameters": {
+        "k": 31
+      },
+      "coordinate": [
+        0.6122448979591837
+      ]
+    },
+    {
+      "id": "counter_32_k32",
+      "family": "counter",
+      "family_index": 32,
+      "parameters": {
+        "k": 32
+      },
+      "coordinate": [
+        0.6326530612244898
+      ]
+    },
+    {
+      "id": "counter_33_k33",
+      "family": "counter",
+      "family_index": 33,
+      "parameters": {
+        "k": 33
+      },
+      "coordinate": [
+        0.6530612244897959
+      ]
+    },
+    {
+      "id": "counter_34_k34",
+      "family": "counter",
+      "family_index": 34,
+      "parameters": {
+        "k": 34
+      },
+      "coordinate": [
+        0.673469387755102
+      ]
+    },
+    {
+      "id": "counter_35_k35",
+      "family": "counter",
+      "family_index": 35,
+      "parameters": {
+        "k": 35
+      },
+      "coordinate": [
+        0.6938775510204082
+      ]
+    },
+    {
+      "id": "counter_36_k36",
+      "family": "counter",
+      "family_index": 36,
+      "parameters": {
+        "k": 36
+      },
+      "coordinate": [
+        0.7142857142857143
+      ]
+    },
+    {
+      "id": "counter_37_k37",
+      "family": "counter",
+      "family_index": 37,
+      "parameters": {
+        "k": 37
+      },
+      "coordinate": [
+        0.7346938775510204
+      ]
+    },
+    {
+      "id": "counter_38_k38",
+      "family": "counter",
+      "family_index": 38,
+      "parameters": {
+        "k": 38
+      },
+      "coordinate": [
+        0.7551020408163265
+      ]
+    },
+    {
+      "id": "counter_39_k39",
+      "family": "counter",
+      "family_index": 39,
+      "parameters": {
+        "k": 39
+      },
+      "coordinate": [
+        0.7755102040816326
+      ]
+    },
+    {
+      "id": "counter_40_k40",
+      "family": "counter",
+      "family_index": 40,
+      "parameters": {
+        "k": 40
+      },
+      "coordinate": [
+        0.7959183673469388
+      ]
+    },
+    {
+      "id": "counter_41_k41",
+      "family": "counter",
+      "family_index": 41,
+      "parameters": {
+        "k": 41
+      },
+      "coordinate": [
+        0.8163265306122449
+      ]
+    },
+    {
+      "id": "counter_42_k42",
+      "family": "counter",
+      "family_index": 42,
+      "parameters": {
+        "k": 42
+      },
+      "coordinate": [
+        0.8367346938775511
+      ]
+    },
+    {
+      "id": "counter_43_k43",
+      "family": "counter",
+      "family_index": 43,
+      "parameters": {
+        "k": 43
+      },
+      "coordinate": [
+        0.8571428571428571
+      ]
+    },
+    {
+      "id": "counter_44_k44",
+      "family": "counter",
+      "family_index": 44,
+      "parameters": {
+        "k": 44
+      },
+      "coordinate": [
+        0.8775510204081632
+      ]
+    },
+    {
+      "id": "counter_45_k45",
+      "family": "counter",
+      "family_index": 45,
+      "parameters": {
+        "k": 45
+      },
+      "coordinate": [
+        0.8979591836734694
+      ]
+    },
+    {
+      "id": "counter_46_k46",
+      "family": "counter",
+      "family_index": 46,
+      "parameters": {
+        "k": 46
+      },
+      "coordinate": [
+        0.9183673469387755
+      ]
+    },
+    {
+      "id": "counter_47_k47",
+      "family": "counter",
+      "family_index": 47,
+      "parameters": {
+        "k": 47
+      },
+      "coordinate": [
+        0.9387755102040817
+      ]
+    },
+    {
+      "id": "counter_48_k48",
+      "family": "counter",
+      "family_index": 48,
+      "parameters": {
+        "k": 48
+      },
+      "coordinate": [
+        0.9591836734693877
+      ]
+    },
+    {
+      "id": "counter_49_k49",
+      "family": "counter",
+      "family_index": 49,
+      "parameters": {
+        "k": 49
+      },
+      "coordinate": [
+        0.9795918367346939
+      ]
+    }
+  ],
+  "family_order": [
+    "hysteresis",
+    "single",
+    "sma",
+    "ema",
+    "counter"
+  ],
+  "candidate_count_per_family": 50,
+  "static_validation_search": "Evaluate all 50 fixed candidates in each family; within each budget select feasible minimum final-action SR, then benign MFA, direct FAR, candidate ID. Do not select on test.",
+  "dynamic_search": {
+    "window_events": 16384,
+    "update_interval_events": 4096,
+    "first_update_event": 4096,
+    "minimum_arrived_benign": 200,
+    "minimum_arrived_attack": 20,
+    "minimum_coverage": 0.1,
+    "evaluations_per_family_per_supported_update": 10,
+    "initial_candidate_indices": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "surrogate": "Separate per-family GaussianProcessRegressor, fixed Matern-5/2 lengthscale 0.2, WhiteKernel 1e-5, alpha 1e-6, normalized targets, LCB mean-2*predictive_std; rebuild within each window.",
+    "selection": "Among queried candidates meeting arrived-label caps, min window final-action SR, then benign MFA, FAR, candidate ID. If no feasible candidate, retain prior version; before first selection use unmodified base.",
+    "causality": "Current label is scheduled only after current action commits; even delay 0 arrives no sooner than next event. A window uses arrived labels only; all candidate actions depend on observed scores and base recommendations, not labels."
+  },
+  "feedback_conditions": [
+    {
+      "name": "clean_D0",
+      "delay_events": 0,
+      "coverage": 1.0,
+      "flip_probability": 0.0
+    },
+    {
+      "name": "clean_D256",
+      "delay_events": 256,
+      "coverage": 1.0,
+      "flip_probability": 0.0
+    },
+    {
+      "name": "quarter_noisy_D256",
+      "delay_events": 256,
+      "coverage": 0.25,
+      "flip_probability": 0.1
+    }
+  ],
+  "feedback_seed": 20261008,
+  "budgets": {
+    "direct_attack_allow_max": 0.005,
+    "hard_benign_deny_max": 0.05,
+    "benign_mfa_max_grid": [
+      0.01,
+      0.02,
+      0.05
+    ]
+  },
+  "acquisition_loss": "SR_action + 200*[directFAR-.005]+ + 50*[hardFDR-.05]+ + 5*[benignMFA-budget]+, using observed pairs and arrived labels in the trailing window.",
+  "report_endpoints": [
+    "final_action_SR",
+    "internal_state_SR",
+    "direct_FAR",
+    "hard_FDR",
+    "benign_MFA",
+    "attack_MFA",
+    "action_mix",
+    "strict_accuracy",
+    "explicit_proxy_cost",
+    "support_and_feasibility_failures",
+    "version_switches"
+  ],
+  "diagnostics": [
+    "base_no_stabilizer",
+    "always_MFA",
+    "constant_trust_50_safe_fixed_40_60",
+    "fixed_hysteresis_40_60",
+    "unsafe_legacy_fusion_40_60_offline_only"
+  ],
+  "diagnostic_scope": "The constant-trust row is a new ablation diagnostic, not a byte-for-byte recovery of the submitted trust-masked PPO row. The legacy fusion is never eligible or deployed.",
+  "bootstrap": {
+    "replicates": 5000,
+    "seed": 20261008,
+    "unit": "whole source-IP proxy trajectories, paired between validation-selected hysteresis and the validation-selected strongest base/single/SMA/EMA/counter method at each cap",
+    "interval": "descriptive 2.5/97.5 percentiles of micro-SR difference, no p-value or population generalization"
+  },
+  "matched_endpoint_lp": {
+    "population": "Fixed library of 200 single/SMA/EMA/counter candidates; each randomized draw chooses one complete policy for the entire history, not per-event random actions.",
+    "validation_problem": "For each cap's validation-selected hysteresis policy, nonnegative mixture weights sum to 1 and exactly match its validation direct FAR and benign MFA; hard FDR is structurally identical. Minimize expected validation final-action SR using SciPy HiGHS. Verify primal residuals and record infeasibility without replacement.",
+    "test_evaluation": "Freeze validation mixture before test evaluation and report expected test SR/FAR/FDR/MFA, including attained rate differences from the test hysteresis policy. Exact test matching is not asserted.",
+    "test_oracle": "Separately match selected hysteresis's test direct FAR and benign MFA using test labels in the same LP. This is an explicitly post hoc nondeployable diagnostic, never a policy-selection result.",
+    "library_budget_note": "The LP's 200-policy simple envelope has a larger library than one 50-candidate hysteresis family; report separately from equal per-family search budgets."
+  },
+  "proxy_cost": "Per event: 10*1{attack and direct Allow} + 1*1{benign and Deny} + .25*1{MFA} + .05*1{within-proxy final-action switch}; descriptive chosen units, not measured business or human cost.",
+  "negative_result_rule": "Retain every method, budget and feedback condition, including no-selection and test-cap failures. No after-test parameter or outcome selection."
+}

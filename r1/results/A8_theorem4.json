@@ -1,0 +1,14 @@
+{
+  "thresholds": [
+    66.832986,
+    98.831311
+  ],
+  "delta": 31.998324999999994,
+  "proxies": 38,
+  "sum_V_n": 1113812.225332422,
+  "sum_bound": 34846.45404665468,
+  "sum_K_h": 2438,
+  "ratio_K_over_bound": 0.06996407716939716,
+  "median_ratio_per_proxy": 0.0,
+  "sum_single_threshold_flips_same_high": 2852
+}

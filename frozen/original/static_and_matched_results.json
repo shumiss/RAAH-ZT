@@ -1,0 +1,930 @@
+{
+  "base_validation": {
+    "events": 253933,
+    "benign": 190204,
+    "attack": 63729,
+    "eligible_pairs": 253898,
+    "action_switches": 5359,
+    "sr_action": 0.021106901196543494,
+    "far_direct": 0.005947057069779849,
+    "fdr_hard": 0.009153330108725368,
+    "mfa_benign": 0.010388845660448781,
+    "mfa_attack": 0.017009524706177722,
+    "strict_accuracy": 0.9796009183524788,
+    "permissive_accuracy_diagnostic": 0.9916513411017867,
+    "deny_count": 64007,
+    "mfa_count": 3060,
+    "allow_count": 186866,
+    "proxy_cost": 0.025849141308927945
+  },
+  "base_test": {
+    "events": 762000,
+    "benign": 613448,
+    "attack": 148552,
+    "eligible_pairs": 761960,
+    "action_switches": 16163,
+    "sr_action": 0.021212399601028924,
+    "far_direct": 0.00881172922612957,
+    "fdr_hard": 0.008530470390318332,
+    "mfa_benign": 0.009259138508887469,
+    "mfa_attack": 0.021972104044375034,
+    "strict_accuracy": 0.9796771653543307,
+    "permissive_accuracy_diagnostic": 0.9914146981627296,
+    "deny_count": 149212,
+    "mfa_count": 8944,
+    "allow_count": 603844,
+    "proxy_cost": 0.028040879265091866
+  },
+  "budget_rows": [
+    {
+      "budget_benign_mfa": 0.01,
+      "family": "hysteresis",
+      "validation_feasible_candidates": 0,
+      "selection_status": "NO_FEASIBLE_VALIDATION_CANDIDATE"
+    },
+    {
+      "budget_benign_mfa": 0.01,
+      "family": "single",
+      "validation_feasible_candidates": 0,
+      "selection_status": "NO_FEASIBLE_VALIDATION_CANDIDATE"
+    },
+    {
+      "budget_benign_mfa": 0.01,
+      "family": "sma",
+      "validation_feasible_candidates": 0,
+      "selection_status": "NO_FEASIBLE_VALIDATION_CANDIDATE"
+    },
+    {
+      "budget_benign_mfa": 0.01,
+      "family": "ema",
+      "validation_feasible_candidates": 0,
+      "selection_status": "NO_FEASIBLE_VALIDATION_CANDIDATE"
+    },
+    {
+      "budget_benign_mfa": 0.01,
+      "family": "counter",
+      "validation_feasible_candidates": 0,
+      "selection_status": "NO_FEASIBLE_VALIDATION_CANDIDATE"
+    },
+    {
+      "budget_benign_mfa": 0.02,
+      "family": "hysteresis",
+      "validation_feasible_candidates": 21,
+      "selection_status": "SELECTED",
+      "candidate_id": "hysteresis_27",
+      "parameters": {
+        "low": 66.832986,
+        "high": 98.831311
+      },
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4572,
+        "sr_action": 0.018007231250344626,
+        "far_direct": 0.0004393604167647382,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.015583268490673171,
+        "mfa_attack": 0.022517221359192832,
+        "strict_accuracy": 0.9757101282621794,
+        "permissive_accuracy_diagnostic": 0.993033595475972,
+        "deny_count": 64007,
+        "mfa_count": 4399,
+        "allow_count": 185527,
+        "proxy_cost": 0.013189896547514502,
+        "state_pairs": 253898,
+        "state_switches": 832,
+        "sr_state": 0.0032769064742534403
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13913,
+        "sr_action": 0.018259488687070186,
+        "far_direct": 0.0003635090742635575,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.014173980516686011,
+        "mfa_attack": 0.030420324196241046,
+        "strict_accuracy": 0.9757204724409448,
+        "permissive_accuracy_diagnostic": 0.9930616797900262,
+        "deny_count": 149212,
+        "mfa_count": 13214,
+        "allow_count": 599574,
+        "proxy_cost": 0.012824343832020997,
+        "state_pairs": 761960,
+        "state_switches": 2438,
+        "sr_state": 0.0031996430258806234
+      },
+      "test_caps_met": true
+    },
+    {
+      "budget_benign_mfa": 0.02,
+      "family": "single",
+      "validation_feasible_candidates": 9,
+      "selection_status": "SELECTED",
+      "candidate_id": "single_28",
+      "parameters": {
+        "threshold": 97.798074
+      },
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4734,
+        "sr_action": 0.01864528275134109,
+        "far_direct": 4.707433036765052e-05,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.016051187146432253,
+        "mfa_attack": 0.022909507445589918,
+        "strict_accuracy": 0.9753596421103204,
+        "permissive_accuracy_diagnostic": 0.9931320466422245,
+        "deny_count": 64007,
+        "mfa_count": 4513,
+        "allow_count": 185413,
+        "proxy_cost": 0.01234951739238303
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 14306,
+        "sr_action": 0.01877526379337498,
+        "far_direct": 0.00020868113522537563,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.014359815338871429,
+        "mfa_attack": 0.03057515213527923,
+        "strict_accuracy": 0.9755708661417323,
+        "permissive_accuracy_diagnostic": 0.9930918635170604,
+        "deny_count": 149212,
+        "mfa_count": 13351,
+        "allow_count": 599437,
+        "proxy_cost": 0.012593241469816273
+      },
+      "test_caps_met": true
+    },
+    {
+      "budget_benign_mfa": 0.02,
+      "family": "sma",
+      "validation_feasible_candidates": 30,
+      "selection_status": "SELECTED",
+      "candidate_id": "sma_10",
+      "parameters": {
+        "threshold": 82.584372,
+        "window": 46
+      },
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4368,
+        "sr_action": 0.01720375898983056,
+        "far_direct": 0.00015691443455883507,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.019531660743202037,
+        "mfa_attack": 0.022799667341398735,
+        "strict_accuracy": 0.9727526552279538,
+        "permissive_accuracy_diagnostic": 0.9931044803156738,
+        "deny_count": 64007,
+        "mfa_count": 5168,
+        "allow_count": 184758,
+        "proxy_cost": 0.013197969543147208
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13327,
+        "sr_action": 0.017490419444590267,
+        "far_direct": 0.0005318003123485379,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.01798848476154458,
+        "mfa_attack": 0.030252032958156067,
+        "strict_accuracy": 0.9726496062992126,
+        "permissive_accuracy_diagnostic": 0.9930288713910761,
+        "deny_count": 149212,
+        "mfa_count": 15529,
+        "allow_count": 597259,
+        "proxy_cost": 0.013873490813648295
+      },
+      "test_caps_met": true
+    },
+    {
+      "budget_benign_mfa": 0.02,
+      "family": "ema",
+      "validation_feasible_candidates": 27,
+      "selection_status": "SELECTED",
+      "candidate_id": "ema_42",
+      "parameters": {
+        "threshold": 82.225308,
+        "alpha": 0.072727
+      },
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4396,
+        "sr_action": 0.017314039496175628,
+        "far_direct": 0.0004393604167647382,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.019016424470568442,
+        "mfa_attack": 0.022517221359192832,
+        "strict_accuracy": 0.9731385837996637,
+        "permissive_accuracy_diagnostic": 0.993033595475972,
+        "deny_count": 64007,
+        "mfa_count": 5052,
+        "allow_count": 184874,
+        "proxy_cost": 0.013798127852622542
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13406,
+        "sr_action": 0.017594099427791485,
+        "far_direct": 0.0007068231999569174,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.01769180109805558,
+        "mfa_attack": 0.030077010070547687,
+        "strict_accuracy": 0.9728884514435695,
+        "permissive_accuracy_diagnostic": 0.9929947506561679,
+        "deny_count": 149212,
+        "mfa_count": 15321,
+        "allow_count": 597467,
+        "proxy_cost": 0.014151640419947506
+      },
+      "test_caps_met": true
+    },
+    {
+      "budget_benign_mfa": 0.02,
+      "family": "counter",
+      "validation_feasible_candidates": 3,
+      "selection_status": "SELECTED",
+      "candidate_id": "counter_05_k4",
+      "parameters": {
+        "k": 4
+      },
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4491,
+        "sr_action": 0.017688205499846395,
+        "far_direct": 0.00120824114610303,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.019726188723686148,
+        "mfa_attack": 0.02174834062985454,
+        "strict_accuracy": 0.9726069475019001,
+        "permissive_accuracy_diagnostic": 0.9928406311901171,
+        "deny_count": 64007,
+        "mfa_count": 5138,
+        "allow_count": 184788,
+        "proxy_cost": 0.015831144435736987
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13784,
+        "sr_action": 0.018090188461336552,
+        "far_direct": 0.0018983251655985782,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.017677129927883048,
+        "mfa_attack": 0.028885508104906026,
+        "strict_accuracy": 0.9729002624671916,
+        "permissive_accuracy_diagnostic": 0.992762467191601,
+        "deny_count": 149212,
+        "mfa_count": 15135,
+        "allow_count": 597653,
+        "proxy_cost": 0.016438254593175855
+      },
+      "test_caps_met": true
+    },
+    {
+      "budget_benign_mfa": 0.05,
+      "family": "hysteresis",
+      "validation_feasible_candidates": 22,
+      "selection_status": "SELECTED",
+      "candidate_id": "hysteresis_27",
+      "parameters": {
+        "low": 66.832986,
+        "high": 98.831311
+      },
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4572,
+        "sr_action": 0.018007231250344626,
+        "far_direct": 0.0004393604167647382,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.015583268490673171,
+        "mfa_attack": 0.022517221359192832,
+        "strict_accuracy": 0.9757101282621794,
+        "permissive_accuracy_diagnostic": 0.993033595475972,
+        "deny_count": 64007,
+        "mfa_count": 4399,
+        "allow_count": 185527,
+        "proxy_cost": 0.013189896547514502,
+        "state_pairs": 253898,
+        "state_switches": 832,
+        "sr_state": 0.0032769064742534403
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13913,
+        "sr_action": 0.018259488687070186,
+        "far_direct": 0.0003635090742635575,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.014173980516686011,
+        "mfa_attack": 0.030420324196241046,
+        "strict_accuracy": 0.9757204724409448,
+        "permissive_accuracy_diagnostic": 0.9930616797900262,
+        "deny_count": 149212,
+        "mfa_count": 13214,
+        "allow_count": 599574,
+        "proxy_cost": 0.012824343832020997,
+        "state_pairs": 761960,
+        "state_switches": 2438,
+        "sr_state": 0.0031996430258806234
+      },
+      "test_caps_met": true
+    },
+    {
+      "budget_benign_mfa": 0.05,
+      "family": "single",
+      "validation_feasible_candidates": 10,
+      "selection_status": "SELECTED",
+      "candidate_id": "single_21",
+      "parameters": {
+        "threshold": 99.982527
+      },
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4395,
+        "sr_action": 0.017310100906663305,
+        "far_direct": 0.0,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.025020504300645622,
+        "mfa_attack": 0.02295658177595757,
+        "strict_accuracy": 0.9686413345252488,
+        "permissive_accuracy_diagnostic": 0.9931438607821749,
+        "deny_count": 64007,
+        "mfa_count": 6222,
+        "allow_count": 183704,
+        "proxy_cost": 0.013847156533416295
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13559,
+        "sr_action": 0.01779489736994068,
+        "far_direct": 0.0,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.021920358367783416,
+        "mfa_attack": 0.030783833270504605,
+        "strict_accuracy": 0.969484251968504,
+        "permissive_accuracy_diagnostic": 0.9931325459317585,
+        "deny_count": 149212,
+        "mfa_count": 18020,
+        "allow_count": 594768,
+        "proxy_cost": 0.013669225721784778
+      },
+      "test_caps_met": true
+    },
+    {
+      "budget_benign_mfa": 0.05,
+      "family": "sma",
+      "validation_feasible_candidates": 38,
+      "selection_status": "SELECTED",
+      "candidate_id": "sma_20",
+      "parameters": {
+        "threshold": 99.031908,
+        "window": 56
+      },
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4264,
+        "sr_action": 0.01679414568054888,
+        "far_direct": 0.0,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.02403734937225295,
+        "mfa_attack": 0.02295658177595757,
+        "strict_accuracy": 0.9693777492488176,
+        "permissive_accuracy_diagnostic": 0.9931438607821749,
+        "deny_count": 64007,
+        "mfa_count": 6035,
+        "allow_count": 183891,
+        "proxy_cost": 0.013637258646965932
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13181,
+        "sr_action": 0.01729880833639561,
+        "far_direct": 0.0,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.021028677247297244,
+        "mfa_attack": 0.030783833270504605,
+        "strict_accuracy": 0.9702020997375328,
+        "permissive_accuracy_diagnostic": 0.9931325459317585,
+        "deny_count": 149212,
+        "mfa_count": 17473,
+        "allow_count": 595315,
+        "proxy_cost": 0.013464960629921259
+      },
+      "test_caps_met": true
+    },
+    {
+      "budget_benign_mfa": 0.05,
+      "family": "ema",
+      "validation_feasible_candidates": 33,
+      "selection_status": "SELECTED",
+      "candidate_id": "ema_06",
+      "parameters": {
+        "threshold": 96.865971,
+        "alpha": 0.010914
+      },
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4262,
+        "sr_action": 0.016786268501524235,
+        "far_direct": 0.0,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.02405312191121112,
+        "mfa_attack": 0.02295658177595757,
+        "strict_accuracy": 0.9693659351088673,
+        "permissive_accuracy_diagnostic": 0.9931438607821749,
+        "deny_count": 64007,
+        "mfa_count": 6038,
+        "allow_count": 183888,
+        "proxy_cost": 0.013639818377288497
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13178,
+        "sr_action": 0.017294871121843667,
+        "far_direct": 0.0,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.021196580639271788,
+        "mfa_attack": 0.030783833270504605,
+        "strict_accuracy": 0.9700669291338583,
+        "permissive_accuracy_diagnostic": 0.9931325459317585,
+        "deny_count": 149212,
+        "mfa_count": 17576,
+        "allow_count": 595212,
+        "proxy_cost": 0.013498556430446194
+      },
+      "test_caps_met": true
+    },
+    {
+      "budget_benign_mfa": 0.05,
+      "family": "counter",
+      "validation_feasible_candidates": 49,
+      "selection_status": "SELECTED",
+      "candidate_id": "counter_47_k47",
+      "parameters": {
+        "k": 47
+      },
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4281,
+        "sr_action": 0.016861101702258387,
+        "far_direct": 0.0,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.028669218312969234,
+        "mfa_attack": 0.02295658177595757,
+        "strict_accuracy": 0.9659083301500789,
+        "permissive_accuracy_diagnostic": 0.9931438607821749,
+        "deny_count": 64007,
+        "mfa_count": 6916,
+        "allow_count": 183010,
+        "proxy_cost": 0.014507960761303179
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13204,
+        "sr_action": 0.017328993647960523,
+        "far_direct": 0.00032311917712316224,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.022508835304703902,
+        "mfa_attack": 0.03046071409338144,
+        "strict_accuracy": 0.9690104986876641,
+        "permissive_accuracy_diagnostic": 0.9930695538057743,
+        "deny_count": 149212,
+        "mfa_count": 18333,
+        "allow_count": 594455,
+        "proxy_cost": 0.014378543307086615
+      },
+      "test_caps_met": true
+    }
+  ],
+  "matched_endpoint_rows": [
+    {
+      "budget_benign_mfa": 0.01,
+      "status": "NO_HYSTERESIS_SELECTION"
+    },
+    {
+      "budget_benign_mfa": 0.02,
+      "hysteresis_id": "hysteresis_27",
+      "hysteresis_validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4572,
+        "sr_action": 0.018007231250344626,
+        "far_direct": 0.0004393604167647382,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.015583268490673171,
+        "mfa_attack": 0.022517221359192832,
+        "strict_accuracy": 0.9757101282621794,
+        "permissive_accuracy_diagnostic": 0.993033595475972,
+        "deny_count": 64007,
+        "mfa_count": 4399,
+        "allow_count": 185527,
+        "proxy_cost": 0.013189896547514502,
+        "state_pairs": 253898,
+        "state_switches": 832,
+        "sr_state": 0.0032769064742534403
+      },
+      "hysteresis_test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13913,
+        "sr_action": 0.018259488687070186,
+        "far_direct": 0.0003635090742635575,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.014173980516686011,
+        "mfa_attack": 0.030420324196241046,
+        "strict_accuracy": 0.9757204724409448,
+        "permissive_accuracy_diagnostic": 0.9930616797900262,
+        "deny_count": 149212,
+        "mfa_count": 13214,
+        "allow_count": 599574,
+        "proxy_cost": 0.012824343832020997,
+        "state_pairs": 761960,
+        "state_switches": 2438,
+        "sr_state": 0.0031996430258806234
+      },
+      "validation_matched_lp": {
+        "status": "PASS",
+        "solver_status": 0,
+        "maximum_equality_residual": 1.734723475976807e-18,
+        "weights": [
+          [
+            "single_02",
+            0.14936910310333215
+          ],
+          [
+            "single_28",
+            0.6963737637831072
+          ],
+          [
+            "sma_16",
+            0.1542571331135606
+          ]
+        ],
+        "expected_sr": 0.018776020910361686,
+        "expected_far": 0.00043936041676473825,
+        "expected_mfa_benign": 0.01558326849067317,
+        "expected_fdr_hard": 0.009153330108725367
+      },
+      "test_oracle_lp": {
+        "status": "INFEASIBLE_OR_SOLVER_FAILURE",
+        "solver_status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "target_far": 0.0003635090742635575,
+        "target_mfa_benign": 0.014173980516686011
+      },
+      "frozen_validation_mixture_test": {
+        "sr_action": 0.018903817108248854,
+        "far_direct": 0.0009412035187214365,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.0141216712620854,
+        "mfa_attack": 0.02984262975178317,
+        "strict_accuracy": 0.9757625839994963,
+        "proxy_cost": 0.013944091347951177
+      },
+      "test_rate_shifts_mixture_minus_hysteresis": {
+        "far_direct": 0.000577694444457879,
+        "mfa_benign": -5.2309254600610075e-05,
+        "fdr_hard": 0.0,
+        "sr_action": 0.0006443284211786679
+      }
+    },
+    {
+      "budget_benign_mfa": 0.05,
+      "hysteresis_id": "hysteresis_27",
+      "hysteresis_validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 4572,
+        "sr_action": 0.018007231250344626,
+        "far_direct": 0.0004393604167647382,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.015583268490673171,
+        "mfa_attack": 0.022517221359192832,
+        "strict_accuracy": 0.9757101282621794,
+        "permissive_accuracy_diagnostic": 0.993033595475972,
+        "deny_count": 64007,
+        "mfa_count": 4399,
+        "allow_count": 185527,
+        "proxy_cost": 0.013189896547514502,
+        "state_pairs": 253898,
+        "state_switches": 832,
+        "sr_state": 0.0032769064742534403
+      },
+      "hysteresis_test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13913,
+        "sr_action": 0.018259488687070186,
+        "far_direct": 0.0003635090742635575,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.014173980516686011,
+        "mfa_attack": 0.030420324196241046,
+        "strict_accuracy": 0.9757204724409448,
+        "permissive_accuracy_diagnostic": 0.9930616797900262,
+        "deny_count": 149212,
+        "mfa_count": 13214,
+        "allow_count": 599574,
+        "proxy_cost": 0.012824343832020997,
+        "state_pairs": 761960,
+        "state_switches": 2438,
+        "sr_state": 0.0031996430258806234
+      },
+      "validation_matched_lp": {
+        "status": "PASS",
+        "solver_status": 0,
+        "maximum_equality_residual": 1.734723475976807e-18,
+        "weights": [
+          [
+            "single_02",
+            0.14936910310333215
+          ],
+          [
+            "single_28",
+            0.6963737637831072
+          ],
+          [
+            "sma_16",
+            0.1542571331135606
+          ]
+        ],
+        "expected_sr": 0.018776020910361686,
+        "expected_far": 0.00043936041676473825,
+        "expected_mfa_benign": 0.01558326849067317,
+        "expected_fdr_hard": 0.009153330108725367
+      },
+      "test_oracle_lp": {
+        "status": "INFEASIBLE_OR_SOLVER_FAILURE",
+        "solver_status": 2,
+        "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+        "target_far": 0.0003635090742635575,
+        "target_mfa_benign": 0.014173980516686011
+      },
+      "frozen_validation_mixture_test": {
+        "sr_action": 0.018903817108248854,
+        "far_direct": 0.0009412035187214365,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.0141216712620854,
+        "mfa_attack": 0.02984262975178317,
+        "strict_accuracy": 0.9757625839994963,
+        "proxy_cost": 0.013944091347951177
+      },
+      "test_rate_shifts_mixture_minus_hysteresis": {
+        "far_direct": 0.000577694444457879,
+        "mfa_benign": -5.2309254600610075e-05,
+        "fdr_hard": 0.0,
+        "sr_action": 0.0006443284211786679
+      }
+    }
+  ],
+  "bootstrap_rows": [
+    {
+      "budget_benign_mfa": 0.01,
+      "status": "NO_HYSTERESIS_SELECTION"
+    },
+    {
+      "budget_benign_mfa": 0.02,
+      "hysteresis_id": "hysteresis_27",
+      "best_simple_id_selected_on_validation": "sma_10",
+      "clusters": 40,
+      "replicates": 5000,
+      "seed": 20261008,
+      "observed_hysteresis_minus_simple_pp": 0.07690692424799188,
+      "descriptive_95_interval_pp": [
+        0.011552753447053978,
+        0.15860648375818648
+      ],
+      "scope": "Paired source-IP proxy resampling on one previously inspected test period; no p-value or population guarantee."
+    },
+    {
+      "budget_benign_mfa": 0.05,
+      "hysteresis_id": "hysteresis_27",
+      "best_simple_id_selected_on_validation": "ema_06",
+      "clusters": 40,
+      "replicates": 5000,
+      "seed": 20261008,
+      "observed_hysteresis_minus_simple_pp": 0.09646175652265193,
+      "descriptive_95_interval_pp": [
+        0.020875293943403615,
+        0.18898911000737537
+      ],
+      "scope": "Paired source-IP proxy resampling on one previously inspected test period; no p-value or population guarantee."
+    }
+  ],
+  "diagnostics": {
+    "base_no_stabilizer": {
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 5359,
+        "sr_action": 0.021106901196543494,
+        "far_direct": 0.005947057069779849,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.010388845660448781,
+        "mfa_attack": 0.017009524706177722,
+        "strict_accuracy": 0.9796009183524788,
+        "permissive_accuracy_diagnostic": 0.9916513411017867,
+        "deny_count": 64007,
+        "mfa_count": 3060,
+        "allow_count": 186866,
+        "proxy_cost": 0.025849141308927945
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 16163,
+        "sr_action": 0.021212399601028924,
+        "far_direct": 0.00881172922612957,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.009259138508887469,
+        "mfa_attack": 0.021972104044375034,
+        "strict_accuracy": 0.9796771653543307,
+        "permissive_accuracy_diagnostic": 0.9914146981627296,
+        "deny_count": 149212,
+        "mfa_count": 8944,
+        "allow_count": 603844,
+        "proxy_cost": 0.028040879265091866
+      }
+    },
+    "always_MFA": {
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 0,
+        "sr_action": 0.0,
+        "far_direct": 0.0,
+        "fdr_hard": 0.0,
+        "mfa_benign": 1.0,
+        "mfa_attack": 1.0,
+        "strict_accuracy": 0.0,
+        "permissive_accuracy_diagnostic": 1.0,
+        "deny_count": 0,
+        "mfa_count": 762000,
+        "allow_count": 0,
+        "proxy_cost": 0.25
+      }
+    },
+    "constant_trust_50_safe_fixed_40_60": {
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13176,
+        "sr_action": 0.017292246312142368,
+        "far_direct": 0.0,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.9914695296096817,
+        "mfa_attack": 0.030783833270504605,
+        "strict_accuracy": 0.1889488188976378,
+        "permissive_accuracy_diagnostic": 0.9931325459317585,
+        "deny_count": 149212,
+        "mfa_count": 612788,
+        "allow_count": 0,
+        "proxy_cost": 0.2087779527559055,
+        "state_pairs": 761960,
+        "state_switches": 0,
+        "sr_state": 0.0
+      }
+    },
+    "fixed_hysteresis_40_60": {
+      "validation": {
+        "events": 253933,
+        "benign": 190204,
+        "attack": 63729,
+        "eligible_pairs": 253898,
+        "action_switches": 5359,
+        "sr_action": 0.021106901196543494,
+        "far_direct": 0.005947057069779849,
+        "fdr_hard": 0.009153330108725368,
+        "mfa_benign": 0.010388845660448781,
+        "mfa_attack": 0.017009524706177722,
+        "strict_accuracy": 0.9796009183524788,
+        "permissive_accuracy_diagnostic": 0.9916513411017867,
+        "deny_count": 64007,
+        "mfa_count": 3060,
+        "allow_count": 186866,
+        "proxy_cost": 0.025849141308927945,
+        "state_pairs": 253898,
+        "state_switches": 3108,
+        "sr_state": 0.012241136204302516
+      },
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 16163,
+        "sr_action": 0.021212399601028924,
+        "far_direct": 0.00881172922612957,
+        "fdr_hard": 0.008530470390318332,
+        "mfa_benign": 0.009259138508887469,
+        "mfa_attack": 0.021972104044375034,
+        "strict_accuracy": 0.9796771653543307,
+        "permissive_accuracy_diagnostic": 0.9914146981627296,
+        "deny_count": 149212,
+        "mfa_count": 8944,
+        "allow_count": 603844,
+        "proxy_cost": 0.028040879265091866,
+        "state_pairs": 761960,
+        "state_switches": 9902,
+        "sr_state": 0.012995432831119744
+      }
+    },
+    "unsafe_legacy_fusion_40_60_offline_only": {
+      "test": {
+        "events": 762000,
+        "benign": 613448,
+        "attack": 148552,
+        "eligible_pairs": 761960,
+        "action_switches": 13935,
+        "sr_action": 0.01828836159378445,
+        "far_direct": 0.02364155312617804,
+        "fdr_hard": 0.007940363323378673,
+        "mfa_benign": 0.002635920240998422,
+        "mfa_attack": 0.008609779740427594,
+        "strict_accuracy": 0.9851981627296588,
+        "permissive_accuracy_diagnostic": 0.988998687664042,
+        "deny_count": 148632,
+        "mfa_count": 2896,
+        "allow_count": 610472,
+        "proxy_cost": 0.054346128608923884,
+        "state_pairs": 761960,
+        "state_switches": 9902,
+        "sr_state": 0.012995432831119744
+      }
+    }
+  }
+}

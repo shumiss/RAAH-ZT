@@ -1,0 +1,28 @@
+{
+  "runtime": {
+    "python": "3.13.6",
+    "numpy": "2.3.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 191 Stepping 2, GenuineIntel"
+  },
+  "per_event_decision_selected_pair": {
+    "n": 4096,
+    "p50_us": 0.5,
+    "p95_us": 0.9,
+    "p99_us": 1.3,
+    "max_us": 21.6
+  },
+  "per_event_shadow_update_50_hysteresis_numpy": {
+    "n": 4096,
+    "p50_us": 5.1,
+    "p95_us": 8.3,
+    "p99_us": 11.7,
+    "max_us": 98.6
+  },
+  "per_event_amortized_compiled_shadow_250_candidates_us": 0.20467060367893636,
+  "periodic_update_window_metrics_250_candidates_ms": 13.834124999145084,
+  "periodic_update_gp_lcb_5_families_3_caps_ms": 122.3222750001393,
+  "periodic_update_exhaustive_50_5_families_3_caps_ms": 0.6627666674224505,
+  "update_interval_events": 4096,
+  "note": "Python/NumPy on one workstation; engineering measurements, not deployment latency."
+}

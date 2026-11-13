@@ -1,0 +1,33 @@
+\begin{table}[!htbp]
+\centering
+\caption{All 20 quarter-level rows for the 5\% cap, adaptive policy under synthetic score offsets 0,+12,-12,0. Each phase contains 190,500 events. Adjacent edges are assigned to the later event's phase, including cross-phase edges; full boundary counts and action changes are in the saved phase CSV. Rates are percent and cost is a proxy.}
+\label{tab:supp_shift_phase_5_adaptive}
+\scriptsize
+\setlength{\tabcolsep}{2.6pt}
+\begin{tabular}{rrlrrrrrrl}
+\toprule
+Phase & Offset & Family & SR & FAR$_d$ & MFA$_b$ & MFA$_a$ & Strict Acc. & Cost & Caps\\
+\midrule
+1 & +0 & Hyst & 1.782 & 0.071 & 1.563 & 3.392 & 97.459 & 0.01321 & Yes \\
+1 & +0 & Single & 1.837 & 0.150 & 1.477 & 3.313 & 97.529 & 0.01449 & Yes \\
+1 & +0 & SMA & 1.704 & 0.079 & 1.904 & 3.383 & 97.182 & 0.01402 & Yes \\
+1 & +0 & EMA & 1.696 & 0.076 & 2.071 & 3.386 & 97.046 & 0.01430 & Yes \\
+1 & +0 & Counter & 1.718 & 0.155 & 2.189 & 3.307 & 96.949 & 0.01599 & Yes \\
+2 & +12 & Hyst & 1.904 & 0.362 & 1.256 & 2.866 & 97.538 & 0.01997 & Yes \\
+2 & +12 & Single & 2.032 & 0.965 & 0.984 & 2.263 & 97.759 & 0.03038 & No \\
+2 & +12 & SMA & 1.678 & 0.037 & 1.789 & 3.191 & 97.103 & 0.01505 & Yes \\
+2 & +12 & EMA & 1.662 & 0.011 & 1.799 & 3.216 & 97.095 & 0.01461 & Yes \\
+2 & +12 & Counter & 1.668 & 0.201 & 1.787 & 3.027 & 97.104 & 0.01801 & Yes \\
+3 & -12 & Hyst & 2.048 & 0.061 & 3.889 & 2.767 & 95.556 & 0.01905 & Yes \\
+3 & -12 & Single & 2.310 & 0.442 & 1.019 & 2.386 & 97.857 & 0.02080 & Yes \\
+3 & -12 & SMA & 2.024 & 0.019 & 3.261 & 2.809 & 96.060 & 0.01696 & Yes \\
+3 & -12 & EMA & 2.067 & 0.045 & 2.512 & 2.783 & 96.660 & 0.01599 & Yes \\
+3 & -12 & Counter & 2.003 & 0.071 & 2.098 & 2.756 & 96.992 & 0.01564 & Yes \\
+4 & +0 & Hyst & 1.696 & 0.013 & 1.846 & 2.831 & 97.429 & 0.01140 & Yes \\
+4 & +0 & Single & 1.891 & 0.283 & 1.133 & 2.561 & 97.992 & 0.01562 & Yes \\
+4 & +0 & SMA & 1.666 & 0.135 & 1.837 & 2.708 & 97.436 & 0.01388 & Yes \\
+4 & +0 & EMA & 1.649 & 0.070 & 2.039 & 2.773 & 97.276 & 0.01294 & Yes \\
+4 & +0 & Counter & 1.631 & 0.065 & 2.141 & 2.778 & 97.195 & 0.01303 & Yes \\
+\bottomrule
+\end{tabular}
+\end{table}

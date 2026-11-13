@@ -1,0 +1,706 @@
+{
+  "validation": {
+    "safe_candidates": 154,
+    "global_front": [
+      {
+        "id": "ema_07",
+        "family": "ema",
+        "mfa_benign": 0.010993459653845345,
+        "sr_action": 0.020874524415316387,
+        "far_direct": 0.004927113245147421
+      },
+      {
+        "id": "hysteresis_05",
+        "family": "hysteresis",
+        "mfa_benign": 0.011077579861622259,
+        "sr_action": 0.020614577507503014,
+        "far_direct": 0.004989879018970955
+      },
+      {
+        "id": "hysteresis_25",
+        "family": "hysteresis",
+        "mfa_benign": 0.011645391264116423,
+        "sr_action": 0.02026404304090619,
+        "far_direct": 0.0032952031257355366
+      },
+      {
+        "id": "ema_21",
+        "family": "ema",
+        "mfa_benign": 0.012428760699038926,
+        "sr_action": 0.020165578303098095,
+        "far_direct": 0.003326586012647303
+      },
+      {
+        "id": "ema_44",
+        "family": "ema",
+        "mfa_benign": 0.012497108367857668,
+        "sr_action": 0.020153762534561123,
+        "far_direct": 0.0030441400304414
+      },
+      {
+        "id": "sma_25",
+        "family": "sma",
+        "mfa_benign": 0.01251288090681584,
+        "sr_action": 0.02011043804992556,
+        "far_direct": 0.003373660343014954
+      },
+      {
+        "id": "hysteresis_31",
+        "family": "hysteresis",
+        "mfa_benign": 0.012628546192509095,
+        "sr_action": 0.019614175771372755,
+        "far_direct": 0.002290950744558992
+      },
+      {
+        "id": "hysteresis_49",
+        "family": "hysteresis",
+        "mfa_benign": 0.01267586380938361,
+        "sr_action": 0.0195550969286879,
+        "far_direct": 0.002134036310000157
+      },
+      {
+        "id": "hysteresis_18",
+        "family": "hysteresis",
+        "mfa_benign": 0.013601186094929654,
+        "sr_action": 0.01897612427037629,
+        "far_direct": 0.0017260587801471857
+      },
+      {
+        "id": "hysteresis_26",
+        "family": "hysteresis",
+        "mfa_benign": 0.013937666926037307,
+        "sr_action": 0.018692545825488977,
+        "far_direct": 0.001176858259191263
+      },
+      {
+        "id": "hysteresis_39",
+        "family": "hysteresis",
+        "mfa_benign": 0.014242602679228618,
+        "sr_action": 0.0185310636554837,
+        "far_direct": 0.0009414866073530104
+      },
+      {
+        "id": "hysteresis_38",
+        "family": "hysteresis",
+        "mfa_benign": 0.014389813042838215,
+        "sr_action": 0.018393213022552365,
+        "far_direct": 0.0006904235120588743
+      },
+      {
+        "id": "hysteresis_30",
+        "family": "hysteresis",
+        "mfa_benign": 0.014700006309015584,
+        "sr_action": 0.018275055337182648,
+        "far_direct": 0.0006433491816912238
+      },
+      {
+        "id": "hysteresis_43",
+        "family": "hysteresis",
+        "mfa_benign": 0.014726293873945868,
+        "sr_action": 0.01815689765181293,
+        "far_direct": 0.0006119662947794567
+      },
+      {
+        "id": "hysteresis_27",
+        "family": "hysteresis",
+        "mfa_benign": 0.015583268490673171,
+        "sr_action": 0.018007231250344626,
+        "far_direct": 0.0004393604167647382
+      },
+      {
+        "id": "sma_29",
+        "family": "sma",
+        "mfa_benign": 0.016929191815103783,
+        "sr_action": 0.01787725779643794,
+        "far_direct": 0.0007845721727941753
+      },
+      {
+        "id": "sma_02",
+        "family": "sma",
+        "mfa_benign": 0.01732876280204412,
+        "sr_action": 0.017747284342531252,
+        "far_direct": 0.001271006919926564
+      },
+      {
+        "id": "sma_08",
+        "family": "sma",
+        "mfa_benign": 0.01781245399676137,
+        "sr_action": 0.017727591394969634,
+        "far_direct": 0.0005021261905882723
+      },
+      {
+        "id": "sma_36",
+        "family": "sma",
+        "mfa_benign": 0.018038527055161825,
+        "sr_action": 0.01758186358301365,
+        "far_direct": 0.0007374978424265248
+      },
+      {
+        "id": "sma_09",
+        "family": "sma",
+        "mfa_benign": 0.018206767470715653,
+        "sr_action": 0.01745582871861929,
+        "far_direct": 0.0010042523811765445
+      },
+      {
+        "id": "ema_38",
+        "family": "ema",
+        "mfa_benign": 0.018327690269394965,
+        "sr_action": 0.017444012950082317,
+        "far_direct": 0.0007845721727941753
+      },
+      {
+        "id": "ema_42",
+        "family": "ema",
+        "mfa_benign": 0.019016424470568442,
+        "sr_action": 0.017314039496175628,
+        "far_direct": 0.0004393604167647382
+      },
+      {
+        "id": "sma_10",
+        "family": "sma",
+        "mfa_benign": 0.019531660743202037,
+        "sr_action": 0.01720375898983056,
+        "far_direct": 0.00015691443455883507
+      },
+      {
+        "id": "sma_31",
+        "family": "sma",
+        "mfa_benign": 0.020088957119724086,
+        "sr_action": 0.017101355662510143,
+        "far_direct": 0.00012553154764706806
+      },
+      {
+        "id": "sma_45",
+        "family": "sma",
+        "mfa_benign": 0.020719858678050936,
+        "sr_action": 0.01700682951421437,
+        "far_direct": 4.707433036765052e-05
+      },
+      {
+        "id": "sma_27",
+        "family": "sma",
+        "mfa_benign": 0.021639923450610922,
+        "sr_action": 0.016888671828844654,
+        "far_direct": 1.5691443455883508e-05
+      },
+      {
+        "id": "ema_41",
+        "family": "ema",
+        "mfa_benign": 0.022039494437551262,
+        "sr_action": 0.01683353157567212,
+        "far_direct": 1.5691443455883508e-05
+      },
+      {
+        "id": "sma_03",
+        "family": "sma",
+        "mfa_benign": 0.022207734853105086,
+        "sr_action": 0.016821715807135148,
+        "far_direct": 0.0
+      },
+      {
+        "id": "ema_04",
+        "family": "ema",
+        "mfa_benign": 0.022675653508864167,
+        "sr_action": 0.016805961449085853,
+        "far_direct": 0.0
+      },
+      {
+        "id": "ema_03",
+        "family": "ema",
+        "mfa_benign": 0.02343799289184244,
+        "sr_action": 0.01680202285957353,
+        "far_direct": 0.0
+      },
+      {
+        "id": "sma_20",
+        "family": "sma",
+        "mfa_benign": 0.02403734937225295,
+        "sr_action": 0.01679414568054888,
+        "far_direct": 0.0
+      },
+      {
+        "id": "ema_06",
+        "family": "ema",
+        "mfa_benign": 0.02405312191121112,
+        "sr_action": 0.016786268501524235,
+        "far_direct": 0.0
+      }
+    ],
+    "front_family_counts": {
+      "sma": 12,
+      "hysteresis": 11,
+      "ema": 9
+    },
+    "envelope": [
+      {
+        "mfa_level": 0.01,
+        "hysteresis": null,
+        "hysteresis_far": null,
+        "single": null,
+        "single_far": null,
+        "sma": null,
+        "sma_far": null,
+        "ema": null,
+        "ema_far": null,
+        "counter": null,
+        "counter_far": null
+      },
+      {
+        "mfa_level": 0.0125,
+        "hysteresis": 0.02026404304090619,
+        "hysteresis_far": 0.0032952031257355366,
+        "single": 0.020523989948719564,
+        "single_far": 0.004079775298529712,
+        "sma": 0.020358569189201963,
+        "sma_far": 0.003750254985956158,
+        "ema": 0.020153762534561123,
+        "ema_far": 0.0030441400304414,
+        "counter": null,
+        "counter_far": null
+      },
+      {
+        "mfa_level": 0.014,
+        "hysteresis": 0.018692545825488977,
+        "hysteresis_far": 0.001176858259191263,
+        "single": 0.019633868718934376,
+        "single_far": 0.0012239325895589135,
+        "sma": 0.019389676169170297,
+        "sma_far": 0.002008504762353089,
+        "ema": 0.019692947561619233,
+        "ema_far": 0.0023380250749266427,
+        "counter": null,
+        "counter_far": null
+      },
+      {
+        "mfa_level": 0.015,
+        "hysteresis": 0.01815689765181293,
+        "hysteresis_far": 0.0006119662947794567,
+        "single": 0.019212439641115724,
+        "single_far": 0.0006747320686029907,
+        "sma": 0.018672852877927356,
+        "sma_far": 0.0016632930063236516,
+        "ema": 0.018802826331834045,
+        "ema_far": 0.0016632930063236516,
+        "counter": null,
+        "counter_far": null
+      },
+      {
+        "mfa_level": 0.0175,
+        "hysteresis": 0.018007231250344626,
+        "hysteresis_far": 0.0004393604167647382,
+        "single": 0.01864528275134109,
+        "single_far": 4.707433036765052e-05,
+        "sma": 0.017747284342531252,
+        "sma_far": 0.001271006919926564,
+        "ema": 0.018125388935714342,
+        "ema_far": 0.0013808470241177485,
+        "counter": 0.019358167453071708,
+        "counter_far": 0.0023066421880148756
+      },
+      {
+        "mfa_level": 0.02,
+        "hysteresis": 0.018007231250344626,
+        "hysteresis_far": 0.0004393604167647382,
+        "single": 0.01864528275134109,
+        "single_far": 4.707433036765052e-05,
+        "sma": 0.01720375898983056,
+        "sma_far": 0.00015691443455883507,
+        "ema": 0.017314039496175628,
+        "ema_far": 0.0004393604167647382,
+        "counter": 0.017688205499846395,
+        "counter_far": 0.00120824114610303
+      },
+      {
+        "mfa_level": 0.025,
+        "hysteresis": 0.018007231250344626,
+        "hysteresis_far": 0.0004393604167647382,
+        "single": 0.01864528275134109,
+        "single_far": 4.707433036765052e-05,
+        "sma": 0.01679414568054888,
+        "sma_far": 0.0,
+        "ema": 0.016786268501524235,
+        "ema_far": 0.0,
+        "counter": 0.01693593490299254,
+        "counter_far": 0.0005335090775000392
+      },
+      {
+        "mfa_level": 0.03,
+        "hysteresis": 0.018007231250344626,
+        "hysteresis_far": 0.0004393604167647382,
+        "single": 0.017310100906663305,
+        "single_far": 0.0,
+        "sma": 0.01679414568054888,
+        "sma_far": 0.0,
+        "ema": 0.016786268501524235,
+        "ema_far": 0.0,
+        "counter": 0.016861101702258387,
+        "counter_far": 0.0
+      },
+      {
+        "mfa_level": 0.05,
+        "hysteresis": 0.018007231250344626,
+        "hysteresis_far": 0.0004393604167647382,
+        "single": 0.017310100906663305,
+        "single_far": 0.0,
+        "sma": 0.01679414568054888,
+        "sma_far": 0.0,
+        "ema": 0.016786268501524235,
+        "ema_far": 0.0,
+        "counter": 0.016861101702258387,
+        "counter_far": 0.0
+      }
+    ]
+  },
+  "test": {
+    "safe_candidates": 125,
+    "global_front": [
+      {
+        "id": "hysteresis_31",
+        "family": "hysteresis",
+        "mfa_benign": 0.011225075312006885,
+        "sr_action": 0.01993936689590005,
+        "far_direct": 0.00410630620927352
+      },
+      {
+        "id": "hysteresis_49",
+        "family": "hysteresis",
+        "mfa_benign": 0.011417430654268984,
+        "sr_action": 0.01985012336605596,
+        "far_direct": 0.003917820022618343
+      },
+      {
+        "id": "hysteresis_18",
+        "family": "hysteresis",
+        "mfa_benign": 0.011971674860786896,
+        "sr_action": 0.019453777101160166,
+        "far_direct": 0.002955194140772255
+      },
+      {
+        "id": "hysteresis_26",
+        "family": "hysteresis",
+        "mfa_benign": 0.012419960616058736,
+        "sr_action": 0.019053493621712426,
+        "far_direct": 0.0021877860951047445
+      },
+      {
+        "id": "hysteresis_29",
+        "family": "hysteresis",
+        "mfa_benign": 0.012861725851253896,
+        "sr_action": 0.018777888603076276,
+        "far_direct": 0.0016425224837094082
+      },
+      {
+        "id": "hysteresis_30",
+        "family": "hysteresis",
+        "mfa_benign": 0.013067122233669357,
+        "sr_action": 0.018642710903459498,
+        "far_direct": 0.0014405729980074317
+      },
+      {
+        "id": "hysteresis_03",
+        "family": "hysteresis",
+        "mfa_benign": 0.013199162765222153,
+        "sr_action": 0.018630899259803664,
+        "far_direct": 0.0012116969142118585
+      },
+      {
+        "id": "hysteresis_43",
+        "family": "hysteresis",
+        "mfa_benign": 0.013603435009976395,
+        "sr_action": 0.018361856265420758,
+        "far_direct": 0.0008885777370886962
+      },
+      {
+        "id": "hysteresis_27",
+        "family": "hysteresis",
+        "mfa_benign": 0.014173980516686011,
+        "sr_action": 0.018259488687070186,
+        "far_direct": 0.0003635090742635575
+      },
+      {
+        "id": "sma_22",
+        "family": "sma",
+        "mfa_benign": 0.015629686623805115,
+        "sr_action": 0.018222741351252035,
+        "far_direct": 0.0022820291884323336
+      },
+      {
+        "id": "sma_29",
+        "family": "sma",
+        "mfa_benign": 0.016170889790169663,
+        "sr_action": 0.017894640138589952,
+        "far_direct": 0.00145403629705423
+      },
+      {
+        "id": "sma_08",
+        "family": "sma",
+        "mfa_benign": 0.01675284620701347,
+        "sr_action": 0.017700404220694,
+        "far_direct": 0.0009895524799396844
+      },
+      {
+        "id": "ema_40",
+        "family": "ema",
+        "mfa_benign": 0.01686206491829788,
+        "sr_action": 0.01769252979159011,
+        "far_direct": 0.0008616511389950993
+      },
+      {
+        "id": "sma_09",
+        "family": "sma",
+        "mfa_benign": 0.017117995331307624,
+        "sr_action": 0.017689904981888813,
+        "far_direct": 0.001514621142764823
+      },
+      {
+        "id": "ema_17",
+        "family": "ema",
+        "mfa_benign": 0.017176680011997757,
+        "sr_action": 0.017649220431518713,
+        "far_direct": 0.0003971673218805536
+      },
+      {
+        "id": "ema_23",
+        "family": "ema",
+        "mfa_benign": 0.0173445834039723,
+        "sr_action": 0.01761378550055121,
+        "far_direct": 0.000787602994237708
+      },
+      {
+        "id": "ema_42",
+        "family": "ema",
+        "mfa_benign": 0.01769180109805558,
+        "sr_action": 0.017594099427791485,
+        "far_direct": 0.0007068231999569174
+      },
+      {
+        "id": "sma_10",
+        "family": "sma",
+        "mfa_benign": 0.01798848476154458,
+        "sr_action": 0.017490419444590267,
+        "far_direct": 0.0005318003123485379
+      },
+      {
+        "id": "sma_31",
+        "family": "sma",
+        "mfa_benign": 0.01838786661624131,
+        "sr_action": 0.017452359703921467,
+        "far_direct": 0.0003635090742635575
+      },
+      {
+        "id": "sma_45",
+        "family": "sma",
+        "mfa_benign": 0.018746495220458785,
+        "sr_action": 0.0174261116069085,
+        "far_direct": 0.00020868113522537563
+      },
+      {
+        "id": "sma_27",
+        "family": "sma",
+        "mfa_benign": 0.01932193111722591,
+        "sr_action": 0.017381489841986456,
+        "far_direct": 0.00020868113522537563
+      },
+      {
+        "id": "sma_03",
+        "family": "sma",
+        "mfa_benign": 0.019900627274031378,
+        "sr_action": 0.017340805291616357,
+        "far_direct": 0.00013463299046798428
+      },
+      {
+        "id": "sma_41",
+        "family": "sma",
+        "mfa_benign": 0.020332611729111515,
+        "sr_action": 0.01733818048191506,
+        "far_direct": 4.038989714039528e-05
+      },
+      {
+        "id": "sma_19",
+        "family": "sma",
+        "mfa_benign": 0.020451611220510948,
+        "sr_action": 0.01731455719460339,
+        "far_direct": 2.6926598093596855e-05
+      },
+      {
+        "id": "ema_35",
+        "family": "ema",
+        "mfa_benign": 0.020643966562773047,
+        "sr_action": 0.0173093075752008,
+        "far_direct": 0.0
+      },
+      {
+        "id": "ema_03",
+        "family": "ema",
+        "mfa_benign": 0.020842842425111828,
+        "sr_action": 0.017296183526694316,
+        "far_direct": 0.0
+      },
+      {
+        "id": "ema_06",
+        "family": "ema",
+        "mfa_benign": 0.021196580639271788,
+        "sr_action": 0.017294871121843667,
+        "far_direct": 0.0
+      },
+      {
+        "id": "hysteresis_00",
+        "family": "hysteresis",
+        "mfa_benign": 0.9914695296096817,
+        "sr_action": 0.017292246312142368,
+        "far_direct": 0.0
+      }
+    ],
+    "front_family_counts": {
+      "sma": 11,
+      "hysteresis": 10,
+      "ema": 7
+    },
+    "envelope": [
+      {
+        "mfa_level": 0.01,
+        "hysteresis": null,
+        "hysteresis_far": null,
+        "single": null,
+        "single_far": null,
+        "sma": null,
+        "sma_far": null,
+        "ema": null,
+        "ema_far": null,
+        "counter": null,
+        "counter_far": null
+      },
+      {
+        "mfa_level": 0.0125,
+        "hysteresis": 0.019053493621712426,
+        "hysteresis_far": 0.0021877860951047445,
+        "single": 0.019844873746653367,
+        "single_far": 0.002551295169368302,
+        "sma": null,
+        "sma_far": null,
+        "ema": null,
+        "ema_far": null,
+        "counter": null,
+        "counter_far": null
+      },
+      {
+        "mfa_level": 0.014,
+        "hysteresis": 0.018361856265420758,
+        "hysteresis_far": 0.0008885777370886962,
+        "single": 0.019126988293348732,
+        "single_far": 0.0009491625827992891,
+        "sma": 0.019108614625439654,
+        "sma_far": 0.00359470084549518,
+        "ema": 0.01973200692949761,
+        "ema_far": 0.004550595077817869,
+        "counter": null,
+        "counter_far": null
+      },
+      {
+        "mfa_level": 0.015,
+        "hysteresis": 0.018259488687070186,
+        "hysteresis_far": 0.0003635090742635575,
+        "single": 0.01877526379337498,
+        "single_far": 0.00020868113522537563,
+        "sma": 0.018481285106829753,
+        "sma_far": 0.002544563519844903,
+        "ema": 0.018653210142264686,
+        "ema_far": 0.002807097851257472,
+        "counter": 0.019931492466796156,
+        "counter_far": 0.0037562604340567614
+      },
+      {
+        "mfa_level": 0.0175,
+        "hysteresis": 0.018259488687070186,
+        "hysteresis_far": 0.0003635090742635575,
+        "single": 0.01877526379337498,
+        "single_far": 0.00020868113522537563,
+        "sma": 0.017689904981888813,
+        "sma_far": 0.001514621142764823,
+        "ema": 0.01761378550055121,
+        "ema_far": 0.000787602994237708,
+        "counter": 0.01861121318704394,
+        "counter_far": 0.0023830039312833216
+      },
+      {
+        "mfa_level": 0.02,
+        "hysteresis": 0.018259488687070186,
+        "hysteresis_far": 0.0003635090742635575,
+        "single": 0.01877526379337498,
+        "single_far": 0.00020868113522537563,
+        "sma": 0.017340805291616357,
+        "sma_far": 0.00013463299046798428,
+        "ema": 0.017397238700194235,
+        "ema_far": 0.00010770639237438742,
+        "counter": 0.01749566906399286,
+        "counter_far": 0.0014203780494372342
+      },
+      {
+        "mfa_level": 0.025,
+        "hysteresis": 0.018259488687070186,
+        "hysteresis_far": 0.0003635090742635575,
+        "single": 0.01779489736994068,
+        "single_far": 0.0,
+        "sma": 0.01729880833639561,
+        "sma_far": 0.0,
+        "ema": 0.017294871121843667,
+        "ema_far": 0.0,
+        "counter": 0.017326368838259228,
+        "counter_far": 0.00028272927998276696
+      },
+      {
+        "mfa_level": 0.03,
+        "hysteresis": 0.018259488687070186,
+        "hysteresis_far": 0.0003635090742635575,
+        "single": 0.01779489736994068,
+        "single_far": 0.0,
+        "sma": 0.01729880833639561,
+        "sma_far": 0.0,
+        "ema": 0.017294871121843667,
+        "ema_far": 0.0,
+        "counter": 0.017326368838259228,
+        "counter_far": 0.00028272927998276696
+      },
+      {
+        "mfa_level": 0.05,
+        "hysteresis": 0.018259488687070186,
+        "hysteresis_far": 0.0003635090742635575,
+        "single": 0.01779489736994068,
+        "single_far": 0.0,
+        "sma": 0.01729880833639561,
+        "sma_far": 0.0,
+        "ema": 0.017294871121843667,
+        "ema_far": 0.0,
+        "counter": 0.017326368838259228,
+        "counter_far": 0.00028272927998276696
+      }
+    ]
+  },
+  "decomposition_at_selected_hysteresis": {
+    "base": {
+      "sr_action": 0.021212399601028924,
+      "far_direct": 0.00881172922612957,
+      "mfa_benign": 0.009259138508887469
+    },
+    "hysteresis": {
+      "sr_action": 0.018259488687070186,
+      "far_direct": 0.0003635090742635575,
+      "mfa_benign": 0.014173980516686011
+    },
+    "best_single_threshold_with_no_more_benign_MFA": {
+      "id": "single_26",
+      "params": {
+        "threshold": 94.251156
+      },
+      "sr_action": 0.019126988293348732,
+      "far_direct": 0.0009491625827992891,
+      "mfa_benign": 0.013548010589324604
+    },
+    "always_low_conservative_fusion_only": {
+      "sr_action": 0.017292246312142368,
+      "far_direct": 0.0,
+      "mfa_benign": 0.9914695296096817
+    }
+  }
+}
