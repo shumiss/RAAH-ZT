@@ -42,14 +42,14 @@ Run the scripts from inside `r1/`. Each one writes to `r1/results/`.
 | Script | Results | Paper |
 |---|---|---|
 | `exp_static.py` | A1 tie permutations, A2 inactivity timeouts, A7 candidate frontier, A8 Theorem 4 | Sec. V-C, V-D, Table IV |
-| `exp_dynamic.py` | A3 fallback rules, A4 label-noise curve, A5 switch decomposition, A6 query rules | Sec. V-E, Table V, Fig. 8 |
-| `exp_robust.py b1` / `exp_robust.py b2` | B1 bootstrap frontier, B2 replicates | Sec. V-C, Fig. 6; Sec. V-E |
-| `exp_rerun75.py` | C1 all 75 feedback rows with the revised fallback | Sec. V-E, Fig. 7 |
-| `exp_score_shift_R1.py` | C2 score-calibration shift with the revised fallback | Sec. V-E1, Fig. 9 |
+| `exp_dynamic.py` | A3 fallback rules, A4 label-noise curve, A5 switch decomposition, A6 query rules | Sec. V-E, Table V, Fig. 5 |
+| `exp_robust.py b1` / `exp_robust.py b2` | B1 bootstrap frontier, B2 replicates | Sec. V-C, Fig. 4; Sec. V-E |
+| `exp_rerun75.py` | C1 all 75 feedback rows with the revised fallback | Sec. V-E, Supplement Fig. S6 |
+| `exp_score_shift_R1.py` | C2 score-calibration shift with the revised fallback | Sec. V-E1, Fig. 6 |
 | `exp_misspec_R1.py` | C3 misspecified flip rate | Sec. V-E |
 | `exp_timing_local.py` | A9 timing per layer, A11 local MFA windows | Sec. V-H, Sec. V-E2 |
 | `exp_causal_features.py` | A10 evaluator with start-time features | Sec. V-D |
-| `make_figures.py` | Figs. 2, 3, 6--10 | |
+| `make_figures.py` | Figs. 2--7 and Supplement Fig. S6 | |
 | `fig1_final.py` | Fig. 1 | |
 
 `supplement/gen_s7.py` rebuilds the tables of Supplement S7 from these results.
